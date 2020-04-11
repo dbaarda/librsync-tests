@@ -1,0 +1,318 @@
+Version v2.3.0 with args '-b 1024 -S 8'
+===============================================
+
+rdiff (librsync 2.3.0)
+Copyright (C) 1997-2016 by Martin Pool, Andrew Tridgell and others.
+http://librsync.sourcefrog.net/
+Capabilities: 64 bit files, trace disabled
+
+librsync comes with NO WARRANTY, to the extent permitted by law.
+You may redistribute copies of librsync under the terms of the GNU
+Lesser General Public License.  For more information about these
+matters, see the files named COPYING.
+
+32K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[32768 blocks, 1024 bytes per block] speed[33.6 MB (33.6 MB/s) in, 0.4 MB (0.4 MB/s) out, 1 sec]
+0.33user 0.06system 0:00.40elapsed 99%CPU (0avgtext+0avgdata 1740maxresident)k
+65536inputs+776outputs (0major+91minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[32768 blocks, 1024 bytes per block] speed[0.4 MB (0.4 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[16793600 searches, 16384 (0.098%) matches, 19454511 (1.158x) weak sum compares, 16507 (0.098%) strong sum compares, 16507 (0.098%) strong sum calcs]
+librsync: delta statistics: literal[512 cmds, 16777216 bytes, 1536 cmdbytes] copy[2 cmds, 16777216 bytes, 18 cmdbytes, 0 false] speed[33.6 MB (16.8 MB/s) in, 16.8 MB (8.4 MB/s) out, 2 sec]
+1.47user 0.19system 0:01.67elapsed 99%CPU (0avgtext+0avgdata 2924maxresident)k
+65536inputs+32776outputs (0major+473minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[512 cmds, 16777216 bytes, 1536 cmdbytes] copy[2 cmds, 16777216 bytes, 18 cmdbytes, 0 false] speed[16.8 MB (16.8 MB/s) in, 33.6 MB (33.6 MB/s) out, 1 sec]
+0.02user 0.15system 0:00.17elapsed 99%CPU (0avgtext+0avgdata 1856maxresident)k
+0inputs+65536outputs (0major+124minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 16778775 Apr 11 12:59 /tmp/delta.32K
+-rw-rw-r-- 1 abo abo   393228 Apr 11 12:59 /tmp/sig.32K
+
+51K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[52224 blocks, 1024 bytes per block] speed[53.5 MB (53.5 MB/s) in, 0.6 MB (0.6 MB/s) out, 1 sec]
+0.52user 0.11system 0:00.64elapsed 98%CPU (0avgtext+0avgdata 1820maxresident)k
+104456inputs+1232outputs (0major+90minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[52224 blocks, 1024 bytes per block] speed[0.6 MB (0.6 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[26764800 searches, 26112 (0.098%) matches, 127942827 (4.780x) weak sum compares, 26419 (0.099%) strong sum compares, 26418 (0.099%) strong sum calcs]
+librsync: delta statistics: literal[816 cmds, 26738688 bytes, 2448 cmdbytes] copy[2 cmds, 26738688 bytes, 18 cmdbytes, 0 false] speed[53.5 MB (17.8 MB/s) in, 26.7 MB (8.9 MB/s) out, 3 sec]
+3.34user 0.24system 0:03.67elapsed 97%CPU (0avgtext+0avgdata 3284maxresident)k
+104456inputs+52232outputs (0major+533minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[816 cmds, 26738688 bytes, 2448 cmdbytes] copy[2 cmds, 26738688 bytes, 18 cmdbytes, 0 false] speed[26.7 MB (26.7 MB/s) in, 53.5 MB (53.5 MB/s) out, 1 sec]
+0.01user 0.27system 0:00.29elapsed 98%CPU (0avgtext+0avgdata 1888maxresident)k
+0inputs+104448outputs (0major+122minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 26741159 Apr 11 12:59 /tmp/delta.51K
+-rw-rw-r-- 1 abo abo   626700 Apr 11 12:59 /tmp/sig.51K
+
+52K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[53248 blocks, 1024 bytes per block] speed[54.5 MB (54.5 MB/s) in, 0.6 MB (0.6 MB/s) out, 1 sec]
+0.50user 0.15system 0:00.69elapsed 96%CPU (0avgtext+0avgdata 1828maxresident)k
+106496inputs+1256outputs (0major+93minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[53248 blocks, 1024 bytes per block] speed[0.6 MB (0.6 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[27289600 searches, 26624 (0.098%) matches, 21351731 (0.782x) weak sum compares, 26975 (0.099%) strong sum compares, 26974 (0.099%) strong sum calcs]
+librsync: delta statistics: literal[832 cmds, 27262976 bytes, 2496 cmdbytes] copy[2 cmds, 27262976 bytes, 18 cmdbytes, 0 false] speed[54.5 MB (18.2 MB/s) in, 27.3 MB (9.1 MB/s) out, 3 sec]
+3.17user 0.39system 0:03.57elapsed 99%CPU (0avgtext+0avgdata 3960maxresident)k
+106496inputs+53264outputs (0major+791minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[832 cmds, 27262976 bytes, 2496 cmdbytes] copy[2 cmds, 27262976 bytes, 18 cmdbytes, 0 false] speed[27.3 MB (27.3 MB/s) in, 54.5 MB (54.5 MB/s) out, 1 sec]
+0.01user 0.26system 0:00.28elapsed 99%CPU (0avgtext+0avgdata 1860maxresident)k
+0inputs+106496outputs (0major+126minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 27265495 Apr 11 12:59 /tmp/delta.52K
+-rw-rw-r-- 1 abo abo   638988 Apr 11 12:59 /tmp/sig.52K
+
+64K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[65536 blocks, 1024 bytes per block] speed[67.1 MB (67.1 MB/s) in, 0.8 MB (0.8 MB/s) out, 1 sec]
+0.66user 0.14system 0:00.81elapsed 99%CPU (0avgtext+0avgdata 1724maxresident)k
+131072inputs+1544outputs (0major+90minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[65536 blocks, 1024 bytes per block] speed[0.8 MB (0.8 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[33587200 searches, 32768 (0.098%) matches, 38971160 (1.160x) weak sum compares, 33276 (0.099%) strong sum compares, 33275 (0.099%) strong sum calcs]
+librsync: delta statistics: literal[1024 cmds, 33554432 bytes, 3072 cmdbytes] copy[2 cmds, 33554432 bytes, 18 cmdbytes, 0 false] speed[67.1 MB (13.4 MB/s) in, 33.6 MB (6.7 MB/s) out, 5 sec]
+3.78user 0.45system 0:04.24elapsed 99%CPU (0avgtext+0avgdata 4156maxresident)k
+131080inputs+65544outputs (0major+828minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[1024 cmds, 33554432 bytes, 3072 cmdbytes] copy[2 cmds, 33554432 bytes, 18 cmdbytes, 0 false] speed[33.6 MB (33.6 MB/s) in, 67.1 MB (67.1 MB/s) out, 1 sec]
+0.01user 0.34system 0:00.35elapsed 99%CPU (0avgtext+0avgdata 1860maxresident)k
+0inputs+131080outputs (0major+124minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 33557527 Apr 11 12:59 /tmp/delta.64K
+-rw-rw-r-- 1 abo abo   786444 Apr 11 12:59 /tmp/sig.64K
+
+102K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[104448 blocks, 1024 bytes per block] speed[107.0 MB (107.0 MB/s) in, 1.3 MB (1.3 MB/s) out, 1 sec]
+1.14user 0.27system 0:01.41elapsed 99%CPU (0avgtext+0avgdata 1824maxresident)k
+208904inputs+2456outputs (0major+91minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[104448 blocks, 1024 bytes per block] speed[1.3 MB (1.3 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[53529600 searches, 52224 (0.098%) matches, 255026477 (4.764x) weak sum compares, 53512 (0.100%) strong sum compares, 53511 (0.100%) strong sum calcs]
+librsync: delta statistics: literal[1632 cmds, 53477376 bytes, 4896 cmdbytes] copy[2 cmds, 53477376 bytes, 18 cmdbytes, 0 false] speed[107.0 MB (10.7 MB/s) in, 53.5 MB (5.3 MB/s) out, 10 sec]
+8.56user 0.79system 0:09.36elapsed 99%CPU (0avgtext+0avgdata 4544maxresident)k
+208904inputs+104472outputs (0major+942minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[1632 cmds, 53477376 bytes, 4896 cmdbytes] copy[2 cmds, 53477376 bytes, 18 cmdbytes, 0 false] speed[53.5 MB (53.5 MB/s) in, 107.0 MB (107.0 MB/s) out, 1 sec]
+0.04user 0.51system 0:00.56elapsed 99%CPU (0avgtext+0avgdata 1872maxresident)k
+0inputs+208896outputs (0major+122minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 53482295 Apr 11 12:59 /tmp/delta.102K
+-rw-rw-r-- 1 abo abo  1253388 Apr 11 12:59 /tmp/sig.102K
+
+103K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[105472 blocks, 1024 bytes per block] speed[108.0 MB (54.0 MB/s) in, 1.3 MB (0.6 MB/s) out, 2 sec]
+1.13user 0.15system 0:01.29elapsed 99%CPU (0avgtext+0avgdata 1716maxresident)k
+210952inputs+2480outputs (0major+90minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[105472 blocks, 1024 bytes per block] speed[1.3 MB (1.3 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[54054400 searches, 52736 (0.098%) matches, 41553315 (0.769x) weak sum compares, 54101 (0.100%) strong sum compares, 54101 (0.100%) strong sum calcs]
+librsync: delta statistics: literal[1648 cmds, 54001664 bytes, 4944 cmdbytes] copy[2 cmds, 54001664 bytes, 18 cmdbytes, 0 false] speed[108.0 MB (13.5 MB/s) in, 54.0 MB (6.8 MB/s) out, 8 sec]
+7.83user 0.70system 0:08.53elapsed 99%CPU (0avgtext+0avgdata 6060maxresident)k
+210952inputs+105496outputs (0major+1454minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[1648 cmds, 54001664 bytes, 4944 cmdbytes] copy[2 cmds, 54001664 bytes, 18 cmdbytes, 0 false] speed[54.0 MB (54.0 MB/s) in, 108.0 MB (108.0 MB/s) out, 1 sec]
+0.03user 0.53system 0:00.56elapsed 99%CPU (0avgtext+0avgdata 1860maxresident)k
+0inputs+210944outputs (0major+124minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 54006631 Apr 11 12:59 /tmp/delta.103K
+-rw-rw-r-- 1 abo abo  1265676 Apr 11 12:59 /tmp/sig.103K
+
+128K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[131072 blocks, 1024 bytes per block] speed[134.2 MB (67.1 MB/s) in, 1.6 MB (0.8 MB/s) out, 2 sec]
+1.35user 0.24system 0:01.60elapsed 99%CPU (0avgtext+0avgdata 1728maxresident)k
+262152inputs+3080outputs (0major+92minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[131072 blocks, 1024 bytes per block] speed[1.6 MB (1.6 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[67174400 searches, 65536 (0.098%) matches, 78543685 (1.169x) weak sum compares, 67614 (0.101%) strong sum compares, 67613 (0.101%) strong sum calcs]
+librsync: delta statistics: literal[2048 cmds, 67108864 bytes, 6144 cmdbytes] copy[2 cmds, 67108864 bytes, 18 cmdbytes, 0 false] speed[134.2 MB (12.2 MB/s) in, 67.1 MB (6.1 MB/s) out, 11 sec]
+10.11user 0.92system 0:11.04elapsed 99%CPU (0avgtext+0avgdata 6396maxresident)k
+262152inputs+131096outputs (0major+1528minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[2048 cmds, 67108864 bytes, 6144 cmdbytes] copy[2 cmds, 67108864 bytes, 18 cmdbytes, 0 false] speed[67.1 MB (67.1 MB/s) in, 134.2 MB (134.2 MB/s) out, 1 sec]
+0.06user 0.65system 0:00.72elapsed 99%CPU (0avgtext+0avgdata 1864maxresident)k
+0inputs+262144outputs (0major+123minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 67115031 Apr 11 13:00 /tmp/delta.128K
+-rw-rw-r-- 1 abo abo  1572876 Apr 11 12:59 /tmp/sig.128K
+
+204K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[208896 blocks, 1024 bytes per block] speed[213.9 MB (107.0 MB/s) in, 2.5 MB (1.3 MB/s) out, 2 sec]
+2.10user 0.44system 0:02.54elapsed 99%CPU (0avgtext+0avgdata 1696maxresident)k
+417800inputs+4904outputs (0major+89minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[208896 blocks, 1024 bytes per block] speed[2.5 MB (2.5 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[107059200 searches, 104448 (0.098%) matches, 514207289 (4.803x) weak sum compares, 109581 (0.102%) strong sum compares, 109579 (0.102%) strong sum calcs]
+librsync: delta statistics: literal[3264 cmds, 106954752 bytes, 9792 cmdbytes] copy[2 cmds, 106954752 bytes, 18 cmdbytes, 0 false] speed[213.9 MB (8.9 MB/s) in, 107.0 MB (4.5 MB/s) out, 24 sec]
+21.75user 1.65system 0:23.45elapsed 99%CPU (0avgtext+0avgdata 7300maxresident)k
+417800inputs+208928outputs (0major+1760minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[3264 cmds, 106954752 bytes, 9792 cmdbytes] copy[2 cmds, 106954752 bytes, 18 cmdbytes, 0 false] speed[107.0 MB (107.0 MB/s) in, 213.9 MB (213.9 MB/s) out, 1 sec]
+0.06user 1.10system 0:01.16elapsed 99%CPU (0avgtext+0avgdata 1852maxresident)k
+0inputs+417792outputs (0major+123minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 106964567 Apr 11 13:00 /tmp/delta.204K
+-rw-rw-r-- 1 abo abo   2506764 Apr 11 13:00 /tmp/sig.204K
+
+205K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[209920 blocks, 1024 bytes per block] speed[215.0 MB (71.7 MB/s) in, 2.5 MB (0.8 MB/s) out, 3 sec]
+2.13user 0.43system 0:02.60elapsed 98%CPU (0avgtext+0avgdata 1720maxresident)k
+419312inputs+4928outputs (0major+94minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[209920 blocks, 1024 bytes per block] speed[2.5 MB (2.5 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[107584000 searches, 104960 (0.098%) matches, 82053270 (0.763x) weak sum compares, 110163 (0.102%) strong sum compares, 110160 (0.102%) strong sum calcs]
+librsync: delta statistics: literal[3280 cmds, 107479040 bytes, 9840 cmdbytes] copy[2 cmds, 107479040 bytes, 18 cmdbytes, 0 false] speed[215.0 MB (10.7 MB/s) in, 107.5 MB (5.4 MB/s) out, 20 sec]
+18.04user 1.42system 0:20.01elapsed 97%CPU (0avgtext+0avgdata 10388maxresident)k
+419848inputs+209952outputs (0major+2277minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[3280 cmds, 107479040 bytes, 9840 cmdbytes] copy[2 cmds, 107479040 bytes, 18 cmdbytes, 0 false] speed[107.5 MB (107.5 MB/s) in, 215.0 MB (215.0 MB/s) out, 1 sec]
+0.07user 1.10system 0:01.18elapsed 99%CPU (0avgtext+0avgdata 1852maxresident)k
+0inputs+419840outputs (0major+125minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 107488903 Apr 11 13:01 /tmp/delta.205K
+-rw-rw-r-- 1 abo abo   2519052 Apr 11 13:00 /tmp/sig.205K
+
+256K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[262144 blocks, 1024 bytes per block] speed[268.4 MB (89.5 MB/s) in, 3.1 MB (1.0 MB/s) out, 3 sec]
+2.63user 0.54system 0:03.27elapsed 97%CPU (0avgtext+0avgdata 1724maxresident)k
+523600inputs+6152outputs (0major+91minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[262144 blocks, 1024 bytes per block] speed[3.1 MB (3.1 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[134348800 searches, 131072 (0.098%) matches, 156704964 (1.166x) weak sum compares, 139355 (0.104%) strong sum compares, 139351 (0.104%) strong sum calcs]
+librsync: delta statistics: literal[4096 cmds, 134217728 bytes, 12288 cmdbytes] copy[2 cmds, 134217728 bytes, 18 cmdbytes, 0 false] speed[268.4 MB (10.3 MB/s) in, 134.2 MB (5.2 MB/s) out, 26 sec]
+23.18user 1.90system 0:25.28elapsed 99%CPU (0avgtext+0avgdata 10988maxresident)k
+524296inputs+262184outputs (0major+1917minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[4096 cmds, 134217728 bytes, 12288 cmdbytes] copy[2 cmds, 134217728 bytes, 18 cmdbytes, 0 false] speed[134.2 MB (134.2 MB/s) in, 268.4 MB (268.4 MB/s) out, 1 sec]
+0.08user 1.46system 0:01.55elapsed 99%CPU (0avgtext+0avgdata 1848maxresident)k
+0inputs+524288outputs (0major+123minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 134230039 Apr 11 13:01 /tmp/delta.256K
+-rw-rw-r-- 1 abo abo   3145740 Apr 11 13:01 /tmp/sig.256K
+
+409K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[418816 blocks, 1024 bytes per block] speed[428.9 MB (71.5 MB/s) in, 5.0 MB (0.8 MB/s) out, 6 sec]
+4.16user 0.93system 0:05.25elapsed 97%CPU (0avgtext+0avgdata 1724maxresident)k
+835040inputs+9832outputs (0major+93minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[418816 blocks, 1024 bytes per block] speed[5.0 MB (5.0 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[214643200 searches, 209408 (0.098%) matches, 1038825299 (4.840x) weak sum compares, 230322 (0.107%) strong sum compares, 230310 (0.107%) strong sum calcs]
+librsync: delta statistics: literal[6544 cmds, 214433792 bytes, 19632 cmdbytes] copy[2 cmds, 214433792 bytes, 18 cmdbytes, 0 false] speed[428.9 MB (7.7 MB/s) in, 214.5 MB (3.8 MB/s) out, 56 sec]
+51.88user 3.65system 0:55.82elapsed 99%CPU (0avgtext+0avgdata 12956maxresident)k
+837640inputs+418864outputs (0major+2376minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[6544 cmds, 214433792 bytes, 19632 cmdbytes] copy[2 cmds, 214433792 bytes, 18 cmdbytes, 0 false] speed[214.5 MB (107.2 MB/s) in, 428.9 MB (214.4 MB/s) out, 2 sec]
+0.12user 2.19system 0:02.42elapsed 95%CPU (0avgtext+0avgdata 1956maxresident)k
+0inputs+837640outputs (0major+126minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 214453447 Apr 11 13:02 /tmp/delta.409K
+-rw-rw-r-- 1 abo abo   5025804 Apr 11 13:01 /tmp/sig.409K
+
+410K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[419840 blocks, 1024 bytes per block] speed[429.9 MB (71.7 MB/s) in, 5.0 MB (0.8 MB/s) out, 6 sec]
+4.11user 1.01system 0:05.48elapsed 93%CPU (0avgtext+0avgdata 1740maxresident)k
+837584inputs+9856outputs (0major+91minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[419840 blocks, 1024 bytes per block] speed[5.0 MB (5.0 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[215168000 searches, 209920 (0.098%) matches, 163736140 (0.761x) weak sum compares, 230784 (0.107%) strong sum compares, 230776 (0.107%) strong sum calcs]
+librsync: delta statistics: literal[6560 cmds, 214958080 bytes, 19680 cmdbytes] copy[2 cmds, 214958080 bytes, 18 cmdbytes, 0 false] speed[429.9 MB (10.2 MB/s) in, 215.0 MB (5.1 MB/s) out, 42 sec]
+38.61user 3.07system 0:42.20elapsed 98%CPU (0avgtext+0avgdata 19108maxresident)k
+839688inputs+419888outputs (0major+3915minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[6560 cmds, 214958080 bytes, 19680 cmdbytes] copy[2 cmds, 214958080 bytes, 18 cmdbytes, 0 false] speed[215.0 MB (43.0 MB/s) in, 429.9 MB (86.0 MB/s) out, 5 sec]
+0.14user 2.40system 0:04.73elapsed 54%CPU (0avgtext+0avgdata 1856maxresident)k
+195224inputs+839680outputs (0major+126minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 214977783 Apr 11 13:03 /tmp/delta.410K
+-rw-rw-r-- 1 abo abo   5038092 Apr 11 13:02 /tmp/sig.410K
+
+512K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[524288 blocks, 1024 bytes per block] speed[536.9 MB (76.7 MB/s) in, 6.3 MB (0.9 MB/s) out, 7 sec]
+5.23user 1.09system 0:06.81elapsed 92%CPU (0avgtext+0avgdata 1828maxresident)k
+914560inputs+12304outputs (0major+92minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[524288 blocks, 1024 bytes per block] speed[6.3 MB (6.3 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[268697600 searches, 262144 (0.098%) matches, 312912823 (1.165x) weak sum compares, 294624 (0.110%) strong sum compares, 294598 (0.110%) strong sum calcs]
+librsync: delta statistics: literal[8192 cmds, 268435456 bytes, 24576 cmdbytes] copy[2 cmds, 268435456 bytes, 18 cmdbytes, 0 false] speed[536.9 MB (9.6 MB/s) in, 268.5 MB (4.8 MB/s) out, 56 sec]
+50.33user 3.83system 0:55.97elapsed 96%CPU (0avgtext+0avgdata 20208maxresident)k
+1048584inputs+524352outputs (0major+4221minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[8192 cmds, 268435456 bytes, 24576 cmdbytes] copy[2 cmds, 268435456 bytes, 18 cmdbytes, 0 false] speed[268.5 MB (44.7 MB/s) in, 536.9 MB (89.5 MB/s) out, 6 sec]
+0.17user 3.09system 0:06.15elapsed 52%CPU (0avgtext+0avgdata 1852maxresident)k
+341968inputs+1048584outputs (0major+124minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 268460055 Apr 11 13:04 /tmp/delta.512K
+-rw-rw-r-- 1 abo abo   6291468 Apr 11 13:03 /tmp/sig.512K
+
+819K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[838656 blocks, 1024 bytes per block] speed[858.8 MB (78.1 MB/s) in, 10.1 MB (0.9 MB/s) out, 11 sec]
+8.55user 1.63system 0:10.97elapsed 92%CPU (0avgtext+0avgdata 1724maxresident)k
+1466968inputs+19672outputs (0major+92minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[838656 blocks, 1024 bytes per block] speed[10.1 MB (10.1 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[429811200 searches, 419328 (0.098%) matches, 2102362660 (4.891x) weak sum compares, 503026 (0.117%) strong sum compares, 502975 (0.117%) strong sum calcs]
+librsync: delta statistics: literal[13104 cmds, 429391872 bytes, 39312 cmdbytes] copy[2 cmds, 429391872 bytes, 18 cmdbytes, 0 false] speed[858.8 MB (7.5 MB/s) in, 429.4 MB (3.7 MB/s) out, 115 sec]
+107.57user 6.93system 1:55.08elapsed 99%CPU (0avgtext+0avgdata 23872maxresident)k
+1677320inputs+838752outputs (0major+5139minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[13104 cmds, 429391872 bytes, 39312 cmdbytes] copy[2 cmds, 429391872 bytes, 18 cmdbytes, 0 false] speed[429.4 MB (53.7 MB/s) in, 858.8 MB (107.3 MB/s) out, 8 sec]
+0.25user 4.37system 0:08.65elapsed 53%CPU (0avgtext+0avgdata 1960maxresident)k
+47928inputs+1677320outputs (0major+125minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 429431207 Apr 11 13:06 /tmp/delta.819K
+-rw-rw-r-- 1 abo abo  10063884 Apr 11 13:04 /tmp/sig.819K
+
+820K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: signature statistics: signature[839680 blocks, 1024 bytes per block] speed[859.8 MB (71.7 MB/s) in, 10.1 MB (0.8 MB/s) out, 12 sec]
+8.64user 1.66system 0:11.51elapsed 89%CPU (0avgtext+0avgdata 1740maxresident)k
+1677848inputs+19696outputs (0major+92minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[839680 blocks, 1024 bytes per block] speed[10.1 MB (10.1 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[430336000 searches, 419840 (0.098%) matches, 328042863 (0.762x) weak sum compares, 503622 (0.117%) strong sum compares, 503569 (0.117%) strong sum calcs]
+librsync: delta statistics: literal[13120 cmds, 429916160 bytes, 39360 cmdbytes] copy[2 cmds, 429916160 bytes, 18 cmdbytes, 0 false] speed[859.8 MB (9.8 MB/s) in, 430.0 MB (4.9 MB/s) out, 88 sec]
+81.17user 6.13system 1:28.52elapsed 98%CPU (0avgtext+0avgdata 36192maxresident)k
+1679368inputs+839768outputs (0major+8219minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[13120 cmds, 429916160 bytes, 39360 cmdbytes] copy[2 cmds, 429916160 bytes, 18 cmdbytes, 0 false] speed[430.0 MB (35.8 MB/s) in, 859.8 MB (71.7 MB/s) out, 12 sec]
+0.31user 4.73system 0:11.52elapsed 43%CPU (0avgtext+0avgdata 1924maxresident)k
+354384inputs+1679368outputs (2major+122minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 429955543 Apr 11 13:08 /tmp/delta.820K
+-rw-rw-r-- 1 abo abo  10076172 Apr 11 13:07 /tmp/sig.820K
+
+1024K blocks of 1K size using sig args '-b 1024 -S 8'
+========================================
+librsync: Warning: (rs_sig_args) strong_len=8 smaller than recommended minimum 9 for old_fsize=1073741824 with block_len=1024
+librsync: signature statistics: signature[1048576 blocks, 1024 bytes per block] speed[1073.7 MB (76.7 MB/s) in, 12.6 MB (0.9 MB/s) out, 14 sec]
+10.66user 2.13system 0:14.13elapsed 90%CPU (0avgtext+0avgdata 1736maxresident)k
+2096504inputs+24592outputs (0major+91minor)pagefaults 0swaps
+
+librsync: loadsig statistics: signature[1048576 blocks, 1024 bytes per block] speed[12.6 MB (12.6 MB/s) in, 0.0 MB (0.0 MB/s) out, 1 sec]
+librsync: match statistics: signature[537395200 searches, 524288 (0.098%) matches, 626493341 (1.166x) weak sum compares, 655019 (0.122%) strong sum compares, 654956 (0.122%) strong sum calcs]
+librsync: delta statistics: literal[16384 cmds, 536870912 bytes, 49152 cmdbytes] copy[2 cmds, 536870912 bytes, 18 cmdbytes, 0 false] speed[1073.7 MB (9.5 MB/s) in, 536.9 MB (4.8 MB/s) out, 113 sec]
+105.22user 7.45system 1:53.74elapsed 99%CPU (0avgtext+0avgdata 38764maxresident)k
+2097160inputs+1048688outputs (0major+8835minor)pagefaults 0swaps
+
+librsync: patch statistics: literal[16384 cmds, 536870912 bytes, 49152 cmdbytes] copy[2 cmds, 536870912 bytes, 18 cmdbytes, 0 false] speed[536.9 MB (26.8 MB/s) in, 1073.7 MB (53.7 MB/s) out, 20 sec]
+0.29user 6.57system 0:20.46elapsed 33%CPU (0avgtext+0avgdata 1848maxresident)k
+1048720inputs+2097160outputs (0major+124minor)pagefaults 0swaps
+
+-rw-rw-r-- 1 abo abo 536920087 Apr 11 13:10 /tmp/delta.1024K
+-rw-rw-r-- 1 abo abo  12582924 Apr 11 13:09 /tmp/sig.1024K
+
