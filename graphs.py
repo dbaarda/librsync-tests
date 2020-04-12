@@ -24,8 +24,8 @@ def saveplt(filename, title, xlabel, ylabel, xticks, xlabels=None, yticks=None):
     ylabels = [str(n) for n in yticks]
     plt.yticks(yticks, ylabels)
   plt.grid()
-  plt.legend()
-  plt.savefig(filename)
+  plt.legend(bbox_to_anchor=(1,1), loc='upper left')
+  plt.savefig(filename, bbox_inches='tight')
   plt.cla()
 
 
