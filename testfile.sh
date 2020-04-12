@@ -3,7 +3,7 @@
 # librsync -- the library for network deltas
 # Copyright (C) 2001, 2014 by Martin Pool <mbp@sourcefrog.net>
 #
-# largefile.test: Generate some large random files with 50% matches
+# testfile.sh: Generate some large random files with 50% matches
 # and generate signature, delta, and patch files, comparing for
 # correctness.
 

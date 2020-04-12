@@ -3,7 +3,7 @@
 # librsync -- the library for network deltas
 # Copyright (C) 2001, 2014 by Martin Pool <mbp@sourcefrog.net>
 #
-# performance.test: Run largefile.test with a variety of different
+# testfull.sh: Run testfile.sh with a variety of different
 # numbers of blocks, using persistent data files in /tmp so the tests
 # are repeatable.
 sigargs="$@"
@@ -16,5 +16,5 @@ alltags () {
 }
 
 for version in $(alltags); do
-  ./performance.test $version $sigargs
+  ./testfull.sh $version $sigargs
 done;

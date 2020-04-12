@@ -3,7 +3,7 @@
 # librsync -- the library for network deltas
 # Copyright (C) 2001, 2014 by Martin Pool <mbp@sourcefrog.net>
 #
-# performance.test: Run largefile.test with a variety of different
+# testfull.sh: Run testfile.sh with a variety of different
 # numbers of blocks, using persistent data files in /tmp so the tests
 # are repeatable.
 if [ -z "$1" ]; then
@@ -49,5 +49,5 @@ echo ========================================
 build
 header > $out
 for size in ${fsizes}; do
-  ./largefile.test $size $sigargs >>$out
+  ./testfile.sh $size $sigargs >>$out
 done;
