@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 cmds = ('sig', 'delta', 'patch')
 args = ('defaults', 'b1024S8')
 
+sizeticks = (32, 64, 128, 256, 512, 1024)
 
 def saveplt(filename, title, xlabel, ylabel, xticks, xlabels=None, yticks=None):
   xlabels = xlabels or [str(n) for n in xticks]
@@ -75,7 +76,7 @@ def GraphTimeVsSize(data, args, cmd):
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/time-size-%s-%s.svg' % (args,cmd), '%s times vs filesize for %s' % (cmd, args),
-            'size', 'time', sizes)
+            'size', 'time', sizeticks)
 
 
 def GraphTimeVsVers(data, args, cmd):
@@ -88,7 +89,7 @@ def GraphTimeVsVers(data, args, cmd):
     plt.plot(vers, times, label="%sM" % size)
   #plt.xscale('log')
   saveplt('data/time-vers-%s-%s.svg' % (args,cmd), '%s times vs version for %s' % (cmd, args),
-            'version', 'time', vers, vers)
+            'version', 'time', vers)
 
 
 def GraphMemVsSize(data, args, cmd):
@@ -101,7 +102,7 @@ def GraphMemVsSize(data, args, cmd):
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/mem-size-%s-%s.svg' % (args,cmd), '%s memory vs filesize for %s' % (cmd, args),
-            'filesize', 'KB', sizes)
+            'filesize', 'KB', sizeticks)
 
 
 def GraphMemVsVers(data, args, cmd):
@@ -114,7 +115,7 @@ def GraphMemVsVers(data, args, cmd):
     plt.plot(vers, mems, label="%sM" % size)
   #plt.xscale('log')
   saveplt('data/mem-vers-%s-%s.svg' % (args,cmd), '%s memory vs version for %s' % (cmd, args),
-            'version', 'KB', vers, vers)
+            'version', 'KB', vers)
 
 
 def GraphSigVsSize(data, args):
@@ -127,7 +128,7 @@ def GraphSigVsSize(data, args):
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/file-size-%s-%s.svg' % (args,'sig'), 'sigsize vs filesize for %s' % args,
-            'filesize', 'MB', sizes)
+            'filesize', 'MB', sizeticks)
 
 
 def GraphDeltaVsSize(data, args):
@@ -140,7 +141,7 @@ def GraphDeltaVsSize(data, args):
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/file-size-%s-%s.svg' % (args,'delta'), 'deltasize vs filesize for %s' % args,
-            'filesize', 'MB', sizes)
+            'filesize', 'MB', sizeticks)
 
 
 if __name__ == '__main__':
