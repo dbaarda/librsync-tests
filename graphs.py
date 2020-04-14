@@ -9,6 +9,7 @@ import itertools
 import matplotlib
 matplotlib.use('svg')
 import matplotlib.pyplot as plt
+from matplotlib.ticker import *
 
 cmds = ('sig', 'delta', 'patch')
 args = ('defaults', 'b1024S8')
@@ -24,6 +25,8 @@ def saveplt(filename, title, xlabel, ylabel, xticks, xlabels=None, yticks=None):
   if yticks:
     ylabels = [str(n) for n in yticks]
     plt.yticks(yticks, ylabels)
+  ax = plt.gca()
+  ax.ticklabel_format(axis='y', style='plain', useOffset=False)
   plt.grid()
   plt.legend(bbox_to_anchor=(1,1), loc='upper left')
   plt.savefig(filename, bbox_inches='tight')
@@ -69,10 +72,13 @@ def GetAllData():
 def GraphTimeVsSize(data, args, cmd):
   """Plot how execution times vary with file size."""
   p = data[args][cmd]
-  for ver in sorted(p):
-    sizes = sorted(p[ver])
+  vers = sorted(p)
+  sizes = sorted(p[vers[0]])
+  for ver in vers:
     times = [p[ver][size][0] for size in sizes]
     plt.plot(sizes, times, label=ver)
+  if cmd == 'delta':
+    plt.gca().yaxis.set_major_locator(MultipleLocator(60))
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/time-size-%s-%s.svg' % (args,cmd), '%s times vs filesize for %s' % (cmd, args),
@@ -80,25 +86,33 @@ def GraphTimeVsSize(data, args, cmd):
 
 
 def GraphTimeVsVers(data, args, cmd):
-  """Plot how execution times vary with file size."""
+  """Plot how execution times vary with version."""
   p = data[args][cmd]
   vers = sorted(p)
   sizes = sorted(p[vers[0]])
   for size in sizes:
     times = [p[ver][size][0] for ver in vers]
     plt.plot(vers, times, label="%sM" % size)
+  if cmd == 'delta':
+    plt.gca().yaxis.set_major_locator(MultipleLocator(60))
   #plt.xscale('log')
   saveplt('data/time-vers-%s-%s.svg' % (args,cmd), '%s times vs version for %s' % (cmd, args),
             'version', 'time', vers)
 
 
 def GraphMemVsSize(data, args, cmd):
-  """Plot how execution times vary with file size."""
+  """Plot how memory usage varys with file size."""
   p = data[args][cmd]
-  for ver in sorted(p):
-    sizes = sorted(p[ver])
+  vers = sorted(p)
+  sizes = sorted(p[vers[0]])
+  for ver in vers:
     mems = [p[ver][size][1] for size in sizes]
     plt.plot(sizes, mems, label=ver)
+  if cmd == 'delta':
+    mult=10240
+  else:
+    mult=32
+  plt.gca().yaxis.set_major_locator(MultipleLocator(mult))
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/mem-size-%s-%s.svg' % (args,cmd), '%s memory vs filesize for %s' % (cmd, args),
@@ -106,13 +120,18 @@ def GraphMemVsSize(data, args, cmd):
 
 
 def GraphMemVsVers(data, args, cmd):
-  """Plot how execution times vary with file size."""
+  """Plot how memory usage varys with version."""
   p = data[args][cmd]
   vers = sorted(p)
   sizes = sorted(p[vers[0]])
   for size in sizes:
     mems = [p[ver][size][1] for ver in vers]
     plt.plot(vers, mems, label="%sM" % size)
+  if cmd == 'delta':
+    mult=10240
+  else:
+    mult=32
+  plt.gca().yaxis.set_major_locator(MultipleLocator(mult))
   #plt.xscale('log')
   saveplt('data/mem-vers-%s-%s.svg' % (args,cmd), '%s memory vs version for %s' % (cmd, args),
             'version', 'KB', vers)
@@ -121,34 +140,66 @@ def GraphMemVsVers(data, args, cmd):
 def GraphSigVsSize(data, args):
   """Plot how signature size vary with file size."""
   p = data[args]['sigsize']
-  for ver in sorted(p):
-    sizes = sorted(p[ver])
-    sigs = [p[ver][size] for size in sizes]
+  vers = sorted(p)
+  sizes = sorted(p[vers[0]])
+  for ver in vers:
+    sigs = [p[ver][size]/size for size in sizes]
     plt.plot(sizes, sigs, label=ver)
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/file-size-%s-%s.svg' % (args,'sig'), 'sigsize vs filesize for %s' % args,
-            'filesize', 'MB', sizeticks)
+          'filesize', 'ratio', sizeticks)
+
+
+def GraphSigVsVers(data, args):
+  """Plot how signature size vary with version."""
+  p = data[args]['sigsize']
+  vers = sorted(p)
+  sizes = sorted(p[vers[0]])
+  for size in sizes:
+    sigs = [p[ver][size]/size for ver in vers]
+    plt.plot(vers, sigs, label="%sM" % size)
+  #plt.xscale('log')
+  #plt.yscale('log')
+  saveplt('data/file-vers-%s-%s.svg' % (args,'sig'), 'sigsize vs version for %s' % args,
+          'version', 'ratio', vers)
 
 
 def GraphDeltaVsSize(data, args):
   """Plot how delta size vary with file size."""
   p = data[args]['deltasize']
-  for ver in sorted(p):
-    sizes = sorted(p[ver])
-    sigs = [p[ver][size] for size in sizes]
-    plt.plot(sizes, sigs, label=ver)
+  vers = sorted(p)
+  sizes = sorted(p[vers[0]])
+  for ver in vers:
+    deltas = [p[ver][size]/size for size in sizes]
+    plt.plot(sizes, deltas, label=ver)
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/file-size-%s-%s.svg' % (args,'delta'), 'deltasize vs filesize for %s' % args,
-            'filesize', 'MB', sizeticks)
+          'filesize', 'ratio', sizeticks)
+
+
+def GraphDeltaVsVers(data, args):
+  """Plot how delta size vary with version."""
+  p = data[args]['deltasize']
+  vers = sorted(p)
+  sizes = sorted(p[vers[0]])
+  for size in sizes:
+    deltas = [p[ver][size]/size for ver in vers]
+    plt.plot(vers, deltas, label="%sM" % size)
+  #plt.xscale('log')
+  #plt.yscale('log')
+  saveplt('data/file-vers-%s-%s.svg' % (args,'delta'), 'deltasize vs version for %s' % args,
+          'version', 'ratio', vers)
 
 
 if __name__ == '__main__':
   data = GetAllData()
   for arg in args:
     GraphSigVsSize(data, arg)
+    GraphSigVsVers(data, arg)
     GraphDeltaVsSize(data, arg)
+    GraphDeltaVsVers(data, arg)
     for cmd in cmds:
       GraphTimeVsSize(data, arg, cmd)
       GraphTimeVsVers(data, arg, cmd)
