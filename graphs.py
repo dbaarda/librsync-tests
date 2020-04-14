@@ -66,6 +66,15 @@ def GetAllData():
   data = {}
   for f in GetFiles():
     GetFileData(data, f)
+  # For cmds not supported by all versions, setdefault to the cmd without the unsupported arg.
+  cmds = sorted(data['defaults'])
+  vers = sorted(data['defaults']['sig'])
+  for cmd in cmds:
+    for ver in vers:
+      data['S1'][cmd].setdefault(ver, data['defaults'][cmd][ver])
+      data['b1024S1'][cmd].setdefault(ver, data['b1024S8'][cmd][ver])
+      data['Rrollsum'][cmd].setdefault(ver, data['defaults'][cmd][ver])
+      data['b1024S8Rrollsum'][cmd].setdefault(ver, data['b1024S8'][cmd][ver])
   return data
 
 
@@ -205,3 +214,9 @@ if __name__ == '__main__':
       GraphTimeVsVers(data, arg, cmd)
       GraphMemVsSize(data, arg, cmd)
       GraphMemVsVers(data, arg, cmd)
+  for cmd in ('sig', 'delta'):
+    GraphTimeVsVers(data, 'b1024S8Rrollsum', cmd)
+    GraphTimeVsVers(data, 'Rrollsum', cmd)
+  # Regenerated file-size-defaults-sig.svg treating -S1 as another version.
+  data['defaults']['sigsize']['v2.3.0-S1'] = data['S1']['sigsize']['v2.3.0']
+  GraphSigVsSize(data, 'defaults')
