@@ -1,7 +1,7 @@
 #!/usr/bin/python -O
 """Generate graphs comparing librsync versions.
 
-This reads the run output text files in data/perf_*.out to extract the data.
+This reads the run output text files in data/perf_*.txt to extract the data.
 """
 import re
 import glob
@@ -31,11 +31,11 @@ def saveplt(filename, title, xlabel, ylabel, xticks, xlabels=None, yticks=None):
 
 
 def GetFiles(sigargs='*'):
-  return glob.glob('data/perf_%s_*.out' % sigargs)
+  return glob.glob('data/perf_%s_*.txt' % sigargs)
 
 
 def GetFileArgsVer(fname):
-  return re.match(r'.*_(.*)_(.*).out',fname).groups()
+  return re.match(r'.*_(.*)_(.*).txt',fname).groups()
 
 
 def GetFileData(data, fname):

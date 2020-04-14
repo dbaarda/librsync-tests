@@ -32,7 +32,7 @@ runfull () {
   else
     argsname=$(echo $sigargs | sed 's/[-_ ]//g')
   fi
-  out="${datadir}/perf_${argsname}_${version}.out"
+  out="${datadir}/perf_${argsname}_${version}.txt"
   ./testfull.sh $sigargs >$out
 }
 
