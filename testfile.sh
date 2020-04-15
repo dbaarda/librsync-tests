@@ -5,8 +5,7 @@
 # stats, time info, and generated file sizes. Generates, leaves, and reuses
 # input data files in /tmp.
 
-tmpdir=/tmp
-bindir=../librsync
+. ./common.sh
 
 if [ -z "$1" ]; then
   echo "Usage: $0 <blocks>K [<sigargs> ...]"
@@ -37,11 +36,11 @@ rm -f $sig $delta $out
 # Note: usne '\time' to avoid the bash builtin which doesn't have memstats.
 echo $blocks blocks of 1K size using sig args \'$sigargs\'
 echo ========================================
-\time $bindir/rdiff $debug -s $sigargs signature $old $sig 2>&1
+\time $bindir/rdiff -s $sigargs signature $old $sig 2>&1
 echo
-\time $bindir/rdiff $debug -s delta $sig $new $delta 2>&1
+\time $bindir/rdiff -s delta $sig $new $delta 2>&1
 echo
-\time $bindir/rdiff $debug -s patch $old $delta $out 2>&1
+\time $bindir/rdiff -s patch $old $delta $out 2>&1
 echo
 ls -l $sig $delta
 echo

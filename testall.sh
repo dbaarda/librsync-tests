@@ -2,39 +2,8 @@
 #
 # testfull.sh: Run testfull.sh with a variety of different arguments for all
 # released versions.
-datadir=./data
 
-alltags () {
-  pushd ../librsync >/dev/null
-  # skip first version that didn't use cmake.
-  git tag | tail +2
-  popd >/dev/null
-}
-
-# Usage: buildversion <version>
-buildversion () {
-  version="$1"
-  pushd ../librsync
-  git checkout $version
-  git clean -dfx
-  cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_TRACE=OFF .
-  make rdiff
-  popd
-}
-
-# Usage: runfull <version> [<sigargs>...]
-runfull () {
-  version="$1"
-  shift 1
-  sigargs="$@"
-  if [ -z "${sigargs}" ]; then
-    argsname="defaults"
-  else
-    argsname=$(echo $sigargs | sed 's/[-_ ]//g')
-  fi
-  out="${datadir}/perf_${argsname}_${version}.txt"
-  ./testfull.sh $sigargs >$out
-}
+. ./common.sh
 
 for version in $(alltags); do
   buildversion $version
