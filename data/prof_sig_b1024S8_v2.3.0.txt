@@ -1,0 +1,366 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 53.50      5.59     5.59  8388608     0.00     0.00  blake2b_compress
+ 40.29      9.80     4.21  1048576     0.00     0.00  rs_calc_weak_sum
+  1.15      9.92     0.12  1310724     0.00     0.00  rs_tube_catchup
+  1.05     10.03     0.11  1048576     0.00     0.00  blake2b_update
+  0.86     10.12     0.09  1048576     0.00     0.00  blake2b_init
+  0.57     10.18     0.06  1048576     0.00     0.00  blake2b_final
+  0.48     10.23     0.05  2097155     0.00     0.00  rs_tube_write
+  0.48     10.28     0.05   262146     0.00     0.00  rs_job_iter
+  0.38     10.32     0.04  1310721     0.00     0.00  rs_sig_s_generate
+  0.29     10.35     0.03  1048576     0.00     0.00  rs_calc_strong_sum
+  0.19     10.37     0.02        1     0.02     0.02  rs_sig_s_header
+  0.10     10.38     0.01  1310721     0.00     0.00  rs_scoop_read
+  0.10     10.39     0.01  1048579     0.00     0.00  rs_squirt_n4
+  0.10     10.40     0.01   262146     0.00     0.00  rs_outfilebuf_drain
+  0.10     10.41     0.01        1     0.01    10.42  rs_job_drive
+  0.10     10.42     0.01                             rs_scoop_readahead
+  0.10     10.43     0.01                             rs_scoop_total_avail
+  0.10     10.44     0.01                             rs_tube_copy
+  0.05     10.45     0.01   262146     0.00     0.00  rs_infilebuf_fill
+  0.05     10.45     0.01        2     0.00     0.00  rs_filebuf_free
+  0.00     10.45     0.00        5     0.00     0.00  rs_bzero
+  0.00     10.45     0.00        4     0.00     0.00  rs_alloc_struct0
+  0.00     10.45     0.00        2     0.00     0.00  rs_alloc
+  0.00     10.45     0.00        2     0.00     0.00  rs_filebuf_new
+  0.00     10.45     0.00        2     0.00     0.00  rs_log0
+  0.00     10.45     0.00        2     0.00     0.00  rs_log_va
+  0.00     10.45     0.00        2     0.00     0.00  rs_long_ln2
+  0.00     10.45     0.00        2     0.00     0.00  rs_trace_stderr
+  0.00     10.45     0.00        1     0.00     0.00  _hashtable_free
+  0.00     10.45     0.00        1     0.00     0.00  rs_file_size
+  0.00     10.45     0.00        1     0.00     0.00  rs_format_stats
+  0.00     10.45     0.00        1     0.00     0.00  rs_free_sumset
+  0.00     10.45     0.00        1     0.00     0.00  rs_job_free
+  0.00     10.45     0.00        1     0.00     0.00  rs_job_new
+  0.00     10.45     0.00        1     0.00     0.00  rs_long_sqrt
+  0.00     10.45     0.00        1     0.00     0.00  rs_scoop_read_rest
+  0.00     10.45     0.00        1     0.00     0.00  rs_sig_args
+  0.00     10.45     0.00        1     0.00     0.00  rs_sig_begin
+  0.00     10.45     0.00        1     0.00     0.00  rs_signature_init
+  0.00     10.45     0.00        1     0.00    10.42  rs_whole_run
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.10% of 10.45 seconds
+
+index % time    self  children    called     name
+                0.00   10.42       1/1           rs_sig_file [2]
+[1]     99.7    0.00   10.42       1         rs_whole_run [1]
+                0.01   10.41       1/1           rs_job_drive [3]
+                0.01    0.00       2/2           rs_filebuf_free [22]
+                0.00    0.00       2/2           rs_filebuf_new [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     99.7    0.00   10.42                 rs_sig_file [2]
+                0.00   10.42       1/1           rs_whole_run [1]
+                0.00    0.00       1/1           rs_file_size [31]
+                0.00    0.00       1/1           rs_sig_args [38]
+                0.00    0.00       1/1           rs_sig_begin [39]
+                0.00    0.00       1/1           rs_job_free [34]
+-----------------------------------------------
+                0.01   10.41       1/1           rs_whole_run [1]
+[3]     99.7    0.01   10.41       1         rs_job_drive [3]
+                0.05   10.34  262146/262146      rs_job_iter [4]
+                0.01    0.00  262146/262146      rs_outfilebuf_drain [17]
+                0.01    0.00  262146/262146      rs_infilebuf_fill [21]
+                0.00    0.00       1/5           rs_bzero [23]
+-----------------------------------------------
+                0.05   10.34  262146/262146      rs_job_drive [3]
+[4]     99.4    0.05   10.34  262146         rs_job_iter [4]
+                0.04   10.16 1310721/1310721     rs_sig_s_generate [5]
+                0.12    0.00 1310724/1310724     rs_tube_catchup [11]
+                0.02    0.00       1/1           rs_sig_s_header [15]
+-----------------------------------------------
+                0.04   10.16 1310721/1310721     rs_job_iter [4]
+[5]     97.6    0.04   10.16 1310721         rs_sig_s_generate [5]
+                0.03    5.85 1048576/1048576     rs_calc_strong_sum [6]
+                4.21    0.00 1048576/1048576     rs_calc_weak_sum [9]
+                0.01    0.03 1048576/1048579     rs_squirt_n4 [14]
+                0.03    0.00 1048576/2097155     rs_tube_write [13]
+                0.01    0.00 1310721/1310721     rs_scoop_read [16]
+                0.00    0.00       1/1           rs_scoop_read_rest [37]
+-----------------------------------------------
+                0.03    5.85 1048576/1048576     rs_sig_s_generate [5]
+[6]     56.3    0.03    5.85 1048576         rs_calc_strong_sum [6]
+                0.11    4.89 1048576/1048576     blake2b_update [8]
+                0.06    0.70 1048576/1048576     blake2b_final [10]
+                0.09    0.00 1048576/1048576     blake2b_init [12]
+-----------------------------------------------
+                0.70    0.00 1048576/8388608     blake2b_final [10]
+                4.89    0.00 7340032/8388608     blake2b_update [8]
+[7]     53.5    5.59    0.00 8388608         blake2b_compress [7]
+-----------------------------------------------
+                0.11    4.89 1048576/1048576     rs_calc_strong_sum [6]
+[8]     47.9    0.11    4.89 1048576         blake2b_update [8]
+                4.89    0.00 7340032/8388608     blake2b_compress [7]
+-----------------------------------------------
+                4.21    0.00 1048576/1048576     rs_sig_s_generate [5]
+[9]     40.3    4.21    0.00 1048576         rs_calc_weak_sum [9]
+-----------------------------------------------
+                0.06    0.70 1048576/1048576     rs_calc_strong_sum [6]
+[10]     7.3    0.06    0.70 1048576         blake2b_final [10]
+                0.70    0.00 1048576/8388608     blake2b_compress [7]
+-----------------------------------------------
+                0.12    0.00 1310724/1310724     rs_job_iter [4]
+[11]     1.1    0.12    0.00 1310724         rs_tube_catchup [11]
+-----------------------------------------------
+                0.09    0.00 1048576/1048576     rs_calc_strong_sum [6]
+[12]     0.9    0.09    0.00 1048576         blake2b_init [12]
+-----------------------------------------------
+                0.03    0.00 1048576/2097155     rs_sig_s_generate [5]
+                0.03    0.00 1048579/2097155     rs_squirt_n4 [14]
+[13]     0.5    0.05    0.00 2097155         rs_tube_write [13]
+-----------------------------------------------
+                0.00    0.00       3/1048579     rs_sig_s_header [15]
+                0.01    0.03 1048576/1048579     rs_sig_s_generate [5]
+[14]     0.3    0.01    0.03 1048579         rs_squirt_n4 [14]
+                0.03    0.00 1048579/2097155     rs_tube_write [13]
+-----------------------------------------------
+                0.02    0.00       1/1           rs_job_iter [4]
+[15]     0.2    0.02    0.00       1         rs_sig_s_header [15]
+                0.00    0.00       3/1048579     rs_squirt_n4 [14]
+                0.00    0.00       1/1           rs_signature_init [40]
+-----------------------------------------------
+                0.01    0.00 1310721/1310721     rs_sig_s_generate [5]
+[16]     0.1    0.01    0.00 1310721         rs_scoop_read [16]
+-----------------------------------------------
+                0.01    0.00  262146/262146      rs_job_drive [3]
+[17]     0.1    0.01    0.00  262146         rs_outfilebuf_drain [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     0.1    0.01    0.00                 rs_scoop_readahead [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     0.1    0.01    0.00                 rs_scoop_total_avail [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.1    0.01    0.00                 rs_tube_copy [20]
+-----------------------------------------------
+                0.01    0.00  262146/262146      rs_job_drive [3]
+[21]     0.0    0.01    0.00  262146         rs_infilebuf_fill [21]
+-----------------------------------------------
+                0.01    0.00       2/2           rs_whole_run [1]
+[22]     0.0    0.01    0.00       2         rs_filebuf_free [22]
+                0.00    0.00       2/5           rs_bzero [23]
+-----------------------------------------------
+                0.00    0.00       1/5           rs_free_sumset [33]
+                0.00    0.00       1/5           rs_job_free [34]
+                0.00    0.00       1/5           rs_job_drive [3]
+                0.00    0.00       2/5           rs_filebuf_free [22]
+[23]     0.0    0.00    0.00       5         rs_bzero [23]
+-----------------------------------------------
+                0.00    0.00       1/4           rs_job_new [35]
+                0.00    0.00       1/4           rs_sig_begin [39]
+                0.00    0.00       2/4           rs_filebuf_new [26]
+[24]     0.0    0.00    0.00       4         rs_alloc_struct0 [24]
+-----------------------------------------------
+                0.00    0.00       2/2           rs_filebuf_new [26]
+[25]     0.0    0.00    0.00       2         rs_alloc [25]
+-----------------------------------------------
+                0.00    0.00       2/2           rs_whole_run [1]
+[26]     0.0    0.00    0.00       2         rs_filebuf_new [26]
+                0.00    0.00       2/4           rs_alloc_struct0 [24]
+                0.00    0.00       2/2           rs_alloc [25]
+-----------------------------------------------
+                0.00    0.00       1/2           rs_log_stats [83]
+                0.00    0.00       1/2           rs_sig_args [38]
+[27]     0.0    0.00    0.00       2         rs_log0 [27]
+                0.00    0.00       2/2           rs_log_va [28]
+-----------------------------------------------
+                0.00    0.00       2/2           rs_log0 [27]
+[28]     0.0    0.00    0.00       2         rs_log_va [28]
+                0.00    0.00       2/2           rs_trace_stderr [30]
+-----------------------------------------------
+                0.00    0.00       2/2           rs_sig_args [38]
+[29]     0.0    0.00    0.00       2         rs_long_ln2 [29]
+-----------------------------------------------
+                0.00    0.00       2/2           rs_log_va [28]
+[30]     0.0    0.00    0.00       2         rs_trace_stderr [30]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_file [2]
+[31]     0.0    0.00    0.00       1         rs_file_size [31]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_log_stats [83]
+[32]     0.0    0.00    0.00       1         rs_format_stats [32]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_job_free [34]
+[33]     0.0    0.00    0.00       1         rs_free_sumset [33]
+                0.00    0.00       1/1           _hashtable_free [116]
+                0.00    0.00       1/5           rs_bzero [23]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_file [2]
+[34]     0.0    0.00    0.00       1         rs_job_free [34]
+                0.00    0.00       1/5           rs_bzero [23]
+                0.00    0.00       1/1           rs_free_sumset [33]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_begin [39]
+[35]     0.0    0.00    0.00       1         rs_job_new [35]
+                0.00    0.00       1/4           rs_alloc_struct0 [24]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_args [38]
+[36]     0.0    0.00    0.00       1         rs_long_sqrt [36]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_s_generate [5]
+[37]     0.0    0.00    0.00       1         rs_scoop_read_rest [37]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_file [2]
+[38]     0.0    0.00    0.00       1         rs_sig_args [38]
+                0.00    0.00       2/2           rs_long_ln2 [29]
+                0.00    0.00       1/1           rs_long_sqrt [36]
+                0.00    0.00       1/2           rs_log0 [27]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_file [2]
+[39]     0.0    0.00    0.00       1         rs_sig_begin [39]
+                0.00    0.00       1/1           rs_job_new [35]
+                0.00    0.00       1/4           rs_alloc_struct0 [24]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_s_header [15]
+[40]     0.0    0.00    0.00       1         rs_signature_init [40]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_free_sumset [33]
+[116]    0.0    0.00    0.00       1         _hashtable_free [116]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [116] _hashtable_free        [33] rs_free_sumset         [19] rs_scoop_total_avail
+   [7] blake2b_compress (blake2b-ref.c) [21] rs_infilebuf_fill [38] rs_sig_args
+  [10] blake2b_final           [3] rs_job_drive           [39] rs_sig_begin
+  [12] blake2b_init           [34] rs_job_free             [5] rs_sig_s_generate (mksum.c)
+   [8] blake2b_update          [4] rs_job_iter            [15] rs_sig_s_header (mksum.c)
+  [25] rs_alloc               [35] rs_job_new             [40] rs_signature_init
+  [24] rs_alloc_struct0       [27] rs_log0                [14] rs_squirt_n4
+  [23] rs_bzero               [28] rs_log_va (trace.c)    [30] rs_trace_stderr
+   [6] rs_calc_strong_sum     [29] rs_long_ln2            [11] rs_tube_catchup
+   [9] rs_calc_weak_sum       [36] rs_long_sqrt           [20] rs_tube_copy
+  [31] rs_file_size           [17] rs_outfilebuf_drain    [13] rs_tube_write
+  [22] rs_filebuf_free        [16] rs_scoop_read           [1] rs_whole_run
+  [26] rs_filebuf_new         [37] rs_scoop_read_rest
+  [32] rs_format_stats        [18] rs_scoop_readahead

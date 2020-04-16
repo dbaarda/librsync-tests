@@ -23,16 +23,23 @@ buildversion () {
   popd
 }
 
-# Usage: runfull <version> [<sigargs>...]
-runfull () {
-  version="$1"
-  shift 1
+# Usage: outputfile <prefix> <version> [<sigargs>...]
+outputfile () {
+  prefix="$1"
+  version="$2"
+  shift 2
   sigargs="$@"
+  versname=$(echo $version | sed 's:/:-:g')
   if [ -z "${sigargs}" ]; then
     argsname="defaults"
   else
     argsname=$(echo $sigargs | sed 's/[-_ ]//g')
   fi
-  out="${datadir}/perf_${argsname}_${version}.txt"
+  echo "${datadir}/${prefix}_${argsname}_${versname}.txt"
+}
+
+# Usage: runfull <version> [<sigargs>...]
+runfull () {
+  out=$(outputfile perf "$@")
   ./testfull.sh $sigargs >$out
 }
