@@ -11,14 +11,16 @@ alltags () {
   popd >/dev/null
 }
 
-# Usage: buildversion <version> [<cmakeargs> ...]
+# Usage: buildversion <version> [<build_type> [<cmakeargs> ...]]
 buildversion () {
   version="$1"
   shift 1
+  build_type="${1:-Release}"
+  [ -n "$1" ] && shift 1
   pushd ${bindir}
   git checkout $version
   git clean -dfx
-  cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_TRACE=OFF "$@" .
+  cmake -DCMAKE_BUILD_TYPE=${build_type} -DENABLE_TRACE=OFF "$@" .
   make rdiff
   popd
 }
