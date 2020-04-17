@@ -1,3 +1,9 @@
+# Editor temp files
+*~
+
+# gprof profile data
+gmon.out
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
