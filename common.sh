@@ -4,6 +4,17 @@ tmpdir=/tmp
 bindir=../librsync
 datadir=./data
 
+platforminfo () {
+  echo cpuinfo
+  echo =======
+  cat /proc/cpuinfo
+  echo
+  echo meminfo
+  echo =======
+  cat /proc/meminfo
+  echo
+}
+
 alltags () {
   pushd ${bindir} >/dev/null
   # skip first version that didn't use cmake.

@@ -1,3 +1,5 @@
+cpuinfo
+=======
 processor	: 0
 vendor_id	: GenuineIntel
 cpu family	: 6
@@ -5,7 +7,7 @@ model		: 28
 model name	: Intel(R) Atom(TM) CPU D525   @ 1.80GHz
 stepping	: 10
 microcode	: 0x107
-cpu MHz		: 1795.501
+cpu MHz		: 1795.573
 cache size	: 512 KB
 physical id	: 0
 siblings	: 4
@@ -32,7 +34,7 @@ model		: 28
 model name	: Intel(R) Atom(TM) CPU D525   @ 1.80GHz
 stepping	: 10
 microcode	: 0x107
-cpu MHz		: 1795.529
+cpu MHz		: 1795.619
 cache size	: 512 KB
 physical id	: 0
 siblings	: 4
@@ -59,7 +61,7 @@ model		: 28
 model name	: Intel(R) Atom(TM) CPU D525   @ 1.80GHz
 stepping	: 10
 microcode	: 0x107
-cpu MHz		: 1795.597
+cpu MHz		: 1795.573
 cache size	: 512 KB
 physical id	: 0
 siblings	: 4
@@ -86,7 +88,7 @@ model		: 28
 model name	: Intel(R) Atom(TM) CPU D525   @ 1.80GHz
 stepping	: 10
 microcode	: 0x107
-cpu MHz		: 1795.573
+cpu MHz		: 1795.612
 cache size	: 512 KB
 physical id	: 0
 siblings	: 4
@@ -105,4 +107,56 @@ clflush size	: 64
 cache_alignment	: 64
 address sizes	: 36 bits physical, 48 bits virtual
 power management:
+
+
+meminfo
+=======
+MemTotal:        4031468 kB
+MemFree:         1833660 kB
+MemAvailable:    3229364 kB
+Buffers:           45196 kB
+Cached:          1499992 kB
+SwapCached:        37096 kB
+Active:           371456 kB
+Inactive:        1428872 kB
+Active(anon):     204300 kB
+Inactive(anon):    72068 kB
+Active(file):     167156 kB
+Inactive(file):  1356804 kB
+Unevictable:        5112 kB
+Mlocked:              64 kB
+SwapTotal:       2421756 kB
+SwapFree:        2210328 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:        252128 kB
+Mapped:            46240 kB
+Shmem:             21832 kB
+KReclaimable:     162028 kB
+Slab:             287484 kB
+SReclaimable:     162028 kB
+SUnreclaim:       125456 kB
+KernelStack:        2904 kB
+PageTables:         4064 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     4437488 kB
+Committed_AS:     865976 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+Percpu:            15984 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     28672 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:     2271936 kB
+DirectMap2M:     1912832 kB
 

@@ -5,6 +5,8 @@
 
 . ./common.sh
 
+platforminfo > $datadir/platforminfo.txt
+
 for version in $(alltags); do
   buildversion $version
   runfull $version
