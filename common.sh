@@ -53,6 +53,9 @@ outputfile () {
 
 # Usage: runfull <version> [<sigargs>...]
 runfull () {
-  out=$(outputfile perf "$@")
+  version="$1"
+  shift 1
+  sigargs="$@"
+  out=$(outputfile perf $version $sigargs)
   ./testfull.sh $sigargs >$out
 }
