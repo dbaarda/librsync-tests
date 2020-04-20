@@ -216,14 +216,14 @@ significantly smaller than the 32byte max.
 The patch memory jumped a little with v2.0.1 perhaps because the insert
 command sizes got longer, resulting in larger inserts being written.
 
-.. image:: data/mem-size-defaults-patch.svg
+.. image:: data/mem-size-defaults-delta.svg
 
 This clearly shows the saw-tooth growth vs filesize when the hashtable size
 doubles for v2.0.1 -> v2.2.1. For v2.3.0 the blocksize varies with filesize so
 the saw-tooth points don't align with the filesizes used and are not
 visible. The memory savings of larger blocks in v2.3.0 are very clear.
 
-.. image:: data/mem-size-b1024S8-patch.svg
+.. image:: data/mem-size-b1024S8-delta.svg
 
 The fixed blocksize removes v2.3.0's memory advantage, but the strongsum
 packing means all versions since v2.0.1 use less memory despite the larger
