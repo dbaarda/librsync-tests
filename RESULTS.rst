@@ -161,6 +161,111 @@ v2.2.0+ are exactly the same as v2.1.0. This means the dynamic
 dispatching overheads are completely negiligable. The minimal gains with
 RabinKarp are not because of other introduced overheads.
 
+.. image:: data/time-size-defaults-delta.svg
+
+Plotting the delta execution time against filesize clearly shows the
+performance saw-tooths at the point where the hashtable doubles in size. It
+also shows the 2.3.0 larger default blocksize for larger files benefits
+clearly, but can't show the sawtooth because the blocksizes nolonger line up
+with the filesizes chosen. Interestingly the sawtooth step is small,
+showing the hashtable's high 80% loadfactor is an OK compromize against
+hashtable size.
+
+.. image:: data/time-size-b1024S8-delta.svg
+
+For the fixe blocksize v2.3.0 doesn't get an advantage any more, but the
+benefits of the new hashtable are even more visible.
+
+How memory vary with version
+-------------------------------
+
+.. image:: data/mem-vers-defaults-sig.svg
+
+The memory required for signatures is small. It jumped a little with v2.0.1
+because of the larger default input/output buffers, and again with v2.3.0
+because of the larger default blocksizes for larger files.
+
+.. image:: data/mem-vers-defaults-delta.svg
+
+The memory required for deltas is large because it needs the full signature
+and hashtable in memory. It jumped a bit with v2.0.1 with the new hashtable,
+and dropped significantly with v2.3.0 with the larger default blocksizes for
+large files.
+
+.. image:: data/mem-vers-defaults-patch.svg
+
+The memory required for patch is very small. It jumped a tiny bit with v2.0.1
+becuse of the larger default input/output buffers, but has not changed since.
+
+.. image:: data/mem-vers-b1024S8-sig.svg
+
+It has not changed much at all. Interestingly it has maybe dropped a tiny bit
+since v2.0.1 because the input/output default buffer size became dependent on
+the blocksize, and it must be a tiny bit smaller for 1K blocks than the old
+default.
+
+.. image:: data/mem-vers-b1024S8-delta.svg
+
+It dropped with V2.0.1 dispite the new hashtable increase visible with
+defaults because that version also introduced strongsum memory packing for
+strongsums smaller than the default max size. The `-S 8` strongsums are
+significantly smaller than the 32byte max.
+
+.. image:: data/mem-vers-b1024S8-patch.svg
+
+The patch memory jumped a little with v2.0.1 perhaps because the insert
+command sizes got longer, resulting in larger inserts being written.
+
+.. image:: data/mem-size-defaults-patch.svg
+
+This clearly shows the saw-tooth growth vs filesize when the hashtable size
+doubles for v2.0.1 -> v2.2.1. For v2.3.0 the blocksize varies with filesize so
+the saw-tooth points don't align with the filesizes used and are not
+visible. The memory savings of larger blocks in v2.3.0 are very clear.
+
+.. image:: data/mem-size-b1024S8-patch.svg
+
+The fixed blocksize removes v2.3.0's memory advantage, but the strongsum
+packing means all versions since v2.0.1 use less memory despite the larger
+hashtable, even at the saw-tooth peaks.
+
+How filesizes vary with version
+-------------------------------
+
+.. image:: data/file-vers-defaults-sig.svg
+
+The signature has stayed the same until v2.3.0 when it significantly dropped
+because of the larger default blocksize for larger files.
+
+.. image:: data/file-vers-defaults-delta.svg
+
+The delta dropped a little at v2.0.1 because of longer insert commands. It
+jumps at v2.3.0 because the blocksizes are nolonger a nice multiple of the
+deltas in our test data, meaning we have small extra insert commands at the
+delta boundaries.
+
+.. image:: data/file-vers-b1024S8-sig.svg
+
+Signatures have stayed exactly the same size.
+
+.. image:: data/file-vers-b1024S8-delta.svg
+
+Delta's dropped a tiny bit with v2.0.1 because of longer insert commands
+having less overheads.
+
+.. image:: data/file-size-defaults-sig.svg
+
+Before V2.3.0 signatures were 1.75% of the original filesize. With V2.3.0
+Signatures get smaller with filesize because the blocksize used grows. When
+also using '-S -1' for the minimum safe strongsum size they get even smaller,
+particularly for small files.
+
+.. image:: data/file-size-b1024S8-sig.svg
+
+With a fixed blocksize all versions are the same. Note the vertical scale; the
+variation is actually tiny, and shows amortizing the header cost over the
+signature data.
+
 
 Summary
 =======
