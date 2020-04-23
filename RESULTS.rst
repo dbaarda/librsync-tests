@@ -13,7 +13,7 @@ Testing
 =======
 
 I needed tests that measured the typical default performance, as well as tests
-that highlighted the worst case bottlenecks. 
+that highlighted the worst case bottlenecks.
 
 Platform
 --------
@@ -41,14 +41,14 @@ I'm testing using the following variants of signature arguments:
 
 * defaults - The default with no special arguments. Designed to measure the
   default performance.
-  
+
 * b1024S8 - Args `-b 1024 -S 8`. A 1KB blocksize with a minimal static
   signature size. Designed to highlight delta costs with smaller blocks.
-  
+
 * b1024S8Rollsum - Args `-b 1024 -S8 -R rollsum`. The same as b1024S8
   forcing the old rollsum algorithm. Used to identify any regressions
   unrelated to the new RabinKarp rollsum algorithm.
-  
+
 * S1 - Args `-S -1`. Like defaults except enabling the new `-1` minimum safe-ish
   strongsum option.
 
@@ -272,3 +272,89 @@ Summary
 
 Making RabinKarp Faster
 -----------------------
+
+The profile runs clearly showed that RabinKarp signature generation was about
+20% slower than the old Rollsum. That seemed excessive.
+
+I first checked the assembler output using `gcc -S` and noticed it was using
+`imulq` 64bit multiplies. This lead to discovering the importance of putting
+`U` on the end of your large #define's and literals.
+
+I then checked `profiling rabinkarp<data/prof_sig_b1024S8_v2.3.0.txt>`_ with
+`-b 1024 -S 8` which showed it was spending nearly as much time in
+rs_calc_weak_sum() calculating the RabinKarp sums as calculating the strongsum
+with blake2b_compress(). Whaaat! Then I compared that to `profiling rollsum
+<data/profl_sig_b1024S8Rrollsum_v2.3.0.txt>`_ which showed RabinKarp was about
+2.5x as slow as Rollsum. What amazed me is how fast blake2b was. I assumed it
+would be dominating the signature time and thus the RabinKarp slowdown must
+have been order-of-magnitude slower than Rollsum to make a 20% overall
+difference. Seeing that RabinKarp was only 2.5x slower meant there wasn't
+something hugely wrong, but there was still scope for making it better.
+
+So I started looking at the assembler generated, profiling, and manual loop
+unrolling. There are several ways that RabinKarp can be unrolled which can be
+summarized as mixtures of the following 2 extrems;
+
+1. K * (K * (K * (K * hash + b[0]) + b[1]) + b[2]) + b[3]
+
+2. K^4 * hash + K^3 * b[0] + K^2 * b[1] + K * b[2] + b[3]
+
+The first is just a literal expansion of how the iterative loop evalutes it.
+It has the disadvantage that each multiply needs the result of the inner
+multiply and add, so it has to be executed sequentially.
+
+The second is what you get when you expand the first out. The different powers
+of K can be precomputed, so it's exactly the same number of multiplies and ads
+as the first, but all the multiplies don't depend on each other so can be
+parallelized on CPU's that can do that.
+
+In practice the following mixed approach benchmarked the fastest, by quite a
+bit, but I don't fully understand why;
+
+3. (K^2 * (K^2 * hash + K * b[1] + b[0]) + K * b[2] + b[3])
+
+I expanded it out to do 2 parallel mults 4x for 16 bytes at once. I also
+experimented with unit32_t vs uint_fast32_t and strangely the fast32 variant
+meant that it used 64bit multiplies for some (not all) of the multiplies and
+was slower. I also experimented with unrolling it as statements that
+accumulate into the hash vs a single long expression and the expression was
+faster.
+
+In the end I managed to shave 1.5 seconds off the 12.5 seconds for the 1G data
+file. `Profiling of opt/rabinkarp1 sig
+<data/prof_sig_b1024S8_opt-rabinkarp1.txt>`_ shows it is nearly 2x as fast as
+blake2b now and only 1.7x slower than the old rollsum.
+
+Lessons Learned
+---------------
+
+* blake2b is FAST! Profiling shows it costs about 2.0x RabinKarp's 32bit
+mult+add per byte. For a cryptographic hash that seems astounding. It shows
+how using blocks and 64bit operations on more than one byte at a time speed
+things up, unfortunately not something a byte-by-byte rolling sum can do.
+Also, it doesn't use any multiplies...
+
+* Multiplies are still expensive. RabinKarp uses one multiply and one add per
+byte compared to two adds for the old Rollsum and it is 70% slower.
+
+* Always make unsigned #define's and literals unsigned! That `U` on the end
+can be the difference between 32bit and 64bit operations.
+
+* Compiler loop unrolling/optimizing and the automatic detection/use of vector
+MMX/SSE instructions is not great for both gcc and clang. I assumed the
+compiler would produce fast binaries best for the simplest code, but manual
+unrolling made a measurable difference. To be fair, the manual unrolling
+required testing multiple variants with significantly different results before
+finding something that worked well. The code structures that did/didn't
+trigger use of SSE instructions seemed almost random. Changing a value in a
+const static array from 0x1 to something else was enough to trigger it (the
+optimizer seemed to optimize away the `*1` before looking for vectoring). Also
+to be fair, the SSE2 vector instructions didn't make it faster, at least not
+on my crappy platform.
+
+* Memory locality matters, a lot! The reason RabinKarp improvements didn't
+make a significant difference is the delta time is completely dominated by L2
+cache misses just looking up the hashtable. This is why the v2.0.1 new
+hashtable made such a difference (better hash-key locality for lookups), and
+why the v2.3.0 default larger blocksize for large files made a difference (it
+needs a smaller hashtable).
