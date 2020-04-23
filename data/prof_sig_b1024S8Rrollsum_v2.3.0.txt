@@ -3,48 +3,51 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls   s/call   s/call  name    
- 72.60      5.80     5.80  2097152     0.00     0.00  blake2b_compress
- 18.53      7.28     1.48  1048576     0.00     0.00  RollsumUpdate
-  1.00      7.36     0.08  2097155     0.00     0.00  rs_tube_write
-  0.88      7.43     0.07  1048576     0.00     0.00  blake2b_final
-  0.88      7.50     0.07  1048576     0.00     0.00  blake2b_init_param
-  0.88      7.57     0.07  1310721     0.00     0.00  rs_scoop_readahead
-  0.63      7.62     0.05  1310721     0.00     0.00  rs_scoop_read
-  0.63      7.67     0.05  1048576     0.00     0.00  rs_calc_weak_sum
-  0.63      7.72     0.05  1310724     0.00     0.00  rs_tube_catchup
-  0.63      7.77     0.05  1048576     0.00     0.00  blake2b_update
-  0.50      7.81     0.04  1310721     0.00     0.00  rs_sig_s_generate
-  0.50      7.85     0.04  1048576     0.00     0.00  rs_calc_strong_sum
-  0.38      7.88     0.03  1048576     0.00     0.00  blake2b_init
-  0.38      7.91     0.03   262146     0.00     0.00  rs_outfilebuf_drain
-  0.38      7.94     0.03        1     0.03     0.03  rs_sig_s_header
-  0.13      7.95     0.01  1048579     0.00     0.00  rs_squirt_n4
-  0.13      7.96     0.01   262146     0.00     0.00  rs_infilebuf_fill
-  0.13      7.97     0.01   262146     0.00     0.00  rs_job_iter
-  0.13      7.98     0.01        1     0.01     7.98  rs_job_drive
-  0.13      7.99     0.01                             blake2b_init_key
-  0.00      7.99     0.00        5     0.00     0.00  rs_bzero
-  0.00      7.99     0.00        4     0.00     0.00  rs_alloc_struct0
-  0.00      7.99     0.00        2     0.00     0.00  rs_alloc
-  0.00      7.99     0.00        2     0.00     0.00  rs_filebuf_free
-  0.00      7.99     0.00        2     0.00     0.00  rs_filebuf_new
-  0.00      7.99     0.00        2     0.00     0.00  rs_log0
-  0.00      7.99     0.00        2     0.00     0.00  rs_log_va
-  0.00      7.99     0.00        2     0.00     0.00  rs_long_ln2
-  0.00      7.99     0.00        2     0.00     0.00  rs_sig_args
-  0.00      7.99     0.00        2     0.00     0.00  rs_trace_stderr
-  0.00      7.99     0.00        1     0.00     0.00  _hashtable_free
-  0.00      7.99     0.00        1     0.00     0.00  rs_file_size
-  0.00      7.99     0.00        1     0.00     0.00  rs_format_stats
-  0.00      7.99     0.00        1     0.00     0.00  rs_free_sumset
-  0.00      7.99     0.00        1     0.00     0.00  rs_job_free
-  0.00      7.99     0.00        1     0.00     0.00  rs_job_new
-  0.00      7.99     0.00        1     0.00     0.00  rs_long_sqrt
-  0.00      7.99     0.00        1     0.00     0.00  rs_scoop_read_rest
-  0.00      7.99     0.00        1     0.00     0.00  rs_sig_begin
-  0.00      7.99     0.00        1     0.00     0.00  rs_signature_done
-  0.00      7.99     0.00        1     0.00     0.00  rs_signature_init
-  0.00      7.99     0.00        1     0.00     7.98  rs_whole_run
+ 68.48      5.43     5.43  2097152     0.00     0.00  blake2b_compress
+ 21.31      7.12     1.69  1048576     0.00     0.00  RollsumUpdate
+  1.64      7.25     0.13  1048576     0.00     0.00  blake2b_init_param
+  1.51      7.37     0.12  1048576     0.00     0.00  blake2b_final
+  1.01      7.45     0.08  2097155     0.00     0.00  rs_tube_write
+  1.01      7.53     0.08  1310721     0.00     0.00  rs_sig_s_generate
+  0.82      7.60     0.07   262146     0.00     0.00  rs_job_iter
+  0.76      7.66     0.06  1310724     0.00     0.00  rs_tube_catchup
+  0.63      7.71     0.05  1048576     0.00     0.00  blake2b_init
+  0.50      7.75     0.04  1310721     0.00     0.00  rs_scoop_readahead
+  0.38      7.78     0.03        1     0.03     0.03  rs_sig_s_header
+  0.38      7.81     0.03                             rs_tube_copy
+  0.25      7.83     0.02  1048579     0.00     0.00  rs_squirt_n4
+  0.25      7.85     0.02  1048576     0.00     0.00  rs_calc_strong_sum
+  0.13      7.86     0.01  1048576     0.00     0.00  blake2b_update
+  0.13      7.87     0.01  1048576     0.00     0.00  rs_calc_weak_sum
+  0.13      7.88     0.01   262146     0.00     0.00  rs_infilebuf_fill
+  0.13      7.89     0.01   262146     0.00     0.00  rs_outfilebuf_drain
+  0.13      7.90     0.01        1     0.01     7.87  rs_job_drive
+  0.13      7.91     0.01                             blake2b_init_key
+  0.13      7.92     0.01                             rs_loadsig_begin
+  0.13      7.93     0.01                             rs_scoop_total_avail
+  0.06      7.93     0.01        1     0.01     0.01  rs_job_free
+  0.00      7.93     0.00  1310721     0.00     0.00  rs_scoop_read
+  0.00      7.93     0.00        5     0.00     0.00  rs_bzero
+  0.00      7.93     0.00        4     0.00     0.00  rs_alloc_struct0
+  0.00      7.93     0.00        2     0.00     0.00  rs_alloc
+  0.00      7.93     0.00        2     0.00     0.00  rs_filebuf_free
+  0.00      7.93     0.00        2     0.00     0.00  rs_filebuf_new
+  0.00      7.93     0.00        2     0.00     0.00  rs_log0
+  0.00      7.93     0.00        2     0.00     0.00  rs_log_va
+  0.00      7.93     0.00        2     0.00     0.00  rs_long_ln2
+  0.00      7.93     0.00        2     0.00     0.00  rs_sig_args
+  0.00      7.93     0.00        2     0.00     0.00  rs_trace_stderr
+  0.00      7.93     0.00        1     0.00     0.00  _hashtable_free
+  0.00      7.93     0.00        1     0.00     0.00  rs_file_size
+  0.00      7.93     0.00        1     0.00     0.00  rs_format_stats
+  0.00      7.93     0.00        1     0.00     0.00  rs_free_sumset
+  0.00      7.93     0.00        1     0.00     0.00  rs_job_new
+  0.00      7.93     0.00        1     0.00     0.00  rs_long_sqrt
+  0.00      7.93     0.00        1     0.00     0.00  rs_scoop_read_rest
+  0.00      7.93     0.00        1     0.00     0.00  rs_sig_begin
+  0.00      7.93     0.00        1     0.00     0.00  rs_signature_done
+  0.00      7.93     0.00        1     0.00     0.00  rs_signature_init
+  0.00      7.93     0.00        1     0.00     7.87  rs_whole_run
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -82,197 +85,206 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 0.13% of 7.99 seconds
+granularity: each sample hit covers 2 byte(s) for 0.13% of 7.93 seconds
 
 index % time    self  children    called     name
-                0.01    7.97       1/1           rs_whole_run [2]
-[1]     99.9    0.01    7.97       1         rs_job_drive [1]
-                0.01    7.92  262146/262146      rs_job_iter [4]
-                0.03    0.00  262146/262146      rs_outfilebuf_drain [20]
-                0.01    0.00  262146/262146      rs_infilebuf_fill [21]
-                0.00    0.00       1/5           rs_bzero [23]
------------------------------------------------
-                0.00    7.98       1/1           rs_sig_file [3]
-[2]     99.9    0.00    7.98       1         rs_whole_run [2]
-                0.01    7.97       1/1           rs_job_drive [1]
-                0.00    0.00       2/2           rs_filebuf_new [27]
-                0.00    0.00       2/2           rs_filebuf_free [26]
------------------------------------------------
                                                  <spontaneous>
-[3]     99.9    0.00    7.98                 rs_sig_file [3]
-                0.00    7.98       1/1           rs_whole_run [2]
-                0.00    0.00       1/1           rs_file_size [33]
-                0.00    0.00       1/2           rs_sig_args [31]
-                0.00    0.00       1/1           rs_sig_begin [40]
-                0.00    0.00       1/1           rs_job_free [36]
+[1]     99.2    0.00    7.87                 rs_sig_file [1]
+                0.00    7.87       1/1           rs_whole_run [3]
+                0.01    0.00       1/1           rs_job_free [26]
+                0.00    0.00       1/1           rs_file_size [37]
+                0.00    0.00       1/2           rs_sig_args [35]
+                0.00    0.00       1/1           rs_sig_begin [43]
 -----------------------------------------------
-                0.01    7.92  262146/262146      rs_job_drive [1]
-[4]     99.2    0.01    7.92  262146         rs_job_iter [4]
-                0.04    7.80 1310721/1310721     rs_sig_s_generate [5]
-                0.05    0.00 1310724/1310724     rs_tube_catchup [18]
+                0.01    7.86       1/1           rs_whole_run [3]
+[2]     99.2    0.01    7.86       1         rs_job_drive [2]
+                0.07    7.77  262146/262146      rs_job_iter [4]
+                0.01    0.00  262146/262146      rs_outfilebuf_drain [22]
+                0.01    0.00  262146/262146      rs_infilebuf_fill [21]
+                0.00    0.00       1/5           rs_bzero [27]
+-----------------------------------------------
+                0.00    7.87       1/1           rs_sig_file [1]
+[3]     99.2    0.00    7.87       1         rs_whole_run [3]
+                0.01    7.86       1/1           rs_job_drive [2]
+                0.00    0.00       2/2           rs_filebuf_new [31]
+                0.00    0.00       2/2           rs_filebuf_free [30]
+-----------------------------------------------
+                0.07    7.77  262146/262146      rs_job_drive [2]
+[4]     98.8    0.07    7.77  262146         rs_job_iter [4]
+                0.08    7.60 1310721/1310721     rs_sig_s_generate [5]
+                0.06    0.00 1310724/1310724     rs_tube_catchup [16]
                 0.03    0.00       1/1           rs_sig_s_header [19]
 -----------------------------------------------
-                0.04    7.80 1310721/1310721     rs_job_iter [4]
-[5]     98.1    0.04    7.80 1310721         rs_sig_s_generate [5]
-                0.04    6.02 1048576/1048576     rs_calc_strong_sum [6]
-                0.05    1.48 1048576/1048576     rs_calc_weak_sum [10]
-                0.05    0.07 1310721/1310721     rs_scoop_read [12]
-                0.01    0.04 1048576/1048579     rs_squirt_n4 [17]
+                0.08    7.60 1310721/1310721     rs_job_iter [4]
+[5]     96.8    0.08    7.60 1310721         rs_sig_s_generate [5]
+                0.02    5.74 1048576/1048576     rs_calc_strong_sum [6]
+                0.01    1.69 1048576/1048576     rs_calc_weak_sum [10]
+                0.02    0.04 1048576/1048579     rs_squirt_n4 [15]
+                0.00    0.04 1310721/1310721     rs_scoop_read [17]
                 0.04    0.00 1048576/2097155     rs_tube_write [14]
-                0.00    0.00       1/1           rs_scoop_read_rest [39]
+                0.00    0.00       1/1           rs_scoop_read_rest [42]
 -----------------------------------------------
-                0.04    6.02 1048576/1048576     rs_sig_s_generate [5]
-[6]     75.8    0.04    6.02 1048576         rs_calc_strong_sum [6]
-                0.07    2.90 1048576/1048576     blake2b_final [8]
-                0.05    2.90 1048576/1048576     blake2b_update [9]
-                0.03    0.07 1048576/1048576     blake2b_init [13]
+                0.02    5.74 1048576/1048576     rs_sig_s_generate [5]
+[6]     72.6    0.02    5.74 1048576         rs_calc_strong_sum [6]
+                0.12    2.72 1048576/1048576     blake2b_final [8]
+                0.01    2.72 1048576/1048576     blake2b_update [9]
+                0.05    0.13 1048576/1048576     blake2b_init [12]
 -----------------------------------------------
                              7340032             blake2b_compress [7]
-                2.90    0.00 1048576/2097152     blake2b_update [9]
-                2.90    0.00 1048576/2097152     blake2b_final [8]
-[7]     72.6    5.80    0.00 2097152+7340032 blake2b_compress [7]
+                2.72    0.00 1048576/2097152     blake2b_update [9]
+                2.72    0.00 1048576/2097152     blake2b_final [8]
+[7]     68.5    5.43    0.00 2097152+7340032 blake2b_compress [7]
                              7340032             blake2b_compress [7]
 -----------------------------------------------
-                0.07    2.90 1048576/1048576     rs_calc_strong_sum [6]
-[8]     37.2    0.07    2.90 1048576         blake2b_final [8]
-                2.90    0.00 1048576/2097152     blake2b_compress [7]
+                0.12    2.72 1048576/1048576     rs_calc_strong_sum [6]
+[8]     35.8    0.12    2.72 1048576         blake2b_final [8]
+                2.72    0.00 1048576/2097152     blake2b_compress [7]
 -----------------------------------------------
-                0.05    2.90 1048576/1048576     rs_calc_strong_sum [6]
-[9]     36.9    0.05    2.90 1048576         blake2b_update [9]
-                2.90    0.00 1048576/2097152     blake2b_compress [7]
+                0.01    2.72 1048576/1048576     rs_calc_strong_sum [6]
+[9]     34.4    0.01    2.72 1048576         blake2b_update [9]
+                2.72    0.00 1048576/2097152     blake2b_compress [7]
 -----------------------------------------------
-                0.05    1.48 1048576/1048576     rs_sig_s_generate [5]
-[10]    19.1    0.05    1.48 1048576         rs_calc_weak_sum [10]
-                1.48    0.00 1048576/1048576     RollsumUpdate [11]
+                0.01    1.69 1048576/1048576     rs_sig_s_generate [5]
+[10]    21.4    0.01    1.69 1048576         rs_calc_weak_sum [10]
+                1.69    0.00 1048576/1048576     RollsumUpdate [11]
 -----------------------------------------------
-                1.48    0.00 1048576/1048576     rs_calc_weak_sum [10]
-[11]    18.5    1.48    0.00 1048576         RollsumUpdate [11]
+                1.69    0.00 1048576/1048576     rs_calc_weak_sum [10]
+[11]    21.3    1.69    0.00 1048576         RollsumUpdate [11]
 -----------------------------------------------
-                0.05    0.07 1310721/1310721     rs_sig_s_generate [5]
-[12]     1.5    0.05    0.07 1310721         rs_scoop_read [12]
-                0.07    0.00 1310721/1310721     rs_scoop_readahead [16]
+                0.05    0.13 1048576/1048576     rs_calc_strong_sum [6]
+[12]     2.3    0.05    0.13 1048576         blake2b_init [12]
+                0.13    0.00 1048576/1048576     blake2b_init_param [13]
 -----------------------------------------------
-                0.03    0.07 1048576/1048576     rs_calc_strong_sum [6]
-[13]     1.3    0.03    0.07 1048576         blake2b_init [13]
-                0.07    0.00 1048576/1048576     blake2b_init_param [15]
+                0.13    0.00 1048576/1048576     blake2b_init [12]
+[13]     1.6    0.13    0.00 1048576         blake2b_init_param [13]
 -----------------------------------------------
                 0.04    0.00 1048576/2097155     rs_sig_s_generate [5]
-                0.04    0.00 1048579/2097155     rs_squirt_n4 [17]
+                0.04    0.00 1048579/2097155     rs_squirt_n4 [15]
 [14]     1.0    0.08    0.00 2097155         rs_tube_write [14]
 -----------------------------------------------
-                0.07    0.00 1048576/1048576     blake2b_init [13]
-[15]     0.9    0.07    0.00 1048576         blake2b_init_param [15]
------------------------------------------------
-                0.07    0.00 1310721/1310721     rs_scoop_read [12]
-[16]     0.9    0.07    0.00 1310721         rs_scoop_readahead [16]
------------------------------------------------
                 0.00    0.00       3/1048579     rs_sig_s_header [19]
-                0.01    0.04 1048576/1048579     rs_sig_s_generate [5]
-[17]     0.6    0.01    0.04 1048579         rs_squirt_n4 [17]
+                0.02    0.04 1048576/1048579     rs_sig_s_generate [5]
+[15]     0.8    0.02    0.04 1048579         rs_squirt_n4 [15]
                 0.04    0.00 1048579/2097155     rs_tube_write [14]
 -----------------------------------------------
-                0.05    0.00 1310724/1310724     rs_job_iter [4]
-[18]     0.6    0.05    0.00 1310724         rs_tube_catchup [18]
+                0.06    0.00 1310724/1310724     rs_job_iter [4]
+[16]     0.8    0.06    0.00 1310724         rs_tube_catchup [16]
+-----------------------------------------------
+                0.00    0.04 1310721/1310721     rs_sig_s_generate [5]
+[17]     0.5    0.00    0.04 1310721         rs_scoop_read [17]
+                0.04    0.00 1310721/1310721     rs_scoop_readahead [18]
+-----------------------------------------------
+                0.04    0.00 1310721/1310721     rs_scoop_read [17]
+[18]     0.5    0.04    0.00 1310721         rs_scoop_readahead [18]
 -----------------------------------------------
                 0.03    0.00       1/1           rs_job_iter [4]
 [19]     0.4    0.03    0.00       1         rs_sig_s_header [19]
-                0.00    0.00       3/1048579     rs_squirt_n4 [17]
-                0.00    0.00       1/1           rs_signature_init [42]
------------------------------------------------
-                0.03    0.00  262146/262146      rs_job_drive [1]
-[20]     0.4    0.03    0.00  262146         rs_outfilebuf_drain [20]
------------------------------------------------
-                0.01    0.00  262146/262146      rs_job_drive [1]
-[21]     0.1    0.01    0.00  262146         rs_infilebuf_fill [21]
+                0.00    0.00       3/1048579     rs_squirt_n4 [15]
+                0.00    0.00       1/1           rs_signature_init [45]
 -----------------------------------------------
                                                  <spontaneous>
-[22]     0.1    0.01    0.00                 blake2b_init_key [22]
+[20]     0.4    0.03    0.00                 rs_tube_copy [20]
 -----------------------------------------------
-                0.00    0.00       1/5           rs_free_sumset [35]
-                0.00    0.00       1/5           rs_job_free [36]
-                0.00    0.00       1/5           rs_job_drive [1]
-                0.00    0.00       2/5           rs_filebuf_free [26]
-[23]     0.0    0.00    0.00       5         rs_bzero [23]
+                0.01    0.00  262146/262146      rs_job_drive [2]
+[21]     0.1    0.01    0.00  262146         rs_infilebuf_fill [21]
 -----------------------------------------------
-                0.00    0.00       1/4           rs_job_new [37]
-                0.00    0.00       1/4           rs_sig_begin [40]
-                0.00    0.00       2/4           rs_filebuf_new [27]
-[24]     0.0    0.00    0.00       4         rs_alloc_struct0 [24]
+                0.01    0.00  262146/262146      rs_job_drive [2]
+[22]     0.1    0.01    0.00  262146         rs_outfilebuf_drain [22]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_filebuf_new [27]
-[25]     0.0    0.00    0.00       2         rs_alloc [25]
+                                                 <spontaneous>
+[23]     0.1    0.01    0.00                 blake2b_init_key [23]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_whole_run [2]
-[26]     0.0    0.00    0.00       2         rs_filebuf_free [26]
-                0.00    0.00       2/5           rs_bzero [23]
+                                                 <spontaneous>
+[24]     0.1    0.01    0.00                 rs_loadsig_begin [24]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_whole_run [2]
-[27]     0.0    0.00    0.00       2         rs_filebuf_new [27]
-                0.00    0.00       2/4           rs_alloc_struct0 [24]
-                0.00    0.00       2/2           rs_alloc [25]
+                                                 <spontaneous>
+[25]     0.1    0.01    0.00                 rs_scoop_total_avail [25]
 -----------------------------------------------
-                0.00    0.00       1/2           rs_log_stats [82]
-                0.00    0.00       1/2           rs_sig_args [31]
-[28]     0.0    0.00    0.00       2         rs_log0 [28]
-                0.00    0.00       2/2           rs_log_va [29]
+                0.01    0.00       1/1           rs_sig_file [1]
+[26]     0.1    0.01    0.00       1         rs_job_free [26]
+                0.00    0.00       1/5           rs_bzero [27]
+                0.00    0.00       1/1           rs_free_sumset [39]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_log0 [28]
-[29]     0.0    0.00    0.00       2         rs_log_va [29]
-                0.00    0.00       2/2           rs_trace_stderr [32]
+                0.00    0.00       1/5           rs_free_sumset [39]
+                0.00    0.00       1/5           rs_job_free [26]
+                0.00    0.00       1/5           rs_job_drive [2]
+                0.00    0.00       2/5           rs_filebuf_free [30]
+[27]     0.0    0.00    0.00       5         rs_bzero [27]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_sig_args [31]
-[30]     0.0    0.00    0.00       2         rs_long_ln2 [30]
+                0.00    0.00       1/4           rs_job_new [40]
+                0.00    0.00       1/4           rs_sig_begin [43]
+                0.00    0.00       2/4           rs_filebuf_new [31]
+[28]     0.0    0.00    0.00       4         rs_alloc_struct0 [28]
 -----------------------------------------------
-                0.00    0.00       1/2           rs_signature_init [42]
-                0.00    0.00       1/2           rs_sig_file [3]
-[31]     0.0    0.00    0.00       2         rs_sig_args [31]
-                0.00    0.00       2/2           rs_long_ln2 [30]
-                0.00    0.00       1/1           rs_long_sqrt [38]
-                0.00    0.00       1/2           rs_log0 [28]
+                0.00    0.00       2/2           rs_filebuf_new [31]
+[29]     0.0    0.00    0.00       2         rs_alloc [29]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_log_va [29]
-[32]     0.0    0.00    0.00       2         rs_trace_stderr [32]
+                0.00    0.00       2/2           rs_whole_run [3]
+[30]     0.0    0.00    0.00       2         rs_filebuf_free [30]
+                0.00    0.00       2/5           rs_bzero [27]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_sig_file [3]
-[33]     0.0    0.00    0.00       1         rs_file_size [33]
+                0.00    0.00       2/2           rs_whole_run [3]
+[31]     0.0    0.00    0.00       2         rs_filebuf_new [31]
+                0.00    0.00       2/4           rs_alloc_struct0 [28]
+                0.00    0.00       2/2           rs_alloc [29]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_log_stats [82]
-[34]     0.0    0.00    0.00       1         rs_format_stats [34]
+                0.00    0.00       1/2           rs_log_stats [84]
+                0.00    0.00       1/2           rs_sig_args [35]
+[32]     0.0    0.00    0.00       2         rs_log0 [32]
+                0.00    0.00       2/2           rs_log_va [33]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_free [36]
-[35]     0.0    0.00    0.00       1         rs_free_sumset [35]
-                0.00    0.00       1/5           rs_bzero [23]
-                0.00    0.00       1/1           rs_signature_done [41]
+                0.00    0.00       2/2           rs_log0 [32]
+[33]     0.0    0.00    0.00       2         rs_log_va [33]
+                0.00    0.00       2/2           rs_trace_stderr [36]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_sig_file [3]
-[36]     0.0    0.00    0.00       1         rs_job_free [36]
-                0.00    0.00       1/5           rs_bzero [23]
-                0.00    0.00       1/1           rs_free_sumset [35]
+                0.00    0.00       2/2           rs_sig_args [35]
+[34]     0.0    0.00    0.00       2         rs_long_ln2 [34]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_sig_begin [40]
-[37]     0.0    0.00    0.00       1         rs_job_new [37]
-                0.00    0.00       1/4           rs_alloc_struct0 [24]
+                0.00    0.00       1/2           rs_signature_init [45]
+                0.00    0.00       1/2           rs_sig_file [1]
+[35]     0.0    0.00    0.00       2         rs_sig_args [35]
+                0.00    0.00       2/2           rs_long_ln2 [34]
+                0.00    0.00       1/1           rs_long_sqrt [41]
+                0.00    0.00       1/2           rs_log0 [32]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_sig_args [31]
-[38]     0.0    0.00    0.00       1         rs_long_sqrt [38]
+                0.00    0.00       2/2           rs_log_va [33]
+[36]     0.0    0.00    0.00       2         rs_trace_stderr [36]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_file [1]
+[37]     0.0    0.00    0.00       1         rs_file_size [37]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_log_stats [84]
+[38]     0.0    0.00    0.00       1         rs_format_stats [38]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_job_free [26]
+[39]     0.0    0.00    0.00       1         rs_free_sumset [39]
+                0.00    0.00       1/5           rs_bzero [27]
+                0.00    0.00       1/1           rs_signature_done [44]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_begin [43]
+[40]     0.0    0.00    0.00       1         rs_job_new [40]
+                0.00    0.00       1/4           rs_alloc_struct0 [28]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_sig_args [35]
+[41]     0.0    0.00    0.00       1         rs_long_sqrt [41]
 -----------------------------------------------
                 0.00    0.00       1/1           rs_sig_s_generate [5]
-[39]     0.0    0.00    0.00       1         rs_scoop_read_rest [39]
+[42]     0.0    0.00    0.00       1         rs_scoop_read_rest [42]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_sig_file [3]
-[40]     0.0    0.00    0.00       1         rs_sig_begin [40]
-                0.00    0.00       1/1           rs_job_new [37]
-                0.00    0.00       1/4           rs_alloc_struct0 [24]
+                0.00    0.00       1/1           rs_sig_file [1]
+[43]     0.0    0.00    0.00       1         rs_sig_begin [43]
+                0.00    0.00       1/1           rs_job_new [40]
+                0.00    0.00       1/4           rs_alloc_struct0 [28]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_free_sumset [35]
-[41]     0.0    0.00    0.00       1         rs_signature_done [41]
+                0.00    0.00       1/1           rs_free_sumset [39]
+[44]     0.0    0.00    0.00       1         rs_signature_done [44]
                 0.00    0.00       1/1           _hashtable_free [116]
 -----------------------------------------------
                 0.00    0.00       1/1           rs_sig_s_header [19]
-[42]     0.0    0.00    0.00       1         rs_signature_init [42]
-                0.00    0.00       1/2           rs_sig_args [31]
+[45]     0.0    0.00    0.00       1         rs_signature_init [45]
+                0.00    0.00       1/2           rs_sig_args [35]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_signature_done [41]
+                0.00    0.00       1/1           rs_signature_done [44]
 [116]    0.0    0.00    0.00       1         _hashtable_free [116]
 -----------------------------------------------
 
@@ -366,17 +378,18 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [11] RollsumUpdate          [26] rs_filebuf_free        [12] rs_scoop_read
- [116] _hashtable_free        [27] rs_filebuf_new         [39] rs_scoop_read_rest
-   [7] blake2b_compress (blake2b-ref.c) [34] rs_format_stats [16] rs_scoop_readahead
-   [8] blake2b_final          [35] rs_free_sumset         [31] rs_sig_args
-  [13] blake2b_init           [21] rs_infilebuf_fill      [40] rs_sig_begin
-  [22] blake2b_init_key        [1] rs_job_drive            [5] rs_sig_s_generate (mksum.c)
-  [15] blake2b_init_param     [36] rs_job_free            [19] rs_sig_s_header (mksum.c)
-   [9] blake2b_update          [4] rs_job_iter            [41] rs_signature_done
-  [25] rs_alloc               [37] rs_job_new             [42] rs_signature_init
-  [24] rs_alloc_struct0       [28] rs_log0                [17] rs_squirt_n4
-  [23] rs_bzero               [29] rs_log_va (trace.c)    [32] rs_trace_stderr
-   [6] rs_calc_strong_sum     [30] rs_long_ln2            [18] rs_tube_catchup
-  [10] rs_calc_weak_sum       [38] rs_long_sqrt           [14] rs_tube_write
-  [33] rs_file_size           [20] rs_outfilebuf_drain     [2] rs_whole_run
+  [11] RollsumUpdate          [31] rs_filebuf_new         [42] rs_scoop_read_rest
+ [116] _hashtable_free        [38] rs_format_stats        [18] rs_scoop_readahead
+   [7] blake2b_compress (blake2b-ref.c) [39] rs_free_sumset [25] rs_scoop_total_avail
+   [8] blake2b_final          [21] rs_infilebuf_fill      [35] rs_sig_args
+  [12] blake2b_init            [2] rs_job_drive           [43] rs_sig_begin
+  [23] blake2b_init_key       [26] rs_job_free             [5] rs_sig_s_generate (mksum.c)
+  [13] blake2b_init_param      [4] rs_job_iter            [19] rs_sig_s_header (mksum.c)
+   [9] blake2b_update         [40] rs_job_new             [44] rs_signature_done
+  [29] rs_alloc               [24] rs_loadsig_begin       [45] rs_signature_init
+  [28] rs_alloc_struct0       [32] rs_log0                [15] rs_squirt_n4
+  [27] rs_bzero               [33] rs_log_va (trace.c)    [36] rs_trace_stderr
+   [6] rs_calc_strong_sum     [34] rs_long_ln2            [16] rs_tube_catchup
+  [10] rs_calc_weak_sum       [41] rs_long_sqrt           [20] rs_tube_copy
+  [37] rs_file_size           [22] rs_outfilebuf_drain    [14] rs_tube_write
+  [30] rs_filebuf_free        [17] rs_scoop_read           [3] rs_whole_run

@@ -47,10 +47,10 @@ runprofile () {
 #buildversion $version Debug -DCMAKE_C_FLAGS="-pg -g -O1 -fno-inline -DNDEBUG" -DBUILD_SHARED_LIBS=OFF
 buildversion $version RelWithDebInfo -DCMAKE_C_FLAGS="-pg -g" -DBUILD_SHARED_LIBS=OFF
 
-#runprofile $version
+runprofile $version
 runprofile $version -b 1024 -S 8
 # Use rollsum for versions that support rabinkarp
 if [[ "$version" > "v2.1.0" ]]; then
-  #runprofile $version -Rrollsum
+  runprofile $version -Rrollsum
   runprofile $version -b1024 -S8 -Rrollsum
 fi

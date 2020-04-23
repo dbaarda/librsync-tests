@@ -3,499 +3,479 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ns/call  ns/call  name    
- 66.16     72.62    72.62                             hashtable_find (hashtable.h:292 @ 475c)
-  3.53     76.49     3.87                             rs_signature_find_match (sumset.c:253 @ 4737)
-  3.34     80.16     3.67 537395200     6.83     6.83  rs_signature_find_match (sumset.c:247 @ 4720)
-  2.77     83.20     3.04                             rs_signature_find_match (sumset.c:257 @ 487b)
-  2.00     85.40     2.20                             rabinkarp_update (rabinkarp.h:83 @ 5f20)
-  1.76     87.33     1.94                             rs_signature_find_match (sumset.c:257 @ 485b)
-  1.46     88.93     1.60                             rabinkarp_rotate (rabinkarp.h:93 @ 60fc)
-  1.36     90.42     1.49                             hashtable_find (hashtable.h:292 @ 473b)
-  1.06     91.59     1.17                             rs_delta_s_scan (delta.c:133 @ 60a4)
-  1.05     92.74     1.15                             rs_delta_s_scan (delta.c:142 @ 5f96)
-  0.93     93.76     1.03                             rs_signature_find_match (sumset.c:256 @ 4874)
-  0.86     94.70     0.94                             hashtable_find (hashtable.h:293 @ 47b2)
-  0.86     95.64     0.94                             hashtable_find (hashtable.h:294 @ 47b8)
-  0.75     96.46     0.82                             rs_appendmiss (delta.c:287 @ 5fd5)
-  0.72     97.25     0.79                             rabinkarp_rotate (rabinkarp.h:93 @ 60e8)
-  0.62     97.93     0.68                             rs_appendmiss (delta.c:287 @ 60f5)
-  0.55     98.53     0.61                             rs_delta_s_scan (delta.c:142 @ 5f85)
-  0.46     99.03     0.50                             rs_block_match_init (sumset.c:61 @ 474f)
-  0.41     99.48     0.45                             rs_findmatch (delta.c:244 @ 5f70)
-  0.37     99.89     0.41                             rs_block_match_init (sumset.c:60 @ 474b)
-  0.35    100.27     0.38                             rs_signature_add_block (sumset.c:235 @ 4718)
-  0.33    100.64     0.36                             rs_delta_s_scan (delta.c:142 @ 5f9f)
-  0.33    101.00     0.36                             weaksum_rotate (checksum.h:92 @ 5fa4)
-  0.31    101.34     0.35                             rs_findmatch (delta.c:225 @ 5ee1)
-  0.29    101.66     0.32                             rs_findmatch (delta.c:228 @ 5ee5)
-  0.20    101.88     0.22                             rs_findmatch (delta.c:245 @ 605c)
-  0.19    102.09     0.21                             rs_block_sig_init (sumset.c:35 @ 4753)
-  0.18    102.29     0.20                             rabinkarp_update (rabinkarp.h:86 @ 5f6c)
-  0.17    102.48     0.19                             blake2b_compress (blake2b-ref.c:214 @ 9c8c)
-  0.16    102.66     0.18                             hashtable_find (hashtable.h:291 @ 4756)
-  0.16    102.84     0.18                             rs_delta_s_scan (delta.c:133 @ 60b6)
-  0.15    103.01     0.17                             RollsumInit (rollsum.h:46 @ 6206)
-  0.14    103.16     0.15                             blake2b_compress (blake2b-ref.c:184 @ 84d0)
-  0.14    103.31     0.15                             weaksum_rotate (checksum.h:92 @ 5f93)
-  0.14    103.46     0.15                             weaksum_update (checksum.h:84 @ 6040)
-  0.12    103.59     0.14                             rabinkarp_update (rabinkarp.h:82 @ 5f07)
-  0.11    103.71     0.12                             blake2b_compress (blake2b-ref.c:183 @ 84d8)
-  0.11    103.83     0.12                             hashtable_find (hashtable.h:292 @ 49e5)
-  0.10    103.95     0.12                             rs_delta_s_scan (delta.c:158 @ 60d7)
-  0.10    104.06     0.11                             blake2b_compress (blake2b-ref.c:188 @ 84f8)
-  0.10    104.17     0.11                             rs_delta_s_scan (delta.c:141 @ 5f9a)
-  0.10    104.27     0.11                             rs_findmatch (delta.c:228 @ 5edd)
-  0.09    104.37     0.10                             hashtable_find (hashtable.h:296 @ 47cb)
-  0.08    104.46     0.09                             rs_scoop_input (scoop.c:104 @ 8032)
-  0.08    104.55     0.09                             weaksum_digest (checksum.h:116 @ 6063)
-  0.08    104.64     0.09                             rs_delta_s_scan (delta.c:135 @ 5f7b)
-  0.07    104.71     0.08                             rs_appendmiss (delta.c:291 @ 60a0)
-  0.06    104.78     0.07                             weaksum_digest (checksum.h:118 @ 6096)
-  0.06    104.85     0.07                             rs_delta_s_scan (delta.c:133 @ 5eb8)
-  0.05    104.90     0.05                             blake2b_compress (blake2b-ref.c:216 @ 9ca6)
-  0.05    104.95     0.05                             hashtable_add (hashtable.h:272 @ 4b62)
-  0.05    105.00     0.05                             rs_appendmiss (delta.c:291 @ 60af)
-  0.05    105.05     0.05                             rs_signature_find_match (sumset.c:247 @ 4746)
-  0.04    105.09     0.05  5894604     7.64     7.64  blake2b_compress (blake2b-ref.c:178 @ 84a0)
-  0.04    105.13     0.04  1048837    38.14    38.14  rs_suck_n4 (netint.c:110 @ 7660)
-  0.04    105.17     0.04                             blake2b_compress (blake2b-ref.c:204 @ 8e77)
-  0.04    105.21     0.04                             blake2b_compress (blake2b-ref.c:207 @ 9304)
-  0.04    105.25     0.04                             blake2b_compress (blake2b-ref.c:211 @ 9c51)
-  0.04    105.29     0.04                             rs_scoop_input (scoop.c:107 @ 8040)
-  0.03    105.33     0.04  2097925    16.69    16.69  rs_scoop_read (scoop.c:193 @ 81a0)
-  0.03    105.36     0.04                             blake2b_compress (blake2b-ref.c:183 @ 84ba)
-  0.03    105.40     0.04                             blake2b_compress (blake2b-ref.c:213 @ 9c82)
-  0.03    105.43     0.04                             rs_scoop_total_avail (scoop.c:230 @ 824a)
-  0.03    105.47     0.04                             rs_tube_catchup (tube.c:144 @ 8276)
-  0.03    105.50     0.03                             blake2b_compress (blake2b-ref.c:200 @ 850a)
-  0.03    105.53     0.03                             blake2b_compress (blake2b-ref.c:202 @ 89ff)
-  0.03    105.56     0.03                             blake2b_compress (blake2b-ref.c:204 @ 8e23)
-  0.03    105.59     0.03                             blake2b_compress (blake2b-ref.c:205 @ 9060)
-  0.03    105.62     0.03                             blake2b_compress (blake2b-ref.c:210 @ 989b)
-  0.03    105.65     0.03                             rs_delta_s_scan (delta.c:121 @ 5e77)
-  0.03    105.68     0.03                             rs_suck_netint (netint.c:104 @ 761c)
-  0.03    105.71     0.03                             rs_tube_catchup (tube.c:157 @ 8284)
-  0.03    105.74     0.03                             blake2b_compress (blake2b-ref.c:178 @ 84bc)
-  0.03    105.77     0.03                             blake2b_compress (blake2b-ref.c:187 @ 84e9)
-  0.03    105.80     0.03                             blake2b_compress (blake2b-ref.c:187 @ 8500)
-  0.03    105.83     0.03                             blake2b_compress (blake2b-ref.c:200 @ 85e4)
-  0.03    105.86     0.03                             blake2b_compress (blake2b-ref.c:209 @ 9819)
-  0.03    105.89     0.03                             blake2b_final (blake2b-ref.c:264 @ a139)
-  0.03    105.92     0.03                             rs_appendmiss (delta.c:287 @ 6107)
-  0.03    105.95     0.03                             rs_build_hash_table (sumset.c:286 @ 4abb)
-  0.03    105.98     0.03                             rs_delta_s_scan (delta.c:149 @ 60bf)
-  0.03    106.01     0.03                             rs_infilebuf_fill (buf.c:126 @ 55d1)
-  0.03    106.04     0.03                             rs_infilebuf_fill (buf.c:81 @ 55e8)
-  0.03    106.07     0.03                             uint32_pow (rabinkarp.h:62 @ 5f5b)
-  0.02    106.09     0.03                             blake2b_compress (blake2b-ref.c:201 @ 87bb)
-  0.02    106.12     0.03                             blake2b_compress (blake2b-ref.c:203 @ 8bf7)
-  0.02    106.14     0.03                             blake2b_compress (blake2b-ref.c:205 @ 8fb7)
-  0.02    106.17     0.03                             blake2b_compress (blake2b-ref.c:206 @ 90e8)
-  0.02    106.19     0.03                             blake2b_compress (blake2b-ref.c:207 @ 9397)
-  0.02    106.22     0.03                             blake2b_compress (blake2b-ref.c:208 @ 9572)
-  0.02    106.24     0.03                             rs_infilebuf_fill (buf.c:103 @ 5604)
-  0.02    106.26     0.02  4834062     4.14     4.14  rs_tube_catchup (tube.c:137 @ 8250)
-  0.02    106.28     0.02  1048577    19.08    19.08  rs_delta_s_scan (delta.c:120 @ 5e60)
-  0.02    106.30     0.02                             blake2b_compress (blake2b-ref.c:200 @ 8616)
-  0.02    106.32     0.02                             blake2b_compress (blake2b-ref.c:200 @ 8636)
-  0.02    106.34     0.02                             blake2b_compress (blake2b-ref.c:201 @ 87c4)
-  0.02    106.36     0.02                             blake2b_compress (blake2b-ref.c:201 @ 886c)
-  0.02    106.38     0.02                             blake2b_compress (blake2b-ref.c:202 @ 8968)
-  0.02    106.40     0.02                             blake2b_compress (blake2b-ref.c:202 @ 89c0)
-  0.02    106.42     0.02                             blake2b_compress (blake2b-ref.c:202 @ 89d9)
-  0.02    106.44     0.02                             blake2b_compress (blake2b-ref.c:202 @ 8ab7)
-  0.02    106.46     0.02                             blake2b_compress (blake2b-ref.c:203 @ 8b7b)
-  0.02    106.48     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8db8)
-  0.02    106.50     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8eca)
-  0.02    106.52     0.02                             blake2b_compress (blake2b-ref.c:205 @ 8f27)
-  0.02    106.54     0.02                             blake2b_compress (blake2b-ref.c:205 @ 8f3b)
-  0.02    106.56     0.02                             blake2b_compress (blake2b-ref.c:205 @ 8fd7)
-  0.02    106.58     0.02                             blake2b_compress (blake2b-ref.c:205 @ 90d6)
-  0.02    106.60     0.02                             blake2b_compress (blake2b-ref.c:206 @ 911b)
-  0.02    106.62     0.02                             blake2b_compress (blake2b-ref.c:206 @ 9139)
-  0.02    106.64     0.02                             blake2b_compress (blake2b-ref.c:206 @ 914d)
-  0.02    106.66     0.02                             blake2b_compress (blake2b-ref.c:207 @ 9435)
-  0.02    106.68     0.02                             blake2b_compress (blake2b-ref.c:208 @ 950d)
-  0.02    106.70     0.02                             blake2b_compress (blake2b-ref.c:208 @ 95b3)
-  0.02    106.72     0.02                             blake2b_compress (blake2b-ref.c:208 @ 95f7)
-  0.02    106.74     0.02                             blake2b_compress (blake2b-ref.c:210 @ 9868)
-  0.02    106.76     0.02                             blake2b_compress (blake2b-ref.c:210 @ 98f1)
-  0.02    106.78     0.02                             blake2b_compress (blake2b-ref.c:210 @ 9a4d)
-  0.02    106.80     0.02                             blake2b_compress (blake2b-ref.c:211 @ 9a67)
-  0.02    106.82     0.02                             blake2b_final (blake2b-ref.c:270 @ a16b)
-  0.02    106.84     0.02                             blake2b_init (blake2b-ref.c:102 @ 9eee)
-  0.02    106.86     0.02                             blake2b_init0 (blake2b-ref.c:75 @ 9e1f)
-  0.02    106.88     0.02                             blake2b_init_key (blake2b-ref.c:124 @ a058)
-  0.02    106.90     0.02                             hashtable_add (hashtable.h:273 @ 4b57)
-  0.02    106.92     0.02                             hashtable_add (hashtable.h:273 @ 4b67)
-  0.02    106.94     0.02                             rotr64 (blake2-impl.h:155 @ 8bbd)
-  0.02    106.96     0.02                             rotr64 (blake2-impl.h:155 @ 8d71)
-  0.02    106.98     0.02                             rotr64 (blake2-impl.h:155 @ 9495)
-  0.02    107.00     0.02                             rotr64 (blake2-impl.h:155 @ 94f1)
-  0.02    107.02     0.02                             rs_block_match_cmp (sumset.c:76 @ 4807)
-  0.02    107.04     0.02                             rs_block_sig_idx (sumset.c:114 @ 4852)
-  0.02    107.06     0.02                             rs_infilebuf_fill (buf.c:104 @ 5619)
-  0.02    107.08     0.02                             rs_outfilebuf_drain (buf.c:138 @ 56a7)
-  0.02    107.10     0.02                             rs_scoop_readahead (scoop.c:153 @ 8111)
-  0.02    107.12     0.02                             rs_signature_find_match (sumset.c:254 @ 4855)
-  0.02    107.14     0.02                             rs_tube_write (tube.c:199 @ 848e)
-  0.01    107.16     0.02  1146882    13.08    13.08  rs_outfilebuf_drain (buf.c:131 @ 5690)
-  0.01    107.17     0.02   654956    22.91    22.91  blake2b_update (blake2b-ref.c:222 @ a060)
-  0.01    107.19     0.02                             blake2b_compress (blake2b-ref.c:200 @ 8683)
-  0.01    107.20     0.02                             blake2b_compress (blake2b-ref.c:201 @ 8942)
-  0.01    107.22     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8ea2)
-  0.01    107.23     0.02                             blake2b_compress (blake2b-ref.c:206 @ 91b2)
-  0.01    107.25     0.02                             blake2b_compress (blake2b-ref.c:206 @ 91f3)
-  0.01    107.26     0.02                             blake2b_compress (blake2b-ref.c:207 @ 9377)
-  0.01    107.28     0.02                             blake2b_compress (blake2b-ref.c:208 @ 962c)
-  0.01    107.29     0.02                             blake2b_compress (blake2b-ref.c:208 @ 964a)
-  0.01    107.31     0.02                             blake2b_compress (blake2b-ref.c:209 @ 96b1)
-  0.01    107.32     0.02                             blake2b_compress (blake2b-ref.c:211 @ 9a7b)
-  0.01    107.34     0.02                             rotr64 (blake2-impl.h:155 @ 8c56)
-  0.01    107.35     0.02                             rs_block_sig_ptr (sumset.c:106 @ 46a0)
-  0.01    107.37     0.02                             rs_job_drive (job.c:171 @ 695d)
-  0.01    107.38     0.02                             blake2b_compress (blake2b-ref.c:203 @ 8b56)
-  0.01    107.40     0.02                             blake2b_compress (blake2b-ref.c:206 @ 928a)
-  0.01    107.41     0.02                             blake2b_compress (blake2b-ref.c:208 @ 968d)
-  0.01    107.43     0.02                             rotr64 (blake2-impl.h:155 @ 8b53)
-  0.01    107.44     0.02                             rotr64 (blake2-impl.h:155 @ 8fce)
-  0.01    107.46     0.02                             rotr64 (blake2-impl.h:155 @ 9287)
-  0.01    107.47     0.02                             rotr64 (blake2-impl.h:155 @ 9693)
-  0.01    107.49     0.02                             rs_scoop_input (scoop.c:69 @ 7f97)
-  0.01    107.50     0.02                             rs_scoop_input (scoop.c:68 @ 7f9b)
-  0.01    107.51     0.01  1147652     8.71     8.71  rs_job_iter (job.c:94 @ 67a0)
-  0.01    107.52     0.01   654956    15.27    15.27  blake2b_init (blake2b-ref.c:99 @ 9ee0)
-  0.01    107.53     0.01   654956    15.27    15.27  rs_calc_strong_sum (checksum.c:59 @ 5800)
-  0.01    107.54     0.01                             blake2b_compress (blake2b-ref.c:200 @ 85a4)
-  0.01    107.55     0.01                             blake2b_compress (blake2b-ref.c:200 @ 866f)
-  0.01    107.56     0.01                             blake2b_compress (blake2b-ref.c:200 @ 86a0)
-  0.01    107.57     0.01                             blake2b_compress (blake2b-ref.c:200 @ 86be)
-  0.01    107.58     0.01                             blake2b_compress (blake2b-ref.c:200 @ 872a)
-  0.01    107.59     0.01                             blake2b_compress (blake2b-ref.c:200 @ 873c)
-  0.01    107.60     0.01                             blake2b_compress (blake2b-ref.c:200 @ 8783)
-  0.01    107.61     0.01                             blake2b_compress (blake2b-ref.c:200 @ 878d)
-  0.01    107.62     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8796)
-  0.01    107.63     0.01                             blake2b_compress (blake2b-ref.c:201 @ 882d)
-  0.01    107.64     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8837)
-  0.01    107.65     0.01                             blake2b_compress (blake2b-ref.c:201 @ 88b1)
-  0.01    107.66     0.01                             blake2b_compress (blake2b-ref.c:201 @ 88bc)
-  0.01    107.67     0.01                             blake2b_compress (blake2b-ref.c:201 @ 88f5)
-  0.01    107.68     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8956)
-  0.01    107.69     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8998)
-  0.01    107.70     0.01                             blake2b_compress (blake2b-ref.c:202 @ 89ac)
-  0.01    107.71     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8a46)
-  0.01    107.72     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8a73)
-  0.01    107.73     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8aa2)
-  0.01    107.74     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8b43)
-  0.01    107.75     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8b71)
-  0.01    107.76     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8bc1)
-  0.01    107.77     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8be3)
-  0.01    107.78     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c17)
-  0.01    107.79     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c53)
-  0.01    107.80     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c64)
-  0.01    107.81     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c93)
-  0.01    107.82     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c9d)
-  0.01    107.83     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8cb5)
-  0.01    107.84     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8d28)
-  0.01    107.85     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8d8d)
-  0.01    107.86     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8f0d)
-  0.01    107.87     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8f44)
-  0.01    107.88     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8f81)
-  0.01    107.89     0.01                             blake2b_compress (blake2b-ref.c:205 @ 9011)
-  0.01    107.90     0.01                             blake2b_compress (blake2b-ref.c:205 @ 903c)
-  0.01    107.91     0.01                             blake2b_compress (blake2b-ref.c:205 @ 9049)
-  0.01    107.92     0.01                             blake2b_compress (blake2b-ref.c:205 @ 9075)
-  0.01    107.93     0.01                             blake2b_compress (blake2b-ref.c:205 @ 9099)
-  0.01    107.94     0.01                             blake2b_compress (blake2b-ref.c:205 @ 90b1)
-  0.01    107.95     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9171)
-  0.01    107.96     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9237)
-  0.01    107.97     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9255)
-  0.01    107.98     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9262)
-  0.01    107.99     0.01                             blake2b_compress (blake2b-ref.c:206 @ 92a8)
-  0.01    108.00     0.01                             blake2b_compress (blake2b-ref.c:206 @ 92cd)
-  0.01    108.01     0.01                             blake2b_compress (blake2b-ref.c:207 @ 92e7)
-  0.01    108.02     0.01                             blake2b_compress (blake2b-ref.c:207 @ 93ac)
-  0.01    108.03     0.01                             blake2b_compress (blake2b-ref.c:207 @ 941d)
-  0.01    108.04     0.01                             blake2b_compress (blake2b-ref.c:208 @ 94a8)
-  0.01    108.05     0.01                             blake2b_compress (blake2b-ref.c:208 @ 94db)
-  0.01    108.06     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9586)
-  0.01    108.07     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9599)
-  0.01    108.08     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9683)
-  0.01    108.09     0.01                             blake2b_compress (blake2b-ref.c:209 @ 96e9)
-  0.01    108.10     0.01                             blake2b_compress (blake2b-ref.c:209 @ 972d)
-  0.01    108.11     0.01                             blake2b_compress (blake2b-ref.c:209 @ 97a2)
-  0.01    108.12     0.01                             blake2b_compress (blake2b-ref.c:209 @ 97b1)
-  0.01    108.13     0.01                             blake2b_compress (blake2b-ref.c:209 @ 97c9)
-  0.01    108.14     0.01                             blake2b_compress (blake2b-ref.c:209 @ 97f5)
-  0.01    108.15     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9831)
-  0.01    108.16     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9856)
-  0.01    108.17     0.01                             blake2b_compress (blake2b-ref.c:210 @ 99b7)
-  0.01    108.18     0.01                             blake2b_compress (blake2b-ref.c:210 @ 9a43)
-  0.01    108.19     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9ad9)
-  0.01    108.20     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9ba8)
-  0.01    108.21     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9bc0)
-  0.01    108.22     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9bff)
-  0.01    108.23     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9c10)
-  0.01    108.24     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9c6a)
-  0.01    108.25     0.01                             blake2b_compress (blake2b-ref.c:213 @ 9ca1)
-  0.01    108.26     0.01                             blake2b_final (blake2b-ref.c:262 @ a11b)
-  0.01    108.27     0.01                             blake2b_final (blake2b-ref.c:264 @ a12a)
-  0.01    108.28     0.01                             blake2b_final (blake2b-ref.c:269 @ a169)
-  0.01    108.29     0.01                             blake2b_increment_counter (blake2b-ref.c:69 @ 9db0)
-  0.01    108.30     0.01                             blake2b_init_param (blake2b-ref.c:94 @ 9ed1)
-  0.01    108.31     0.01                             blake2b_update (blake2b-ref.c:227 @ 9cd7)
-  0.01    108.32     0.01                             blake2b_update (blake2b-ref.c:243 @ 9d0a)
-  0.01    108.33     0.01                             blake2b_update (blake2b-ref.c:237 @ 9db7)
-  0.01    108.34     0.01                             blake2b_update.part.0 (blake2b-ref.c:234 @ 9df2)
-  0.01    108.35     0.01                             hashtable_add (hashtable.h:270 @ 4b12)
-  0.01    108.36     0.01                             hashtable_find (hashtable.h:296 @ 481b)
-  0.01    108.37     0.01                             rotr64 (blake2-impl.h:155 @ 86a6)
-  0.01    108.38     0.01                             rotr64 (blake2-impl.h:155 @ 8722)
-  0.01    108.39     0.01                             rotr64 (blake2-impl.h:155 @ 877f)
-  0.01    108.40     0.01                             rotr64 (blake2-impl.h:155 @ 8990)
-  0.01    108.41     0.01                             rotr64 (blake2-impl.h:155 @ 89cc)
-  0.01    108.42     0.01                             rotr64 (blake2-impl.h:155 @ 8a3e)
-  0.01    108.43     0.01                             rotr64 (blake2-impl.h:155 @ 8a9e)
-  0.01    108.44     0.01                             rotr64 (blake2-impl.h:155 @ 8c28)
-  0.01    108.45     0.01                             rotr64 (blake2-impl.h:155 @ 8d53)
-  0.01    108.46     0.01                             rotr64 (blake2-impl.h:155 @ 8da7)
-  0.01    108.47     0.01                             rotr64 (blake2-impl.h:155 @ 8dfe)
-  0.01    108.48     0.01                             rotr64 (blake2-impl.h:155 @ 8e1f)
-  0.01    108.49     0.01                             rotr64 (blake2-impl.h:155 @ 8e6c)
-  0.01    108.50     0.01                             rotr64 (blake2-impl.h:155 @ 8f09)
-  0.01    108.51     0.01                             rotr64 (blake2-impl.h:155 @ 8f2d)
-  0.01    108.52     0.01                             rotr64 (blake2-impl.h:155 @ 8fe8)
-  0.01    108.53     0.01                             rotr64 (blake2-impl.h:155 @ 9095)
-  0.01    108.54     0.01                             rotr64 (blake2-impl.h:155 @ 90ce)
-  0.01    108.55     0.01                             rotr64 (blake2-impl.h:155 @ 90e2)
-  0.01    108.56     0.01                             rotr64 (blake2-impl.h:155 @ 921e)
-  0.01    108.57     0.01                             rotr64 (blake2-impl.h:155 @ 922c)
-  0.01    108.58     0.01                             rotr64 (blake2-impl.h:155 @ 92b2)
-  0.01    108.59     0.01                             rotr64 (blake2-impl.h:155 @ 93e0)
-  0.01    108.60     0.01                             rotr64 (blake2-impl.h:155 @ 9505)
-  0.01    108.61     0.01                             rotr64 (blake2-impl.h:155 @ 9527)
-  0.01    108.62     0.01                             rotr64 (blake2-impl.h:155 @ 957e)
-  0.01    108.63     0.01                             rotr64 (blake2-impl.h:155 @ 9628)
-  0.01    108.64     0.01                             rotr64 (blake2-impl.h:155 @ 9789)
-  0.01    108.65     0.01                             rotr64 (blake2-impl.h:155 @ 97c5)
-  0.01    108.66     0.01                             rotr64 (blake2-impl.h:155 @ 98b1)
-  0.01    108.67     0.01                             rotr64 (blake2-impl.h:155 @ 98c5)
-  0.01    108.68     0.01                             rotr64 (blake2-impl.h:155 @ 9a3f)
-  0.01    108.69     0.01                             rotr64 (blake2-impl.h:155 @ 9a77)
-  0.01    108.70     0.01                             rotr64 (blake2-impl.h:155 @ 9ace)
-  0.01    108.71     0.01                             rotr64 (blake2-impl.h:155 @ 9b49)
-  0.01    108.72     0.01                             rotr64 (blake2-impl.h:155 @ 9b53)
-  0.01    108.73     0.01                             rotr64 (blake2-impl.h:155 @ 9c0c)
-  0.01    108.74     0.01                             rotr64 (blake2-impl.h:155 @ 9c63)
-  0.01    108.75     0.01                             rs_block_match_cmp (sumset.c:74 @ 47fb)
-  0.01    108.76     0.01                             rs_block_match_init (sumset.c:59 @ 4742)
-  0.01    108.77     0.01                             rs_block_sig_init (sumset.c:36 @ 46aa)
-  0.01    108.78     0.01                             rs_block_sig_ptr (sumset.c:105 @ 46a4)
-  0.01    108.79     0.01                             rs_block_sig_size (sumset.c:95 @ 4990)
-  0.01    108.80     0.01                             rs_build_hash_table (sumset.c:286 @ 4972)
-  0.01    108.81     0.01                             rs_calc_strong_sum (checksum.c:64 @ 5840)
-  0.01    108.82     0.01                             rs_delta_s_flush (delta.c:304 @ 5e5b)
-  0.01    108.83     0.01                             rs_delta_s_scan (delta.c:132 @ 601f)
-  0.01    108.84     0.01                             rs_getinput (delta.c:209 @ 62d0)
-  0.01    108.85     0.01                             rs_infilebuf_fill (buf.c:93 @ 55b7)
-  0.01    108.86     0.01                             rs_infilebuf_fill (buf.c:123 @ 5629)
-  0.01    108.87     0.01                             rs_infilebuf_fill (buf.c:125 @ 5631)
-  0.01    108.88     0.01                             rs_job_drive (job.c:170 @ 6958)
-  0.01    108.89     0.01                             rs_job_drive (job.c:161 @ 6980)
-  0.01    108.90     0.01                             rs_job_iter (job.c:114 @ 686b)
-  0.01    108.91     0.01                             rs_loadsig_s_magic (readsums.c:135 @ 7bb5)
-  0.01    108.92     0.01                             rs_loadsig_s_stronglen (readsums.c:104 @ 7d11)
-  0.01    108.93     0.01                             rs_loadsig_s_weak (readsums.c:61 @ 7bd6)
-  0.01    108.94     0.01                             rs_outfilebuf_drain (buf.c:157 @ 56e0)
-  0.01    108.95     0.01                             rs_outfilebuf_drain (buf.c:158 @ 56f5)
-  0.01    108.96     0.01                             rs_scoop_input (scoop.c:97 @ 8017)
-  0.01    108.97     0.01                             rs_scoop_input (scoop.c:98 @ 801a)
-  0.01    108.98     0.01                             rs_scoop_read (scoop.c:197 @ 81b8)
-  0.01    108.99     0.01                             rs_scoop_readahead (scoop.c:179 @ 818b)
-  0.01    109.00     0.01                             rs_scoop_readahead (scoop.c:179 @ 8197)
-  0.01    109.01     0.01                             rs_scoop_total_avail (scoop.c:229 @ 823a)
-  0.01    109.02     0.01                             rs_scoop_total_avail (scoop.c:229 @ 8246)
-  0.01    109.03     0.01                             rs_sig_begin (mksum.c:127 @ 74f1)
-  0.01    109.04     0.01                             rs_signature_add_block (sumset.c:231 @ 4651)
-  0.01    109.05     0.01                             rs_signature_add_block (sumset.c:234 @ 467d)
-  0.01    109.06     0.01                             rs_signature_calc_strong_sum (sumset.h:133 @ 47f6)
-  0.01    109.07     0.01                             rs_suck_byte (netint.c:92 @ 75cd)
-  0.01    109.08     0.01                             rs_suck_n4 (netint.c:114 @ 7677)
-  0.01    109.09     0.01                             rs_suck_netint (netint.c:107 @ 7649)
-  0.01    109.10     0.01                             rs_tube_catchup (tube.c:138 @ 8267)
-  0.01    109.11     0.01                             rs_tube_catchup (tube.c:137 @ 826e)
-  0.01    109.12     0.01                             rs_tube_catchup (tube.c:157 @ 8342)
-  0.01    109.13     0.01                             rs_tube_catchup_write (tube.c:69 @ 82d4)
-  0.01    109.14     0.01                             secure_zero_memory (blake2-impl.h:162 @ a156)
-  0.01    109.15     0.01                             store64 (blake2-impl.h:112 @ a130)
-  0.00    109.16     0.01  1147652     4.36     4.36  rs_infilebuf_fill (buf.c:78 @ 55a0)
-  0.00    109.16     0.01  1048834     4.77     4.77  rs_loadsig_s_weak (readsums.c:57 @ 7bc0)
-  0.00    109.17     0.01  1048576     4.77     4.77  rs_signature_add_block (sumset.c:228 @ 4630)
-  0.00    109.17     0.01   654956     7.64     7.64  blake2b_init_param (blake2b-ref.c:82 @ 9e00)
-  0.00    109.18     0.01                             blake2b_compress (blake2b-ref.c:200 @ 85da)
-  0.00    109.18     0.01                             blake2b_compress (blake2b-ref.c:200 @ 8696)
-  0.00    109.19     0.01                             blake2b_compress (blake2b-ref.c:200 @ 86df)
-  0.00    109.19     0.01                             blake2b_compress (blake2b-ref.c:200 @ 8713)
-  0.00    109.20     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8754)
-  0.00    109.20     0.01                             blake2b_compress (blake2b-ref.c:200 @ 875b)
-  0.00    109.21     0.01                             blake2b_compress (blake2b-ref.c:201 @ 87fa)
-  0.00    109.21     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8af6)
-  0.00    109.22     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8b14)
-  0.00    109.22     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8b1b)
-  0.00    109.23     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8bba)
-  0.00    109.23     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c39)
-  0.00    109.24     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c5a)
-  0.00    109.24     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8deb)
-  0.00    109.25     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8df2)
-  0.00    109.25     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8e06)
-  0.00    109.26     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8e70)
-  0.00    109.26     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8eb6)
-  0.00    109.27     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8ee7)
-  0.00    109.27     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8ef2)
-  0.00    109.28     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8ef9)
-  0.00    109.28     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8f69)
-  0.00    109.29     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8f92)
-  0.00    109.29     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8fa3)
-  0.00    109.30     0.01                             blake2b_compress (blake2b-ref.c:205 @ 90c2)
-  0.00    109.30     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9222)
-  0.00    109.31     0.01                             blake2b_compress (blake2b-ref.c:207 @ 92d6)
-  0.00    109.31     0.01                             blake2b_compress (blake2b-ref.c:207 @ 9363)
-  0.00    109.32     0.01                             blake2b_compress (blake2b-ref.c:207 @ 9413)
-  0.00    109.32     0.01                             blake2b_compress (blake2b-ref.c:207 @ 9456)
-  0.00    109.33     0.01                             blake2b_compress (blake2b-ref.c:207 @ 945d)
-  0.00    109.33     0.01                             blake2b_compress (blake2b-ref.c:209 @ 96fa)
-  0.00    109.34     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9701)
-  0.00    109.34     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9842)
-  0.00    109.35     0.01                             blake2b_compress (blake2b-ref.c:210 @ 9932)
-  0.00    109.35     0.01                             blake2b_compress (blake2b-ref.c:210 @ 9a28)
-  0.00    109.36     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9a71)
-  0.00    109.36     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b1a)
-  0.00    109.37     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b2f)
-  0.00    109.37     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b4d)
-  0.00    109.38     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b56)
-  0.00    109.38     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b5d)
-  0.00    109.39     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b9e)
-  0.00    109.39     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9bdf)
-  0.00    109.40     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9c36)
-  0.00    109.40     0.01                             blake2b_init0 (blake2b-ref.c:77 @ 9e0a)
-  0.00    109.41     0.01                             blake2b_update (blake2b-ref.c:224 @ a06a)
-  0.00    109.41     0.01                             hashtable_find (hashtable.h:293 @ 4a33)
-  0.00    109.42     0.01                             hashtable_find (hashtable.h:294 @ 4a38)
-  0.00    109.42     0.01                             rotr64 (blake2-impl.h:155 @ 85d6)
-  0.00    109.43     0.01                             rotr64 (blake2-impl.h:155 @ 867b)
-  0.00    109.43     0.01                             rotr64 (blake2-impl.h:155 @ 868f)
-  0.00    109.44     0.01                             rotr64 (blake2-impl.h:155 @ 86db)
-  0.00    109.44     0.01                             rotr64 (blake2-impl.h:155 @ 870b)
-  0.00    109.45     0.01                             rotr64 (blake2-impl.h:155 @ 87b7)
-  0.00    109.45     0.01                             rotr64 (blake2-impl.h:155 @ 87f3)
-  0.00    109.46     0.01                             rotr64 (blake2-impl.h:155 @ 893a)
-  0.00    109.46     0.01                             rotr64 (blake2-impl.h:155 @ 8af2)
-  0.00    109.47     0.01                             rotr64 (blake2-impl.h:155 @ 8bb3)
-  0.00    109.47     0.01                             rotr64 (blake2-impl.h:155 @ 8c0e)
-  0.00    109.48     0.01                             rotr64 (blake2-impl.h:155 @ 8c46)
-  0.00    109.48     0.01                             rotr64 (blake2-impl.h:155 @ 8de7)
-  0.00    109.49     0.01                             rotr64 (blake2-impl.h:155 @ 8e73)
-  0.00    109.49     0.01                             rotr64 (blake2-impl.h:155 @ 8e9e)
-  0.00    109.50     0.01                             rotr64 (blake2-impl.h:155 @ 8eb2)
-  0.00    109.50     0.01                             rotr64 (blake2-impl.h:155 @ 8ee4)
-  0.00    109.51     0.01                             rotr64 (blake2-impl.h:155 @ 8eee)
-  0.00    109.51     0.01                             rotr64 (blake2-impl.h:155 @ 8eff)
-  0.00    109.52     0.01                             rotr64 (blake2-impl.h:155 @ 8f73)
-  0.00    109.52     0.01                             rotr64 (blake2-impl.h:155 @ 8f8e)
-  0.00    109.53     0.01                             rotr64 (blake2-impl.h:155 @ 8f9f)
-  0.00    109.53     0.01                             rotr64 (blake2-impl.h:155 @ 90ba)
-  0.00    109.54     0.01                             rotr64 (blake2-impl.h:155 @ 9113)
-  0.00    109.54     0.01                             rotr64 (blake2-impl.h:155 @ 91ae)
-  0.00    109.55     0.01                             rotr64 (blake2-impl.h:155 @ 92d3)
-  0.00    109.55     0.01                             rotr64 (blake2-impl.h:155 @ 935f)
-  0.00    109.56     0.01                             rotr64 (blake2-impl.h:155 @ 938e)
-  0.00    109.56     0.01                             rotr64 (blake2-impl.h:155 @ 9394)
-  0.00    109.57     0.01                             rotr64 (blake2-impl.h:155 @ 940c)
-  0.00    109.57     0.01                             rotr64 (blake2-impl.h:155 @ 9452)
-  0.00    109.58     0.01                             rotr64 (blake2-impl.h:155 @ 946e)
-  0.00    109.58     0.01                             rotr64 (blake2-impl.h:155 @ 9592)
-  0.00    109.59     0.01                             rotr64 (blake2-impl.h:155 @ 95af)
-  0.00    109.59     0.01                             rotr64 (blake2-impl.h:155 @ 95de)
-  0.00    109.60     0.01                             rotr64 (blake2-impl.h:155 @ 9632)
-  0.00    109.60     0.01                             rotr64 (blake2-impl.h:155 @ 9647)
-  0.00    109.61     0.01                             rotr64 (blake2-impl.h:155 @ 96b7)
-  0.00    109.61     0.01                             rotr64 (blake2-impl.h:155 @ 96f3)
-  0.00    109.62     0.01                             rotr64 (blake2-impl.h:155 @ 970e)
-  0.00    109.62     0.01                             rotr64 (blake2-impl.h:155 @ 984e)
-  0.00    109.63     0.01                             rotr64 (blake2-impl.h:155 @ 993e)
-  0.00    109.63     0.01                             rotr64 (blake2-impl.h:155 @ 9a32)
-  0.00    109.64     0.01                             rotr64 (blake2-impl.h:155 @ 9b14)
-  0.00    109.64     0.01                             rotr64 (blake2-impl.h:155 @ 9b2b)
-  0.00    109.65     0.01                             rotr64 (blake2-impl.h:155 @ 9b63)
-  0.00    109.65     0.01                             rotr64 (blake2-impl.h:155 @ 9b93)
-  0.00    109.66     0.01                             rotr64 (blake2-impl.h:155 @ 9bdb)
-  0.00    109.66     0.01                             rotr64 (blake2-impl.h:155 @ 9c32)
-  0.00    109.67     0.01                             rotr64 (blake2-impl.h:155 @ 9c78)
-  0.00    109.67     0.01                             rs_block_sig_ptr (sumset.c:106 @ 49a3)
-  0.00    109.68     0.01                             rs_block_sig_ptr (sumset.c:105 @ 49a8)
-  0.00    109.68     0.01                             rs_block_sig_size (sumset.c:95 @ 469c)
-  0.00    109.69     0.01                             rs_filebuf_free (buf.c:71 @ 5593)
-  0.00    109.69     0.01                             rs_infilebuf_fill (buf.c:99 @ 55fd)
-  0.00    109.70     0.01                             rs_infilebuf_fill (buf.c:117 @ 5688)
-  0.00    109.70     0.01                             rs_job_drive (job.c:157 @ 6946)
-  0.00    109.71     0.01                             rs_job_work (job.c:126 @ 67db)
-  0.00    109.71     0.01                             rs_job_work (job.c:127 @ 67e8)
-  0.00    109.72     0.01                             rs_loadsig_add_sum (readsums.c:52 @ 7d62)
-  0.00    109.72     0.01                             rs_loadsig_s_strong (readsums.c:81 @ 7d6a)
-  0.00    109.73     0.01                             rs_loadsig_s_weak (readsums.c:61 @ 7bcf)
-  0.00    109.73     0.01                             rs_loadsig_s_weak (readsums.c:68 @ 7c0d)
-  0.00    109.74     0.01                             rs_loadsig_s_weak (readsums.c:69 @ 7c12)
-  0.00    109.74     0.01                             rs_scoop_input (scoop.c:87 @ 8010)
-  0.00    109.75     0.01                             rs_scoop_input (scoop.c:102 @ 801e)
-  0.00    109.75     0.01                             rs_scoop_read (scoop.c:196 @ 81b3)
-  0.00    109.76     0.01                             rs_scoop_total_avail (scoop.c:230 @ 8245)
-  0.00    109.76     0.01                             rs_signature_weaksum_kind (sumset.h:110 @ 4641)
-  0.00    109.77     0.01                             rs_tube_catchup (tube.c:156 @ 8282)
-  0.00    109.77     0.01                             uint32_pow (rabinkarp.h:64 @ 5f54)
-  0.00    109.78     0.01                             uint32_pow (rabinkarp.h:66 @ 5f58)
-  0.00    109.78     0.00  2097925     0.00     0.00  rs_scoop_readahead (scoop.c:149 @ 8100)
-  0.00    109.78     0.00  1049088     0.00     0.00  rs_loadsig_s_strong (readsums.c:72 @ 7d20)
-  0.00    109.78     0.00  1049088     0.00     0.00  rs_scoop_input (scoop.c:68 @ 7f80)
-  0.00    109.78     0.00  1048837     0.00     0.00  rs_suck_netint (netint.c:95 @ 75e0)
-  0.00    109.78     0.00  1048578     0.00     0.00  rs_scoop_total_avail (scoop.c:228 @ 8230)
-  0.00    109.78     0.00   654956     0.00     0.00  blake2b_final (blake2b-ref.c:249 @ a080)
-  0.00    109.78     0.00    32776     0.00     0.00  rs_tube_write (tube.c:193 @ 8460)
-  0.00    109.78     0.00    16388     0.00     0.00  rs_int_len (netint.c:120 @ 76a0)
-  0.00    109.78     0.00    16388     0.00     0.00  rs_squirt_netint (netint.c:65 @ 7530)
-  0.00    109.78     0.00    16387     0.00     0.00  rs_squirt_byte (netint.c:52 @ 7500)
-  0.00    109.78     0.00    16384     0.00     0.00  rs_emit_literal_cmd (emit.c:48 @ 63c0)
-  0.00    109.78     0.00    16384     0.00     0.00  rs_tube_copy (tube.c:179 @ 8440)
-  0.00    109.78     0.00       12     0.00     0.00  rs_alloc (util.c:50 @ 4f10)
-  0.00    109.78     0.00        8     0.00     0.00  rs_bzero (util.c:34 @ 4ea0)
-  0.00    109.78     0.00        6     0.00     0.00  rs_alloc_struct0 (util.c:39 @ 4ec0)
-  0.00    109.78     0.00        3     0.00     0.00  rs_filebuf_free (buf.c:68 @ 5560)
-  0.00    109.78     0.00        3     0.00     0.00  rs_filebuf_new (buf.c:57 @ 5500)
-  0.00    109.78     0.00        3     0.00     0.00  rs_log0 (trace.c:97 @ 4e00)
-  0.00    109.78     0.00        3     0.00     0.00  rs_log_va (trace.c:76 @ 4cb0)
-  0.00    109.78     0.00        3     0.00     0.00  rs_trace_stderr (trace.c:106 @ 4da0)
-  0.00    109.78     0.00        2     0.00     0.00  rs_emit_copy_cmd (emit.c:81 @ 6460)
-  0.00    109.78     0.00        2     0.00     0.00  rs_format_stats (stats.c:41 @ 40c0)
-  0.00    109.78     0.00        2     0.00     0.00  rs_job_drive (job.c:154 @ 6910)
-  0.00    109.78     0.00        2     0.00     0.00  rs_job_free (job.c:67 @ 6740)
-  0.00    109.78     0.00        2     0.00     0.00  rs_job_new (job.c:49 @ 66e0)
-  0.00    109.78     0.00        2     0.00     0.00  rs_whole_run (whole.c:61 @ 5040)
-  0.00    109.78     0.00        1     0.00     0.00  _hashtable_free (hashtable.c:60 @ 6640)
-  0.00    109.78     0.00        1     0.00     0.00  _hashtable_new (hashtable.c:37 @ 6560)
-  0.00    109.78     0.00        1     0.00     0.00  rs_delta_begin (delta.c:387 @ 6310)
-  0.00    109.78     0.00        1     0.00     0.00  rs_delta_s_end (delta.c:198 @ 5930)
-  0.00    109.78     0.00        1     0.00     0.00  rs_delta_s_flush (delta.c:161 @ 5950)
-  0.00    109.78     0.00        1     0.00     0.00  rs_delta_s_header (delta.c:375 @ 5880)
-  0.00    109.78     0.00        1     0.00     0.00  rs_emit_delta_header (emit.c:41 @ 63a0)
-  0.00    109.78     0.00        1     0.00     0.00  rs_emit_end_cmd (emit.c:124 @ 6540)
-  0.00    109.78     0.00        1     0.00     0.00  rs_file_size (fileutil.c:123 @ 3ec0)
-  0.00    109.78     0.00        1     0.00     0.00  rs_loadsig_begin (readsums.c:138 @ 7d80)
-  0.00    109.78     0.00        1     0.00     0.00  rs_loadsig_s_blocklen (readsums.c:107 @ 7c20)
-  0.00    109.78     0.00        1     0.00     0.00  rs_loadsig_s_magic (readsums.c:125 @ 7b80)
-  0.00    109.78     0.00        1     0.00     0.00  rs_loadsig_s_stronglen (readsums.c:85 @ 7c90)
-  0.00    109.78     0.00        1     0.00     0.00  rs_sig_args (sumset.c:119 @ 42f0)
-  0.00    109.78     0.00        1     0.00     0.00  rs_signature_done (sumset.c:219 @ 45f0)
-  0.00    109.78     0.00        1     0.00     0.00  rs_signature_init (sumset.c:189 @ 4520)
-  0.00    109.78     0.00        1     0.00     0.00  rs_squirt_n4 (netint.c:80 @ 7570)
+ 66.38     73.93    73.93                             hashtable_find (hashtable.h:292 @ 475c)
+  3.81     78.17     4.24                             rs_signature_find_match (sumset.c:253 @ 4737)
+  3.22     81.76     3.59 537395200     6.67     6.67  rs_signature_find_match (sumset.c:247 @ 4720)
+  2.34     84.37     2.61                             rs_signature_find_match (sumset.c:257 @ 487b)
+  1.98     86.58     2.21                             rabinkarp_update (rabinkarp.h:83 @ 5f20)
+  1.74     88.51     1.94                             rs_signature_find_match (sumset.c:257 @ 485b)
+  1.43     90.11     1.60                             rabinkarp_rotate (rabinkarp.h:93 @ 60fc)
+  1.21     91.46     1.35                             hashtable_find (hashtable.h:292 @ 473b)
+  1.21     92.81     1.35                             rs_delta_s_scan (delta.c:133 @ 60a4)
+  1.05     93.98     1.17                             rs_delta_s_scan (delta.c:142 @ 5f96)
+  0.94     95.02     1.05                             rs_signature_find_match (sumset.c:256 @ 4874)
+  0.92     96.04     1.02                             hashtable_find (hashtable.h:293 @ 47b2)
+  0.92     97.06     1.02                             hashtable_find (hashtable.h:294 @ 47b8)
+  0.87     98.03     0.97                             rs_appendmiss (delta.c:287 @ 5fd5)
+  0.84     98.97     0.94                             rabinkarp_rotate (rabinkarp.h:93 @ 60e8)
+  0.75     99.80     0.83                             rs_appendmiss (delta.c:287 @ 60f5)
+  0.51    100.37     0.57                             rs_block_match_init (sumset.c:61 @ 474f)
+  0.44    100.87     0.49                             rs_findmatch (delta.c:244 @ 5f70)
+  0.42    101.33     0.47                             rs_signature_add_block (sumset.c:235 @ 4718)
+  0.31    101.68     0.35                             rs_findmatch (delta.c:225 @ 5ee1)
+  0.31    102.02     0.34                             rs_block_match_init (sumset.c:60 @ 474b)
+  0.31    102.36     0.34                             rs_findmatch (delta.c:228 @ 5ee5)
+  0.30    102.69     0.34                             rs_delta_s_scan (delta.c:142 @ 5f85)
+  0.29    103.02     0.33                             rs_delta_s_scan (delta.c:142 @ 5f9f)
+  0.29    103.34     0.33                             weaksum_rotate (checksum.h:92 @ 5fa4)
+  0.26    103.63     0.29                             rs_block_sig_init (sumset.c:35 @ 4753)
+  0.22    103.88     0.25                             rs_findmatch (delta.c:245 @ 605c)
+  0.22    104.12     0.24                             weaksum_update (checksum.h:84 @ 6040)
+  0.19    104.33     0.21                             rabinkarp_update (rabinkarp.h:86 @ 5f6c)
+  0.16    104.51     0.18                             hashtable_find (hashtable.h:291 @ 4756)
+  0.15    104.68     0.17                             blake2b_compress (blake2b-ref.c:184 @ 84d0)
+  0.15    104.85     0.17                             blake2b_compress (blake2b-ref.c:214 @ 9c8c)
+  0.15    105.02     0.17                             hashtable_find (hashtable.h:292 @ 49e5)
+  0.13    105.16     0.14                             RollsumInit (rollsum.h:46 @ 6206)
+  0.13    105.30     0.14                             rabinkarp_update (rabinkarp.h:82 @ 5f07)
+  0.13    105.44     0.14                             blake2b_compress (blake2b-ref.c:188 @ 84f8)
+  0.13    105.58     0.14                             rs_delta_s_scan (delta.c:133 @ 60b6)
+  0.12    105.71     0.13                             weaksum_digest (checksum.h:116 @ 6063)
+  0.10    105.83     0.12                             rs_delta_s_scan (delta.c:158 @ 60d7)
+  0.10    105.94     0.11                             blake2b_compress (blake2b-ref.c:183 @ 84d8)
+  0.10    106.05     0.11                             weaksum_rotate (checksum.h:92 @ 5f93)
+  0.09    106.15     0.10                             hashtable_find (hashtable.h:296 @ 47cb)
+  0.07    106.23     0.08                             rs_scoop_input (scoop.c:104 @ 8032)
+  0.06    106.30     0.07                             blake2b_compress (blake2b-ref.c:178 @ 84bc)
+  0.06    106.37     0.07                             rs_delta_s_scan (delta.c:141 @ 5f9a)
+  0.06    106.44     0.07                             rs_signature_find_match (sumset.c:247 @ 4746)
+  0.06    106.50     0.07                             rs_findmatch (delta.c:228 @ 5edd)
+  0.06    106.57     0.07                             rs_delta_s_scan (delta.c:135 @ 5f7b)
+  0.05    106.63     0.06                             blake2b_compress (blake2b-ref.c:201 @ 87c4)
+  0.04    106.68     0.05                             rs_appendmiss (delta.c:291 @ 60a0)
+  0.04    106.73     0.05                             rs_build_hash_table (sumset.c:286 @ 4abb)
+  0.04    106.78     0.05                             rs_signature_find_match (sumset.c:254 @ 4855)
+  0.04    106.82     0.05  4834062     9.31     9.31  rs_tube_catchup (tube.c:137 @ 8250)
+  0.04    106.87     0.05                             blake2b_compress (blake2b-ref.c:187 @ 8500)
+  0.04    106.91     0.05                             rs_delta_s_scan (delta.c:133 @ 5eb8)
+  0.04    106.96     0.05                             rs_tube_catchup (tube.c:144 @ 8276)
+  0.04    107.00     0.04  2097925    19.07    19.07  rs_scoop_read (scoop.c:193 @ 81a0)
+  0.04    107.04     0.04                             blake2b_compress (blake2b-ref.c:187 @ 84e9)
+  0.04    107.08     0.04                             blake2b_compress (blake2b-ref.c:200 @ 873c)
+  0.04    107.12     0.04                             blake2b_compress (blake2b-ref.c:202 @ 89d9)
+  0.04    107.16     0.04                             blake2b_compress (blake2b-ref.c:210 @ 98cd)
+  0.04    107.20     0.04                             rs_appendmiss (delta.c:291 @ 60af)
+  0.04    107.24     0.04                             rs_block_sig_idx (sumset.c:114 @ 4852)
+  0.04    107.28     0.04                             rs_suck_netint (netint.c:104 @ 761c)
+  0.04    107.32     0.04                             weaksum_digest (checksum.h:118 @ 6096)
+  0.03    107.35     0.04                             blake2b_compress (blake2b-ref.c:200 @ 850a)
+  0.03    107.39     0.04                             blake2b_compress (blake2b-ref.c:200 @ 8636)
+  0.03    107.42     0.03  5894604     5.09     5.09  blake2b_compress (blake2b-ref.c:178 @ 84a0)
+  0.03    107.45     0.03                             blake2b_compress (blake2b-ref.c:202 @ 89ff)
+  0.03    107.48     0.03                             blake2b_compress (blake2b-ref.c:207 @ 93e4)
+  0.03    107.51     0.03                             blake2b_compress (blake2b-ref.c:211 @ 9b67)
+  0.03    107.54     0.03                             rs_delta_s_scan (delta.c:121 @ 5e77)
+  0.03    107.57     0.03                             rs_infilebuf_fill (buf.c:126 @ 55d1)
+  0.03    107.60     0.03                             blake2b_compress (blake2b-ref.c:202 @ 8968)
+  0.03    107.63     0.03                             blake2b_compress (blake2b-ref.c:211 @ 9a67)
+  0.03    107.66     0.03                             blake2b_init_key (blake2b-ref.c:124 @ a058)
+  0.03    107.69     0.03                             hashtable_add (hashtable.h:273 @ 4b57)
+  0.03    107.72     0.03                             hashtable_add (hashtable.h:273 @ 4b67)
+  0.03    107.75     0.03                             rotr64 (blake2-impl.h:155 @ 9527)
+  0.03    107.78     0.03                             rotr64 (blake2-impl.h:155 @ 98e0)
+  0.03    107.81     0.03                             rs_tube_catchup (tube.c:138 @ 8267)
+  0.02    107.83     0.03                             blake2b_compress (blake2b-ref.c:208 @ 94db)
+  0.02    107.86     0.03                             blake2b_compress (blake2b-ref.c:208 @ 95b3)
+  0.02    107.88     0.03  1049088    23.83    23.83  rs_scoop_input (scoop.c:68 @ 7f80)
+  0.02    107.91     0.03  1048834    23.84    23.84  rs_loadsig_s_weak (readsums.c:57 @ 7bc0)
+  0.02    107.93     0.03                             blake2b_compress (blake2b-ref.c:213 @ 9c82)
+  0.02    107.96     0.03                             rotr64 (blake2-impl.h:155 @ 8a2a)
+  0.02    107.98     0.03                             rs_infilebuf_fill (buf.c:104 @ 5619)
+  0.02    108.01     0.03                             rs_job_drive (job.c:166 @ 6997)
+  0.02    108.03     0.03                             rs_tube_catchup (tube.c:137 @ 826e)
+  0.02    108.05     0.02  1147652    17.43    17.43  rs_infilebuf_fill (buf.c:78 @ 55a0)
+  0.02    108.07     0.02  1048577    19.08    19.08  rs_delta_s_scan (delta.c:120 @ 5e60)
+  0.02    108.09     0.02                             RollsumUpdate (rollsum.c:38 @ 7f70)
+  0.02    108.11     0.02                             blake2b_compress (blake2b-ref.c:201 @ 88a2)
+  0.02    108.13     0.02                             blake2b_compress (blake2b-ref.c:201 @ 88bc)
+  0.02    108.15     0.02                             blake2b_compress (blake2b-ref.c:202 @ 8a73)
+  0.02    108.17     0.02                             blake2b_compress (blake2b-ref.c:203 @ 8b67)
+  0.02    108.19     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8d28)
+  0.02    108.21     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8e19)
+  0.02    108.23     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8e23)
+  0.02    108.25     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8e33)
+  0.02    108.27     0.02                             blake2b_compress (blake2b-ref.c:205 @ 8ef2)
+  0.02    108.29     0.02                             blake2b_compress (blake2b-ref.c:205 @ 8fd7)
+  0.02    108.31     0.02                             blake2b_compress (blake2b-ref.c:205 @ 9075)
+  0.02    108.33     0.02                             blake2b_compress (blake2b-ref.c:206 @ 911b)
+  0.02    108.35     0.02                             blake2b_compress (blake2b-ref.c:206 @ 91b2)
+  0.02    108.37     0.02                             blake2b_compress (blake2b-ref.c:207 @ 9304)
+  0.02    108.39     0.02                             blake2b_compress (blake2b-ref.c:207 @ 9397)
+  0.02    108.41     0.02                             blake2b_compress (blake2b-ref.c:207 @ 945d)
+  0.02    108.43     0.02                             blake2b_compress (blake2b-ref.c:207 @ 948f)
+  0.02    108.45     0.02                             blake2b_compress (blake2b-ref.c:208 @ 94a8)
+  0.02    108.47     0.02                             blake2b_compress (blake2b-ref.c:208 @ 950d)
+  0.02    108.49     0.02                             blake2b_compress (blake2b-ref.c:209 @ 9757)
+  0.02    108.51     0.02                             blake2b_compress (blake2b-ref.c:209 @ 97b1)
+  0.02    108.53     0.02                             blake2b_compress (blake2b-ref.c:210 @ 9946)
+  0.02    108.55     0.02                             blake2b_compress (blake2b-ref.c:211 @ 9ba8)
+  0.02    108.57     0.02                             blake2b_compress (blake2b-ref.c:211 @ 9c10)
+  0.02    108.59     0.02                             blake2b_init0 (blake2b-ref.c:75 @ 9e1f)
+  0.02    108.61     0.02                             blake2b_init0 (blake2b-ref.c:77 @ 9e45)
+  0.02    108.63     0.02                             blake2b_update (blake2b-ref.c:235 @ 9dbc)
+  0.02    108.65     0.02                             rabinkarp_update (rabinkarp.h:82 @ 5f33)
+  0.02    108.67     0.02                             rotr64 (blake2-impl.h:155 @ 89a4)
+  0.02    108.69     0.02                             rotr64 (blake2-impl.h:155 @ 90e2)
+  0.02    108.71     0.02                             rs_calc_strong_sum (checksum.c:68 @ 582e)
+  0.02    108.73     0.02                             rs_delta_s_flush (delta.c:304 @ 5e5b)
+  0.02    108.75     0.02                             rs_job_iter (job.c:105 @ 6865)
+  0.02    108.77     0.02                             rs_job_iter (job.c:114 @ 686b)
+  0.02    108.79     0.02                             rs_outfilebuf_drain (buf.c:138 @ 56a7)
+  0.02    108.81     0.02                             rs_scoop_total_avail (scoop.c:230 @ 824a)
+  0.02    108.83     0.02                             rs_tube_catchup (tube.c:157 @ 8284)
+  0.02    108.85     0.02                             uint32_pow (rabinkarp.h:62 @ 5f5b)
+  0.01    108.87     0.02                             blake2b_compress (blake2b-ref.c:200 @ 8783)
+  0.01    108.88     0.02                             blake2b_compress (blake2b-ref.c:202 @ 8b43)
+  0.01    108.90     0.02                             blake2b_compress (blake2b-ref.c:203 @ 8b7b)
+  0.01    108.91     0.02                             blake2b_compress (blake2b-ref.c:203 @ 8cb5)
+  0.01    108.93     0.02                             blake2b_compress (blake2b-ref.c:204 @ 8eb6)
+  0.01    108.94     0.02                             blake2b_compress (blake2b-ref.c:205 @ 90c2)
+  0.01    108.96     0.02                             blake2b_compress (blake2b-ref.c:209 @ 9701)
+  0.01    108.97     0.02                             blake2b_compress (blake2b-ref.c:209 @ 9856)
+  0.01    108.99     0.02                             blake2b_compress (blake2b-ref.c:210 @ 9973)
+  0.01    109.00     0.02                             blake2b_compress (blake2b-ref.c:211 @ 9b5d)
+  0.01    109.02     0.02                             blake2b_compress (blake2b-ref.c:211 @ 9b9e)
+  0.01    109.03     0.02                             blake2b_final (blake2b-ref.c:262 @ a11b)
+  0.01    109.05     0.02                             blake2b_update (blake2b-ref.c:227 @ 9cd7)
+  0.01    109.06     0.02                             blake2b_update (blake2b-ref.c:231 @ 9d2b)
+  0.01    109.08     0.02                             rotr64 (blake2-impl.h:155 @ 868f)
+  0.01    109.09     0.02                             rotr64 (blake2-impl.h:155 @ 8a3e)
+  0.01    109.11     0.02                             rotr64 (blake2-impl.h:155 @ 8eee)
+  0.01    109.12     0.02                             rotr64 (blake2-impl.h:155 @ 925e)
+  0.01    109.14     0.02                             rotr64 (blake2-impl.h:155 @ 970e)
+  0.01    109.15     0.02                             rotr64 (blake2-impl.h:155 @ 9c78)
+  0.01    109.17     0.02                             rs_scoop_total_avail (scoop.c:229 @ 823a)
+  0.01    109.18     0.02                             rs_infilebuf_fill (buf.c:103 @ 5604)
+  0.01    109.20     0.02                             rs_job_drive (job.c:167 @ 69a5)
+  0.01    109.21     0.02                             rs_loadsig_s_weak (readsums.c:61 @ 7bcf)
+  0.01    109.22     0.01  1147652     8.71     8.71  rs_job_iter (job.c:94 @ 67a0)
+  0.01    109.23     0.01  1146882     8.72     8.72  rs_outfilebuf_drain (buf.c:131 @ 5690)
+  0.01    109.24     0.01  1048576     9.54     9.54  rs_signature_add_block (sumset.c:228 @ 4630)
+  0.01    109.25     0.01   654956    15.27    15.27  blake2b_final (blake2b-ref.c:249 @ a080)
+  0.01    109.26     0.01                             blake2b_compress (blake2b-ref.c:183 @ 84ba)
+  0.01    109.27     0.01                             blake2b_compress (blake2b-ref.c:200 @ 85da)
+  0.01    109.28     0.01                             blake2b_compress (blake2b-ref.c:200 @ 8683)
+  0.01    109.29     0.01                             blake2b_compress (blake2b-ref.c:200 @ 86a9)
+  0.01    109.30     0.01                             blake2b_compress (blake2b-ref.c:200 @ 86be)
+  0.01    109.31     0.01                             blake2b_compress (blake2b-ref.c:200 @ 871c)
+  0.01    109.32     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8796)
+  0.01    109.33     0.01                             blake2b_compress (blake2b-ref.c:201 @ 87bb)
+  0.01    109.34     0.01                             blake2b_compress (blake2b-ref.c:201 @ 87e9)
+  0.01    109.35     0.01                             blake2b_compress (blake2b-ref.c:201 @ 88b1)
+  0.01    109.36     0.01                             blake2b_compress (blake2b-ref.c:201 @ 88e0)
+  0.01    109.37     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8924)
+  0.01    109.38     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8931)
+  0.01    109.39     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8956)
+  0.01    109.40     0.01                             blake2b_compress (blake2b-ref.c:202 @ 89ac)
+  0.01    109.41     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8a63)
+  0.01    109.42     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8b1b)
+  0.01    109.43     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8b84)
+  0.01    109.44     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c2c)
+  0.01    109.45     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c64)
+  0.01    109.46     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8cdd)
+  0.01    109.47     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8cfb)
+  0.01    109.48     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8d05)
+  0.01    109.49     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8d79)
+  0.01    109.50     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8db8)
+  0.01    109.51     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8df2)
+  0.01    109.52     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8eca)
+  0.01    109.53     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8f27)
+  0.01    109.54     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8f3b)
+  0.01    109.55     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8fad)
+  0.01    109.56     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8fec)
+  0.01    109.57     0.01                             blake2b_compress (blake2b-ref.c:205 @ 9011)
+  0.01    109.58     0.01                             blake2b_compress (blake2b-ref.c:205 @ 903c)
+  0.01    109.59     0.01                             blake2b_compress (blake2b-ref.c:205 @ 90a4)
+  0.01    109.60     0.01                             blake2b_compress (blake2b-ref.c:205 @ 90b1)
+  0.01    109.61     0.01                             blake2b_compress (blake2b-ref.c:206 @ 90e8)
+  0.01    109.62     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9171)
+  0.01    109.63     0.01                             blake2b_compress (blake2b-ref.c:206 @ 91e3)
+  0.01    109.64     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9237)
+  0.01    109.65     0.01                             blake2b_compress (blake2b-ref.c:206 @ 925b)
+  0.01    109.66     0.01                             blake2b_compress (blake2b-ref.c:206 @ 928a)
+  0.01    109.67     0.01                             blake2b_compress (blake2b-ref.c:207 @ 93d3)
+  0.01    109.68     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9538)
+  0.01    109.69     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9572)
+  0.01    109.70     0.01                             blake2b_compress (blake2b-ref.c:208 @ 95a3)
+  0.01    109.71     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9672)
+  0.01    109.72     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9696)
+  0.01    109.73     0.01                             blake2b_compress (blake2b-ref.c:209 @ 96b1)
+  0.01    109.74     0.01                             blake2b_compress (blake2b-ref.c:209 @ 96bb)
+  0.01    109.75     0.01                             blake2b_compress (blake2b-ref.c:209 @ 96c4)
+  0.01    109.76     0.01                             blake2b_compress (blake2b-ref.c:209 @ 96fa)
+  0.01    109.77     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9712)
+  0.01    109.78     0.01                             blake2b_compress (blake2b-ref.c:209 @ 972d)
+  0.01    109.79     0.01                             blake2b_compress (blake2b-ref.c:209 @ 976c)
+  0.01    109.80     0.01                             blake2b_compress (blake2b-ref.c:209 @ 97a2)
+  0.01    109.81     0.01                             blake2b_compress (blake2b-ref.c:209 @ 97e0)
+  0.01    109.82     0.01                             blake2b_compress (blake2b-ref.c:209 @ 97f5)
+  0.01    109.83     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9831)
+  0.01    109.84     0.01                             blake2b_compress (blake2b-ref.c:210 @ 9868)
+  0.01    109.85     0.01                             blake2b_compress (blake2b-ref.c:210 @ 989b)
+  0.01    109.86     0.01                             blake2b_compress (blake2b-ref.c:210 @ 99d5)
+  0.01    109.87     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b82)
+  0.01    109.88     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9bed)
+  0.01    109.89     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9c44)
+  0.01    109.90     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9c51)
+  0.01    109.91     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9c6a)
+  0.01    109.92     0.01                             blake2b_compress (blake2b-ref.c:213 @ 9ca1)
+  0.01    109.93     0.01                             blake2b_compress (blake2b-ref.c:216 @ 9ca6)
+  0.01    109.94     0.01                             blake2b_final (blake2b-ref.c:250 @ a095)
+  0.01    109.95     0.01                             blake2b_final (blake2b-ref.c:264 @ a12a)
+  0.01    109.96     0.01                             blake2b_final (blake2b-ref.c:264 @ a139)
+  0.01    109.97     0.01                             blake2b_increment_counter (blake2b-ref.c:68 @ a0d9)
+  0.01    109.98     0.01                             blake2b_init_param (blake2b-ref.c:94 @ 9ed1)
+  0.01    109.99     0.01                             blake2b_update (blake2b-ref.c:246 @ 9d11)
+  0.01    110.00     0.01                             hashtable_add (hashtable.h:268 @ 4b07)
+  0.01    110.01     0.01                             hashtable_add (hashtable.h:272 @ 4b62)
+  0.01    110.02     0.01                             hashtable_find (hashtable.h:292 @ 49c3)
+  0.01    110.03     0.01                             rotr64 (blake2-impl.h:155 @ 85a0)
+  0.01    110.04     0.01                             rotr64 (blake2-impl.h:155 @ 869c)
+  0.01    110.05     0.01                             rotr64 (blake2-impl.h:155 @ 86ba)
+  0.01    110.06     0.01                             rotr64 (blake2-impl.h:155 @ 8818)
+  0.01    110.07     0.01                             rotr64 (blake2-impl.h:155 @ 88b4)
+  0.01    110.08     0.01                             rotr64 (blake2-impl.h:155 @ 88dd)
+  0.01    110.09     0.01                             rotr64 (blake2-impl.h:155 @ 8920)
+  0.01    110.10     0.01                             rotr64 (blake2-impl.h:155 @ 892e)
+  0.01    110.11     0.01                             rotr64 (blake2-impl.h:155 @ 8962)
+  0.01    110.12     0.01                             rotr64 (blake2-impl.h:155 @ 8990)
+  0.01    110.13     0.01                             rotr64 (blake2-impl.h:155 @ 89b8)
+  0.01    110.14     0.01                             rotr64 (blake2-impl.h:155 @ 89cc)
+  0.01    110.15     0.01                             rotr64 (blake2-impl.h:155 @ 8a52)
+  0.01    110.16     0.01                             rotr64 (blake2-impl.h:155 @ 8b49)
+  0.01    110.17     0.01                             rotr64 (blake2-impl.h:155 @ 8b81)
+  0.01    110.18     0.01                             rotr64 (blake2-impl.h:155 @ 8bbd)
+  0.01    110.19     0.01                             rotr64 (blake2-impl.h:155 @ 8c28)
+  0.01    110.20     0.01                             rotr64 (blake2-impl.h:155 @ 8d15)
+  0.01    110.21     0.01                             rotr64 (blake2-impl.h:155 @ 8da7)
+  0.01    110.22     0.01                             rotr64 (blake2-impl.h:155 @ 8e12)
+  0.01    110.23     0.01                             rotr64 (blake2-impl.h:155 @ 8e1f)
+  0.01    110.24     0.01                             rotr64 (blake2-impl.h:155 @ 8e2f)
+  0.01    110.25     0.01                             rotr64 (blake2-impl.h:155 @ 8f98)
+  0.01    110.26     0.01                             rotr64 (blake2-impl.h:155 @ 9045)
+  0.01    110.27     0.01                             rotr64 (blake2-impl.h:155 @ 90ae)
+  0.01    110.28     0.01                             rotr64 (blake2-impl.h:155 @ 9131)
+  0.01    110.29     0.01                             rotr64 (blake2-impl.h:155 @ 9160)
+  0.01    110.30     0.01                             rotr64 (blake2-impl.h:155 @ 91be)
+  0.01    110.31     0.01                             rotr64 (blake2-impl.h:155 @ 9268)
+  0.01    110.32     0.01                             rotr64 (blake2-impl.h:155 @ 933d)
+  0.01    110.33     0.01                             rotr64 (blake2-impl.h:155 @ 93b5)
+  0.01    110.34     0.01                             rotr64 (blake2-impl.h:155 @ 93d6)
+  0.01    110.35     0.01                             rotr64 (blake2-impl.h:155 @ 9431)
+  0.01    110.36     0.01                             rotr64 (blake2-impl.h:155 @ 946e)
+  0.01    110.37     0.01                             rotr64 (blake2-impl.h:155 @ 94f1)
+  0.01    110.38     0.01                             rotr64 (blake2-impl.h:155 @ 95af)
+  0.01    110.39     0.01                             rotr64 (blake2-impl.h:155 @ 96f3)
+  0.01    110.40     0.01                             rotr64 (blake2-impl.h:155 @ 9815)
+  0.01    110.41     0.01                             rotr64 (blake2-impl.h:155 @ 99f2)
+  0.01    110.42     0.01                             rotr64 (blake2-impl.h:155 @ 9a53)
+  0.01    110.43     0.01                             rotr64 (blake2-impl.h:155 @ 9ab9)
+  0.01    110.44     0.01                             rotr64 (blake2-impl.h:155 @ 9ace)
+  0.01    110.45     0.01                             rotr64 (blake2-impl.h:155 @ 9ae9)
+  0.01    110.46     0.01                             rotr64 (blake2-impl.h:155 @ 9b00)
+  0.01    110.47     0.01                             rotr64 (blake2-impl.h:155 @ 9b49)
+  0.01    110.48     0.01                             rotr64 (blake2-impl.h:155 @ 9b59)
+  0.01    110.49     0.01                             rotr64 (blake2-impl.h:155 @ 9b63)
+  0.01    110.50     0.01                             rotr64 (blake2-impl.h:155 @ 9be6)
+  0.01    110.51     0.01                             rotr64 (blake2-impl.h:155 @ 9c40)
+  0.01    110.52     0.01                             rs_appendmiss (delta.c:287 @ 6107)
+  0.01    110.53     0.01                             rs_block_match_cmp (sumset.c:68 @ 47d3)
+  0.01    110.54     0.01                             rs_block_match_cmp (sumset.c:76 @ 4807)
+  0.01    110.55     0.01                             rs_block_match_init (sumset.c:59 @ 4742)
+  0.01    110.56     0.01                             rs_block_sig_init (sumset.c:37 @ 46af)
+  0.01    110.57     0.01                             rs_delta_s_scan (delta.c:149 @ 60bf)
+  0.01    110.58     0.01                             rs_filebuf_free (buf.c:71 @ 5593)
+  0.01    110.59     0.01                             rs_getinput (delta.c:207 @ 5e82)
+  0.01    110.60     0.01                             rs_infilebuf_fill (buf.c:81 @ 55e8)
+  0.01    110.61     0.01                             rs_job_complete (job.c:84 @ 6857)
+  0.01    110.62     0.01                             rs_job_drive (job.c:160 @ 6972)
+  0.01    110.63     0.01                             rs_job_drive (job.c:161 @ 6980)
+  0.01    110.64     0.01                             rs_job_iter (job.c:101 @ 67b7)
+  0.01    110.65     0.01                             rs_job_work (job.c:125 @ 67d0)
+  0.01    110.66     0.01                             rs_loadsig_s_strong (readsums.c:77 @ 7d2f)
+  0.01    110.67     0.01                             rs_loadsig_s_strong (readsums.c:82 @ 7d6f)
+  0.01    110.68     0.01                             rs_scoop_input (scoop.c:69 @ 7f97)
+  0.01    110.69     0.01                             rs_scoop_input (scoop.c:102 @ 801e)
+  0.01    110.70     0.01                             rs_scoop_input (scoop.c:88 @ 8050)
+  0.01    110.71     0.01                             rs_scoop_read (scoop.c:197 @ 81b8)
+  0.01    110.72     0.01                             rs_scoop_readahead (scoop.c:153 @ 8111)
+  0.01    110.73     0.01                             rs_scoop_readahead (scoop.c:149 @ 811c)
+  0.01    110.74     0.01                             rs_scoop_readahead (scoop.c:179 @ 817e)
+  0.01    110.75     0.01                             rs_scoop_readahead (scoop.c:179 @ 8197)
+  0.01    110.76     0.01                             rs_suck_n4 (netint.c:117 @ 768a)
+  0.01    110.77     0.01                             rs_tube_copy (tube.c:183 @ 8454)
+  0.01    110.78     0.01                             rs_tube_write (tube.c:199 @ 848e)
+  0.01    110.79     0.01                             secure_zero_memory (blake2-impl.h:162 @ a156)
+  0.01    110.80     0.01                             store64 (blake2-impl.h:112 @ a130)
+  0.01    110.81     0.01                             uint32_pow (rabinkarp.h:64 @ 5f54)
+  0.01    110.82     0.01                             uint32_pow (rabinkarp.h:66 @ 5f58)
+  0.00    110.83     0.01  1048578     4.77     4.77  rs_scoop_total_avail (scoop.c:228 @ 8230)
+  0.00    110.83     0.01   654956     7.64     7.64  blake2b_init_param (blake2b-ref.c:82 @ 9e00)
+  0.00    110.84     0.01                             blake2b_compress (blake2b-ref.c:200 @ 8696)
+  0.00    110.84     0.01                             blake2b_compress (blake2b-ref.c:201 @ 87b1)
+  0.00    110.85     0.01                             blake2b_compress (blake2b-ref.c:201 @ 8837)
+  0.00    110.85     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8a32)
+  0.00    110.86     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8a6c)
+  0.00    110.86     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8ae2)
+  0.00    110.87     0.01                             blake2b_compress (blake2b-ref.c:202 @ 8aec)
+  0.00    110.87     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8bd2)
+  0.00    110.88     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8bf7)
+  0.00    110.88     0.01                             blake2b_compress (blake2b-ref.c:203 @ 8c5a)
+  0.00    110.89     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8deb)
+  0.00    110.89     0.01                             blake2b_compress (blake2b-ref.c:204 @ 8ea2)
+  0.00    110.90     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8ee7)
+  0.00    110.90     0.01                             blake2b_compress (blake2b-ref.c:205 @ 8f92)
+  0.00    110.91     0.01                             blake2b_compress (blake2b-ref.c:206 @ 91ab)
+  0.00    110.91     0.01                             blake2b_compress (blake2b-ref.c:206 @ 91f3)
+  0.00    110.92     0.01                             blake2b_compress (blake2b-ref.c:206 @ 9262)
+  0.00    110.92     0.01                             blake2b_compress (blake2b-ref.c:206 @ 92a8)
+  0.00    110.93     0.01                             blake2b_compress (blake2b-ref.c:206 @ 92cd)
+  0.00    110.93     0.01                             blake2b_compress (blake2b-ref.c:207 @ 933a)
+  0.00    110.94     0.01                             blake2b_compress (blake2b-ref.c:207 @ 9377)
+  0.00    110.94     0.01                             blake2b_compress (blake2b-ref.c:207 @ 9413)
+  0.00    110.95     0.01                             blake2b_compress (blake2b-ref.c:207 @ 9485)
+  0.00    110.95     0.01                             blake2b_compress (blake2b-ref.c:207 @ 9499)
+  0.00    110.96     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9586)
+  0.00    110.96     0.01                             blake2b_compress (blake2b-ref.c:208 @ 95ac)
+  0.00    110.97     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9622)
+  0.00    110.97     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9636)
+  0.00    110.98     0.01                             blake2b_compress (blake2b-ref.c:208 @ 9679)
+  0.00    110.98     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9723)
+  0.00    110.99     0.01                             blake2b_compress (blake2b-ref.c:209 @ 9842)
+  0.00    110.99     0.01                             blake2b_compress (blake2b-ref.c:210 @ 9932)
+  0.00    111.00     0.01                             blake2b_compress (blake2b-ref.c:210 @ 9963)
+  0.00    111.00     0.01                             blake2b_compress (blake2b-ref.c:210 @ 99ec)
+  0.00    111.01     0.01                             blake2b_compress (blake2b-ref.c:210 @ 99f6)
+  0.00    111.01     0.01                             blake2b_compress (blake2b-ref.c:210 @ 9a4d)
+  0.00    111.02     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9a56)
+  0.00    111.02     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9a8b)
+  0.00    111.03     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9acb)
+  0.00    111.03     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9b56)
+  0.00    111.04     0.01                             blake2b_compress (blake2b-ref.c:211 @ 9bdf)
+  0.00    111.04     0.01                             blake2b_final (blake2b-ref.c:261 @ a104)
+  0.00    111.05     0.01                             blake2b_init0 (blake2b-ref.c:77 @ 9e0a)
+  0.00    111.05     0.01                             blake2b_update (blake2b-ref.c:221 @ 9cc0)
+  0.00    111.06     0.01                             blake2b_update (blake2b-ref.c:242 @ 9cff)
+  0.00    111.06     0.01                             blake2b_update (blake2b-ref.c:243 @ 9d0a)
+  0.00    111.07     0.01                             blake2b_update (blake2b-ref.c:230 @ 9d20)
+  0.00    111.07     0.01                             rabinkarp_init (rabinkarp.h:77 @ 626e)
+  0.00    111.08     0.01                             rabinkarp_update (rabinkarp.h:85 @ 5f38)
+  0.00    111.08     0.01                             rotr64 (blake2-impl.h:155 @ 8632)
+  0.00    111.09     0.01                             rotr64 (blake2-impl.h:155 @ 877f)
+  0.00    111.09     0.01                             rotr64 (blake2-impl.h:155 @ 87b7)
+  0.00    111.10     0.01                             rotr64 (blake2-impl.h:155 @ 884e)
+  0.00    111.10     0.01                             rotr64 (blake2-impl.h:155 @ 89fb)
+  0.00    111.11     0.01                             rotr64 (blake2-impl.h:155 @ 8a6f)
+  0.00    111.11     0.01                             rotr64 (blake2-impl.h:155 @ 8ade)
+  0.00    111.12     0.01                             rotr64 (blake2-impl.h:155 @ 8af2)
+  0.00    111.12     0.01                             rotr64 (blake2-impl.h:155 @ 8b3f)
+  0.00    111.13     0.01                             rotr64 (blake2-impl.h:155 @ 8b77)
+  0.00    111.13     0.01                             rotr64 (blake2-impl.h:155 @ 8bce)
+  0.00    111.14     0.01                             rotr64 (blake2-impl.h:155 @ 8bf3)
+  0.00    111.14     0.01                             rotr64 (blake2-impl.h:155 @ 8c56)
+  0.00    111.15     0.01                             rotr64 (blake2-impl.h:155 @ 8cd2)
+  0.00    111.15     0.01                             rotr64 (blake2-impl.h:155 @ 8de7)
+  0.00    111.16     0.01                             rotr64 (blake2-impl.h:155 @ 8e9e)
+  0.00    111.16     0.01                             rotr64 (blake2-impl.h:155 @ 8ec7)
+  0.00    111.17     0.01                             rotr64 (blake2-impl.h:155 @ 8f8e)
+  0.00    111.17     0.01                             rotr64 (blake2-impl.h:155 @ 90ba)
+  0.00    111.18     0.01                             rotr64 (blake2-impl.h:155 @ 91a7)
+  0.00    111.18     0.01                             rotr64 (blake2-impl.h:155 @ 921e)
+  0.00    111.19     0.01                             rotr64 (blake2-impl.h:155 @ 92b2)
+  0.00    111.19     0.01                             rotr64 (blake2-impl.h:155 @ 92d3)
+  0.00    111.20     0.01                             rotr64 (blake2-impl.h:155 @ 9333)
+  0.00    111.20     0.01                             rotr64 (blake2-impl.h:155 @ 938e)
+  0.00    111.21     0.01                             rotr64 (blake2-impl.h:155 @ 940c)
+  0.00    111.21     0.01                             rotr64 (blake2-impl.h:155 @ 948b)
+  0.00    111.22     0.01                             rotr64 (blake2-impl.h:155 @ 949f)
+  0.00    111.22     0.01                             rotr64 (blake2-impl.h:155 @ 94d3)
+  0.00    111.23     0.01                             rotr64 (blake2-impl.h:155 @ 957e)
+  0.00    111.23     0.01                             rotr64 (blake2-impl.h:155 @ 961e)
+  0.00    111.24     0.01                             rotr64 (blake2-impl.h:155 @ 9647)
+  0.00    111.24     0.01                             rotr64 (blake2-impl.h:155 @ 967f)
+  0.00    111.25     0.01                             rotr64 (blake2-impl.h:155 @ 971f)
+  0.00    111.25     0.01                             rotr64 (blake2-impl.h:155 @ 983a)
+  0.00    111.26     0.01                             rotr64 (blake2-impl.h:155 @ 9862)
+  0.00    111.26     0.01                             rotr64 (blake2-impl.h:155 @ 993e)
+  0.00    111.27     0.01                             rotr64 (blake2-impl.h:155 @ 995f)
+  0.00    111.27     0.01                             rotr64 (blake2-impl.h:155 @ 996f)
+  0.00    111.28     0.01                             rotr64 (blake2-impl.h:155 @ 9a92)
+  0.00    111.28     0.01                             rotr64 (blake2-impl.h:155 @ 9ac7)
+  0.00    111.29     0.01                             rotr64 (blake2-impl.h:155 @ 9b53)
+  0.00    111.29     0.01                             rotr64 (blake2-impl.h:155 @ 9b7f)
+  0.00    111.30     0.01                             rotr64 (blake2-impl.h:155 @ 9b93)
+  0.00    111.30     0.01                             rotr64 (blake2-impl.h:155 @ 9bdb)
+  0.00    111.31     0.01                             rs_appendmatch (delta.c:258 @ 6278)
+  0.00    111.31     0.01                             rs_block_sig_ptr (sumset.c:106 @ 46a0)
+  0.00    111.32     0.01                             rs_block_sig_ptr (sumset.c:105 @ 46a4)
+  0.00    111.32     0.01                             rs_delta_s_scan (delta.c:130 @ 5e94)
+  0.00    111.33     0.01                             rs_delta_s_scan (delta.c:132 @ 5eaa)
+  0.00    111.33     0.01                             rs_findmatch (delta.c:230 @ 5ef2)
+  0.00    111.34     0.01                             rs_findmatch (delta.c:235 @ 5efc)
+  0.00    111.34     0.01                             rs_getinput (delta.c:208 @ 5e87)
+  0.00    111.35     0.01                             rs_job_drive (job.c:157 @ 6946)
+  0.00    111.35     0.01                             rs_job_drive (job.c:170 @ 6958)
+  0.00    111.36     0.01                             rs_scoop_input (scoop.c:68 @ 7f9b)
+  0.00    111.36     0.01                             rs_signature_done (sumset.c:222 @ 4625)
+  0.00    111.37     0.01                             rs_signature_weaksum_kind (sumset.h:110 @ 4641)
+  0.00    111.37     0.01                             rs_suck_netint (netint.c:102 @ 7607)
+  0.00    111.38     0.01                             rs_suck_netint (netint.c:103 @ 760e)
+  0.00    111.38     0.01                             rs_tube_catchup (tube.c:156 @ 8282)
+  0.00    111.39     0.01                             uint32_pow (rabinkarp.h:63 @ 5f50)
+  0.00    111.39     0.00  2097925     0.00     0.00  rs_scoop_readahead (scoop.c:149 @ 8100)
+  0.00    111.39     0.00  1049088     0.00     0.00  rs_loadsig_s_strong (readsums.c:72 @ 7d20)
+  0.00    111.39     0.00  1048837     0.00     0.00  rs_suck_n4 (netint.c:110 @ 7660)
+  0.00    111.39     0.00  1048837     0.00     0.00  rs_suck_netint (netint.c:95 @ 75e0)
+  0.00    111.39     0.00   654956     0.00     0.00  blake2b_init (blake2b-ref.c:99 @ 9ee0)
+  0.00    111.39     0.00   654956     0.00     0.00  blake2b_update (blake2b-ref.c:222 @ a060)
+  0.00    111.39     0.00   654956     0.00     0.00  rs_calc_strong_sum (checksum.c:59 @ 5800)
+  0.00    111.39     0.00    32776     0.00     0.00  rs_tube_write (tube.c:193 @ 8460)
+  0.00    111.39     0.00    16388     0.00     0.00  rs_int_len (netint.c:120 @ 76a0)
+  0.00    111.39     0.00    16388     0.00     0.00  rs_squirt_netint (netint.c:65 @ 7530)
+  0.00    111.39     0.00    16387     0.00     0.00  rs_squirt_byte (netint.c:52 @ 7500)
+  0.00    111.39     0.00    16384     0.00     0.00  rs_emit_literal_cmd (emit.c:48 @ 63c0)
+  0.00    111.39     0.00    16384     0.00     0.00  rs_tube_copy (tube.c:179 @ 8440)
+  0.00    111.39     0.00       12     0.00     0.00  rs_alloc (util.c:50 @ 4f10)
+  0.00    111.39     0.00        8     0.00     0.00  rs_bzero (util.c:34 @ 4ea0)
+  0.00    111.39     0.00        6     0.00     0.00  rs_alloc_struct0 (util.c:39 @ 4ec0)
+  0.00    111.39     0.00        3     0.00     0.00  rs_filebuf_free (buf.c:68 @ 5560)
+  0.00    111.39     0.00        3     0.00     0.00  rs_filebuf_new (buf.c:57 @ 5500)
+  0.00    111.39     0.00        3     0.00     0.00  rs_log0 (trace.c:97 @ 4e00)
+  0.00    111.39     0.00        3     0.00     0.00  rs_log_va (trace.c:76 @ 4cb0)
+  0.00    111.39     0.00        3     0.00     0.00  rs_trace_stderr (trace.c:106 @ 4da0)
+  0.00    111.39     0.00        2     0.00     0.00  rs_emit_copy_cmd (emit.c:81 @ 6460)
+  0.00    111.39     0.00        2     0.00     0.00  rs_format_stats (stats.c:41 @ 40c0)
+  0.00    111.39     0.00        2     0.00     0.00  rs_job_drive (job.c:154 @ 6910)
+  0.00    111.39     0.00        2     0.00     0.00  rs_job_free (job.c:67 @ 6740)
+  0.00    111.39     0.00        2     0.00     0.00  rs_job_new (job.c:49 @ 66e0)
+  0.00    111.39     0.00        2     0.00     0.00  rs_whole_run (whole.c:61 @ 5040)
+  0.00    111.39     0.00        1     0.00     0.00  _hashtable_free (hashtable.c:60 @ 6640)
+  0.00    111.39     0.00        1     0.00     0.00  _hashtable_new (hashtable.c:37 @ 6560)
+  0.00    111.39     0.00        1     0.00     0.00  rs_delta_begin (delta.c:387 @ 6310)
+  0.00    111.39     0.00        1     0.00     0.00  rs_delta_s_end (delta.c:198 @ 5930)
+  0.00    111.39     0.00        1     0.00     4.77  rs_delta_s_flush (delta.c:161 @ 5950)
+  0.00    111.39     0.00        1     0.00     0.00  rs_delta_s_header (delta.c:375 @ 5880)
+  0.00    111.39     0.00        1     0.00     0.00  rs_emit_delta_header (emit.c:41 @ 63a0)
+  0.00    111.39     0.00        1     0.00     0.00  rs_emit_end_cmd (emit.c:124 @ 6540)
+  0.00    111.39     0.00        1     0.00     0.00  rs_file_size (fileutil.c:123 @ 3ec0)
+  0.00    111.39     0.00        1     0.00     0.00  rs_loadsig_begin (readsums.c:138 @ 7d80)
+  0.00    111.39     0.00        1     0.00     0.00  rs_loadsig_s_blocklen (readsums.c:107 @ 7c20)
+  0.00    111.39     0.00        1     0.00     0.00  rs_loadsig_s_magic (readsums.c:125 @ 7b80)
+  0.00    111.39     0.00        1     0.00     0.00  rs_loadsig_s_stronglen (readsums.c:85 @ 7c90)
+  0.00    111.39     0.00        1     0.00     0.00  rs_sig_args (sumset.c:119 @ 42f0)
+  0.00    111.39     0.00        1     0.00     0.00  rs_signature_done (sumset.c:219 @ 45f0)
+  0.00    111.39     0.00        1     0.00     0.00  rs_signature_init (sumset.c:189 @ 4520)
+  0.00    111.39     0.00        1     0.00     0.00  rs_squirt_n4 (netint.c:80 @ 7570)
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -533,230 +513,230 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 0.01% of 109.78 seconds
+granularity: each sample hit covers 2 byte(s) for 0.01% of 111.39 seconds
 
 index % time    self  children    called     name
-                0.00    0.00       1/537395200     rs_findmatch (delta.c:244 @ 5a50) [467]
-                3.67    0.00 537395199/537395200     rs_findmatch (delta.c:244 @ 5f70) [2]
-[4]      3.3    3.67    0.00 537395200         rs_signature_find_match (sumset.c:247 @ 4720) [4]
+                0.00    0.00       1/537395200     rs_findmatch (delta.c:244 @ 5a50) [451]
+                3.59    0.00 537395199/537395200     rs_findmatch (delta.c:244 @ 5f70) [3]
+[4]      3.2    3.59    0.00 537395200         rs_signature_find_match (sumset.c:247 @ 4720) [4]
 -----------------------------------------------
-                0.01    0.00  654956/5894604     blake2b_update (blake2b-ref.c:234 @ 9d50) [386]
-                0.01    0.00  654956/5894604     blake2b_update (blake2b-ref.c:224 @ a06a) [252]
-                0.01    0.00  654956/5894604     blake2b_final (blake2b-ref.c:262 @ a11b) [156]
-                0.03    0.00 3929736/5894604     blake2b_increment_counter (blake2b-ref.c:69 @ 9db0) [60]
-[54]     0.0    0.05    0.00 5894604         blake2b_compress (blake2b-ref.c:178 @ 84a0) [54]
+                0.00    0.00       1/4834062     rs_delta_s_flush (delta.c:170 @ 598d) [447]
+                0.00    0.00       1/4834062     rs_processmatch (delta.c:330 @ 5cbf) [448]
+                0.00    0.00       1/4834062     rs_processmatch (delta.c:330 @ 5e46) [449]
+                0.00    0.00       1/4834062     rs_processmatch (delta.c:331 @ 6150) [450]
+                0.00    0.00       2/4834062     rs_processmiss (delta.c:350 @ 62ad) [446]
+                0.00    0.00   16382/4834062     rs_processmiss (delta.c:350 @ 6007) [444]
+                0.00    0.00  524285/4834062     rs_processmatch (delta.c:330 @ 624b) [441]
+                0.01    0.00 1048577/4834062     rabinkarp_init (rabinkarp.h:75 @ 5e9b) [325]
+                0.03    0.00 3244812/4834062     rs_job_work (job.c:125 @ 67d0) [58]
+[57]     0.0    0.05    0.00 4834062         rs_tube_catchup (tube.c:137 @ 8250) [57]
 -----------------------------------------------
-                0.00    0.00       1/1048837     rs_loadsig_s_magic (readsums.c:129 @ 7b8f) [464]
-                0.00    0.00       1/1048837     rs_loadsig_s_blocklen (readsums.c:111 @ 7c2f) [463]
-                0.00    0.00       1/1048837     rs_loadsig_s_stronglen (readsums.c:89 @ 7c9f) [465]
-                0.04    0.00 1048834/1048837     rs_loadsig_s_weak (readsums.c:61 @ 7bcf) [55]
-[56]     0.0    0.04    0.00 1048837         rs_suck_n4 (netint.c:110 @ 7660) [56]
+                0.02    0.00 1048837/2097925     rs_suck_netint (netint.c:101 @ 75fe) [138]
+                0.02    0.00 1049088/2097925     rs_loadsig_s_strong (readsums.c:77 @ 7d3e) [95]
+[59]     0.0    0.04    0.00 2097925         rs_scoop_read (scoop.c:193 @ 81a0) [59]
+                0.00    0.00 2097925/2097925     rs_scoop_readahead (scoop.c:149 @ 8100) [453]
 -----------------------------------------------
-                0.02    0.00 1048837/2097925     rs_suck_netint (netint.c:101 @ 75fe) [143]
-                0.02    0.00 1049088/2097925     rs_loadsig_s_strong (readsums.c:77 @ 7d3e) [142]
-[62]     0.0    0.04    0.00 2097925         rs_scoop_read (scoop.c:193 @ 81a0) [62]
-                0.00    0.00 2097925/2097925     rs_scoop_readahead (scoop.c:149 @ 8100) [472]
+                0.00    0.00  654956/5894604     blake2b_update (blake2b-ref.c:234 @ 9d50) [442]
+                0.00    0.00  654956/5894604     blake2b_update (blake2b-ref.c:224 @ a06a) [443]
+                0.00    0.00  654956/5894604     blake2b_final (blake2b-ref.c:262 @ a11b) [139]
+                0.02    0.00 3929736/5894604     blake2b_increment_counter (blake2b-ref.c:69 @ 9db0) [123]
+[71]     0.0    0.03    0.00 5894604         blake2b_compress (blake2b-ref.c:178 @ 84a0) [71]
 -----------------------------------------------
-                0.02    0.00 1048577/1048577     rs_job_work (job.c:126 @ 67db) [87]
-[96]     0.0    0.02    0.00 1048577         rs_delta_s_scan (delta.c:120 @ 5e60) [96]
+                0.00    0.00     512/1049088     rs_scoop_readahead (scoop.c:162 @ 8158) [445]
+                0.02    0.00 1048576/1049088     rs_getinput (delta.c:209 @ 62d0) [94]
+[88]     0.0    0.03    0.00 1049088         rs_scoop_input (scoop.c:68 @ 7f80) [88]
 -----------------------------------------------
-                0.00    0.00       1/4834062     rs_delta_s_flush (delta.c:170 @ 598d) [468]
-                0.00    0.00       1/4834062     rs_processmatch (delta.c:330 @ 5cbf) [469]
-                0.00    0.00       1/4834062     rs_processmatch (delta.c:330 @ 5e46) [470]
-                0.00    0.00       1/4834062     rs_processmatch (delta.c:331 @ 6150) [471]
-                0.00    0.00       2/4834062     rs_processmiss (delta.c:350 @ 62ad) [466]
-                0.00    0.00   16382/4834062     rs_processmiss (delta.c:350 @ 6007) [462]
-                0.00    0.00  524285/4834062     rs_processmatch (delta.c:330 @ 624b) [461]
-                0.00    0.00 1048577/4834062     rabinkarp_init (rabinkarp.h:75 @ 5e9b) [460]
-                0.01    0.00 3244812/4834062     rs_job_work (job.c:125 @ 67d0) [170]
-[141]    0.0    0.02    0.00 4834062         rs_tube_catchup (tube.c:137 @ 8250) [141]
+                0.03    0.00 1048834/1048834     rs_job_work (job.c:126 @ 67db) [53]
+[89]     0.0    0.03    0.00 1048834         rs_loadsig_s_weak (readsums.c:57 @ 7bc0) [89]
 -----------------------------------------------
-                0.02    0.00 1146882/1146882     rs_job_drive (job.c:171 @ 695d) [73]
-[144]    0.0    0.02    0.00 1146882         rs_outfilebuf_drain (buf.c:131 @ 5690) [144]
+                0.02    0.00 1147652/1147652     rs_job_drive (job.c:161 @ 6980) [77]
+[96]     0.0    0.02    0.00 1147652         rs_infilebuf_fill (buf.c:78 @ 55a0) [96]
 -----------------------------------------------
-                0.02    0.00  654956/654956      rs_calc_strong_sum (checksum.c:65 @ 5854) [159]
-[145]    0.0    0.02    0.00  654956         blake2b_update (blake2b-ref.c:222 @ a060) [145]
+                0.02    0.00 1048577/1048577     rs_job_work (job.c:126 @ 67db) [53]
+[97]     0.0    0.02    0.00 1048577         rs_delta_s_scan (delta.c:120 @ 5e60) [97]
 -----------------------------------------------
-                0.01    0.00 1147652/1147652     rs_job_drive (job.c:166 @ 6997) [307]
-[171]    0.0    0.01    0.00 1147652         rs_job_iter (job.c:94 @ 67a0) [171]
+                0.01    0.00 1147652/1147652     rs_job_drive (job.c:166 @ 6997) [70]
+[163]    0.0    0.01    0.00 1147652         rs_job_iter (job.c:94 @ 67a0) [163]
 -----------------------------------------------
-                0.01    0.00  654956/654956      rs_calc_strong_sum (checksum.c:64 @ 5840) [135]
-[172]    0.0    0.01    0.00  654956         blake2b_init (blake2b-ref.c:99 @ 9ee0) [172]
+                0.01    0.00 1146882/1146882     rs_job_drive (job.c:171 @ 695d) [304]
+[164]    0.0    0.01    0.00 1146882         rs_outfilebuf_drain (buf.c:131 @ 5690) [164]
 -----------------------------------------------
-                0.01    0.00  654956/654956      rs_signature_strongsum_kind (sumset.h:117 @ 47ec) [325]
-[173]    0.0    0.01    0.00  654956         rs_calc_strong_sum (checksum.c:59 @ 5800) [173]
+                0.01    0.00 1048576/1048576     rs_loadsig_add_sum (readsums.c:51 @ 7d59) [307]
+[165]    0.0    0.01    0.00 1048576         rs_signature_add_block (sumset.c:228 @ 4630) [165]
 -----------------------------------------------
-                0.01    0.00 1147652/1147652     rs_job_drive (job.c:161 @ 6980) [160]
-[335]    0.0    0.01    0.00 1147652         rs_infilebuf_fill (buf.c:78 @ 55a0) [335]
+                0.01    0.00  654956/654956      rs_calc_strong_sum (checksum.c:66 @ 5862) [298]
+[166]    0.0    0.01    0.00  654956         blake2b_final (blake2b-ref.c:249 @ a080) [166]
 -----------------------------------------------
-                0.01    0.00 1048834/1048834     rs_job_work (job.c:126 @ 67db) [87]
-[336]    0.0    0.01    0.00 1048834         rs_loadsig_s_weak (readsums.c:57 @ 7bc0) [336]
+                0.00    0.00       1/1048578     rs_delta_s_flush (delta.c:161 @ 5950) [452]
+                0.01    0.00 1048577/1048578     rs_delta_s_scan (delta.c:120 @ 5e7f) [440]
+[326]    0.0    0.01    0.00 1048578         rs_scoop_total_avail (scoop.c:228 @ 8230) [326]
 -----------------------------------------------
-                0.01    0.00 1048576/1048576     rs_loadsig_add_sum (readsums.c:51 @ 7d59) [447]
-[337]    0.0    0.01    0.00 1048576         rs_signature_add_block (sumset.c:228 @ 4630) [337]
+                0.01    0.00  654956/654956      blake2b_init (blake2b-ref.c:114 @ 9f2d) [370]
+[327]    0.0    0.01    0.00  654956         blake2b_init_param (blake2b-ref.c:82 @ 9e00) [327]
 -----------------------------------------------
-                0.01    0.00  654956/654956      blake2b_init (blake2b-ref.c:114 @ 9f2d) [384]
-[338]    0.0    0.01    0.00  654956         blake2b_init_param (blake2b-ref.c:82 @ 9e00) [338]
+                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [53]
+[452]    0.0    0.00    0.00       1         rs_delta_s_flush (delta.c:161 @ 5950) [452]
+                0.00    0.00       1/1048578     rs_scoop_total_avail (scoop.c:228 @ 8230) [326]
 -----------------------------------------------
-                0.00    0.00 2097925/2097925     rs_scoop_read (scoop.c:193 @ 81a0) [62]
-[472]    0.0    0.00    0.00 2097925         rs_scoop_readahead (scoop.c:149 @ 8100) [472]
+                0.00    0.00 2097925/2097925     rs_scoop_read (scoop.c:193 @ 81a0) [59]
+[453]    0.0    0.00    0.00 2097925         rs_scoop_readahead (scoop.c:149 @ 8100) [453]
 -----------------------------------------------
-                0.00    0.00 1049088/1049088     rs_job_work (job.c:126 @ 67db) [87]
-[473]    0.0    0.00    0.00 1049088         rs_loadsig_s_strong (readsums.c:72 @ 7d20) [473]
+                0.00    0.00 1049088/1049088     rs_job_work (job.c:126 @ 67db) [53]
+[454]    0.0    0.00    0.00 1049088         rs_loadsig_s_strong (readsums.c:72 @ 7d20) [454]
 -----------------------------------------------
-                0.00    0.00     512/1049088     rs_scoop_readahead (scoop.c:162 @ 8158) [2497]
-                0.00    0.00 1048576/1049088     rs_getinput (delta.c:209 @ 62d0) [302]
-[474]    0.0    0.00    0.00 1049088         rs_scoop_input (scoop.c:68 @ 7f80) [474]
+                0.00    0.00       1/1048837     rs_loadsig_s_magic (readsums.c:129 @ 7b8f) [1792]
+                0.00    0.00       1/1048837     rs_loadsig_s_blocklen (readsums.c:111 @ 7c2f) [1780]
+                0.00    0.00       1/1048837     rs_loadsig_s_stronglen (readsums.c:89 @ 7c9f) [1804]
+                0.00    0.00 1048834/1048837     rs_loadsig_s_weak (readsums.c:61 @ 7bcf) [162]
+[455]    0.0    0.00    0.00 1048837         rs_suck_n4 (netint.c:110 @ 7660) [455]
 -----------------------------------------------
-                0.00    0.00 1048837/1048837     rs_suck_n4 (netint.c:114 @ 7677) [327]
-[475]    0.0    0.00    0.00 1048837         rs_suck_netint (netint.c:95 @ 75e0) [475]
+                0.00    0.00 1048837/1048837     rs_suck_n4 (netint.c:114 @ 7677) [2735]
+[456]    0.0    0.00    0.00 1048837         rs_suck_netint (netint.c:95 @ 75e0) [456]
 -----------------------------------------------
-                0.00    0.00       1/1048578     rs_delta_s_flush (delta.c:161 @ 5950) [500]
-                0.00    0.00 1048577/1048578     rs_delta_s_scan (delta.c:120 @ 5e7f) [1490]
-[476]    0.0    0.00    0.00 1048578         rs_scoop_total_avail (scoop.c:228 @ 8230) [476]
+                0.00    0.00  654956/654956      rs_calc_strong_sum (checksum.c:64 @ 5840) [1426]
+[457]    0.0    0.00    0.00  654956         blake2b_init (blake2b-ref.c:99 @ 9ee0) [457]
 -----------------------------------------------
-                0.00    0.00  654956/654956      rs_calc_strong_sum (checksum.c:66 @ 5862) [1440]
-[477]    0.0    0.00    0.00  654956         blake2b_final (blake2b-ref.c:249 @ a080) [477]
+                0.00    0.00  654956/654956      rs_calc_strong_sum (checksum.c:65 @ 5854) [1427]
+[458]    0.0    0.00    0.00  654956         blake2b_update (blake2b-ref.c:222 @ a060) [458]
+-----------------------------------------------
+                0.00    0.00  654956/654956      rs_signature_strongsum_kind (sumset.h:117 @ 47ec) [2679]
+[459]    0.0    0.00    0.00  654956         rs_calc_strong_sum (checksum.c:59 @ 5800) [459]
 -----------------------------------------------
                 0.00    0.00       1/32776       rs_squirt_netint (netint.c:75 @ 7588) [2703]
                 0.00    0.00   16387/32776       rs_squirt_byte (netint.c:55 @ 7520) [2693]
                 0.00    0.00   16388/32776       rs_squirt_netint (netint.c:75 @ 7560) [2699]
-[478]    0.0    0.00    0.00   32776         rs_tube_write (tube.c:193 @ 8460) [478]
+[460]    0.0    0.00    0.00   32776         rs_tube_write (tube.c:193 @ 8460) [460]
 -----------------------------------------------
-                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:81 @ 6480) [1520]
-                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:85 @ 648e) [1524]
-                0.00    0.00   16384/16388       rs_emit_literal_cmd (emit.c:50 @ 6410) [1555]
-[479]    0.0    0.00    0.00   16388         rs_int_len (netint.c:120 @ 76a0) [479]
+                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:81 @ 6480) [1505]
+                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:85 @ 648e) [1509]
+                0.00    0.00   16384/16388       rs_emit_literal_cmd (emit.c:50 @ 6410) [1540]
+[461]    0.0    0.00    0.00   16388         rs_int_len (netint.c:120 @ 76a0) [461]
 -----------------------------------------------
-                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:111 @ 64d9) [1534]
-                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:113 @ 64ef) [1536]
-                0.00    0.00   16384/16388       rs_emit_literal_cmd (emit.c:69 @ 643f) [1560]
-[480]    0.0    0.00    0.00   16388         rs_squirt_netint (netint.c:65 @ 7530) [480]
+                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:111 @ 64d9) [1519]
+                0.00    0.00       2/16388       rs_emit_copy_cmd (emit.c:113 @ 64ef) [1521]
+                0.00    0.00   16384/16388       rs_emit_literal_cmd (emit.c:69 @ 643f) [1545]
+[462]    0.0    0.00    0.00   16388         rs_squirt_netint (netint.c:65 @ 7530) [462]
 -----------------------------------------------
-                0.00    0.00       1/16387       rs_delta_s_end (delta.c:198 @ 5930) [499]
-                0.00    0.00       2/16387       rs_emit_copy_cmd (emit.c:111 @ 64d9) [1534]
-                0.00    0.00   16384/16387       rs_emit_literal_cmd (emit.c:63 @ 6424) [1558]
-[481]    0.0    0.00    0.00   16387         rs_squirt_byte (netint.c:52 @ 7500) [481]
+                0.00    0.00       1/16387       rs_delta_s_end (delta.c:198 @ 5930) [481]
+                0.00    0.00       2/16387       rs_emit_copy_cmd (emit.c:111 @ 64d9) [1519]
+                0.00    0.00   16384/16387       rs_emit_literal_cmd (emit.c:63 @ 6424) [1543]
+[463]    0.0    0.00    0.00   16387         rs_squirt_byte (netint.c:52 @ 7500) [463]
 -----------------------------------------------
-                0.00    0.00       2/16384       rs_appendflush (delta.c:308 @ 6290) [1327]
-                0.00    0.00   16382/16384       rs_appendflush (delta.c:308 @ 5feb) [1319]
-[482]    0.0    0.00    0.00   16384         rs_emit_literal_cmd (emit.c:48 @ 63c0) [482]
+                0.00    0.00       2/16384       rs_appendflush (delta.c:308 @ 6290) [1310]
+                0.00    0.00   16382/16384       rs_appendflush (delta.c:308 @ 5feb) [1302]
+[464]    0.0    0.00    0.00   16384         rs_emit_literal_cmd (emit.c:48 @ 63c0) [464]
 -----------------------------------------------
-                0.00    0.00       2/16384       rs_processmiss (delta.c:349 @ 629c) [2432]
-                0.00    0.00   16382/16384       rs_processmiss (delta.c:349 @ 5ff6) [2429]
-[483]    0.0    0.00    0.00   16384         rs_tube_copy (tube.c:179 @ 8440) [483]
+                0.00    0.00       2/16384       rs_processmiss (delta.c:349 @ 629c) [2424]
+                0.00    0.00   16382/16384       rs_processmiss (delta.c:349 @ 5ff6) [2421]
+[465]    0.0    0.00    0.00   16384         rs_tube_copy (tube.c:179 @ 8440) [465]
 -----------------------------------------------
-                0.00    0.00       1/12          rs_signature_init (sumset.c:206 @ 45db) [2672]
-                0.00    0.00       3/12          rs_filebuf_new (buf.c:60 @ 552a) [1618]
-                0.00    0.00       8/12          rs_scoop_input (scoop.c:79 @ 7fc8) [2459]
-[484]    0.0    0.00    0.00      12         rs_alloc (util.c:50 @ 4f10) [484]
+                0.00    0.00       1/12          rs_signature_init (sumset.c:206 @ 45db) [2671]
+                0.00    0.00       3/12          rs_filebuf_new (buf.c:60 @ 552a) [1603]
+                0.00    0.00       8/12          rs_scoop_input (scoop.c:79 @ 7fc8) [2451]
+[466]    0.0    0.00    0.00      12         rs_alloc (util.c:50 @ 4f10) [466]
 -----------------------------------------------
-                0.00    0.00       1/8           rs_free_sumset (sumset.c:297 @ 4bc0) [1676]
-                0.00    0.00       2/8           rs_job_free (job.c:71 @ 6768) [1738]
-                0.00    0.00       2/8           rs_job_drive (job.c:154 @ 6938) [1728]
-                0.00    0.00       3/8           rs_filebuf_free (buf.c:70 @ 557c) [1613]
-[485]    0.0    0.00    0.00       8         rs_bzero (util.c:34 @ 4ea0) [485]
+                0.00    0.00       1/8           rs_free_sumset (sumset.c:297 @ 4bc0) [1659]
+                0.00    0.00       2/8           rs_job_free (job.c:71 @ 6768) [1721]
+                0.00    0.00       2/8           rs_job_drive (job.c:154 @ 6938) [1713]
+                0.00    0.00       3/8           rs_filebuf_free (buf.c:70 @ 557c) [1598]
+[467]    0.0    0.00    0.00       8         rs_bzero (util.c:34 @ 4ea0) [467]
 -----------------------------------------------
-                0.00    0.00       1/6           rs_loadsig_begin (readsums.c:141 @ 7daf) [1782]
-                0.00    0.00       2/6           rs_job_new (job.c:52 @ 66f9) [1758]
-                0.00    0.00       3/6           rs_filebuf_new (buf.c:58 @ 5519) [1617]
-[486]    0.0    0.00    0.00       6         rs_alloc_struct0 (util.c:39 @ 4ec0) [486]
+                0.00    0.00       1/6           rs_loadsig_begin (readsums.c:141 @ 7daf) [1765]
+                0.00    0.00       2/6           rs_job_new (job.c:52 @ 66f9) [1739]
+                0.00    0.00       3/6           rs_filebuf_new (buf.c:58 @ 5519) [1602]
+[468]    0.0    0.00    0.00       6         rs_alloc_struct0 (util.c:39 @ 4ec0) [468]
 -----------------------------------------------
-                0.00    0.00       1/3           rs_whole_run (whole.c:79 @ 50d9) [2828]
-                0.00    0.00       2/3           rs_whole_run (whole.c:77 @ 50cf) [2826]
-[487]    0.0    0.00    0.00       3         rs_filebuf_free (buf.c:68 @ 5560) [487]
+                0.00    0.00       1/3           rs_whole_run (whole.c:79 @ 50d9) [2829]
+                0.00    0.00       2/3           rs_whole_run (whole.c:77 @ 50cf) [2827]
+[469]    0.0    0.00    0.00       3         rs_filebuf_free (buf.c:68 @ 5560) [469]
 -----------------------------------------------
-                0.00    0.00       1/3           rs_whole_run (whole.c:72 @ 508d) [2822]
-                0.00    0.00       2/3           rs_whole_run (whole.c:70 @ 507a) [2818]
-[488]    0.0    0.00    0.00       3         rs_filebuf_new (buf.c:57 @ 5500) [488]
+                0.00    0.00       1/3           rs_whole_run (whole.c:72 @ 508d) [2823]
+                0.00    0.00       2/3           rs_whole_run (whole.c:70 @ 507a) [2819]
+[470]    0.0    0.00    0.00       3         rs_filebuf_new (buf.c:57 @ 5500) [470]
 -----------------------------------------------
-                0.00    0.00       1/3           rs_signature_log_stats (sumset.c:264 @ 48ca) [2677]
-                0.00    0.00       2/3           rs_log_stats (stats.c:36 @ 42b7) [1845]
-[489]    0.0    0.00    0.00       3         rs_log0 (trace.c:97 @ 4e00) [489]
+                0.00    0.00       1/3           rs_signature_log_stats (sumset.c:264 @ 48ca) [2676]
+                0.00    0.00       2/3           rs_log_stats (stats.c:36 @ 42b7) [1835]
+[471]    0.0    0.00    0.00       3         rs_log0 (trace.c:97 @ 4e00) [471]
 -----------------------------------------------
-                0.00    0.00       3/3           rs_log0 (trace.c:101 @ 4e7e) [1841]
-[490]    0.0    0.00    0.00       3         rs_log_va (trace.c:76 @ 4cb0) [490]
+                0.00    0.00       3/3           rs_log0 (trace.c:101 @ 4e7e) [1831]
+[472]    0.0    0.00    0.00       3         rs_log_va (trace.c:76 @ 4cb0) [472]
 -----------------------------------------------
-                0.00    0.00       3/3           rs_log_va (trace.c:91 @ 4d4c) [1858]
-[491]    0.0    0.00    0.00       3         rs_trace_stderr (trace.c:106 @ 4da0) [491]
+                0.00    0.00       3/3           rs_log_va (trace.c:91 @ 4d4c) [1848]
+[473]    0.0    0.00    0.00       3         rs_trace_stderr (trace.c:106 @ 4da0) [473]
 -----------------------------------------------
-                0.00    0.00       1/2           rs_appendflush (delta.c:302 @ 5e14) [1316]
-                0.00    0.00       1/2           rs_appendflush (delta.c:302 @ 6110) [1320]
-[492]    0.0    0.00    0.00       2         rs_emit_copy_cmd (emit.c:81 @ 6460) [492]
+                0.00    0.00       1/2           rs_appendflush (delta.c:302 @ 5e14) [1299]
+                0.00    0.00       1/2           rs_appendflush (delta.c:302 @ 6110) [1303]
+[474]    0.0    0.00    0.00       2         rs_emit_copy_cmd (emit.c:81 @ 6460) [474]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_log_stats (stats.c:35 @ 42a3) [1844]
-[493]    0.0    0.00    0.00       2         rs_format_stats (stats.c:41 @ 40c0) [493]
+                0.00    0.00       2/2           rs_log_stats (stats.c:35 @ 42a3) [1834]
+[475]    0.0    0.00    0.00       2         rs_format_stats (stats.c:41 @ 40c0) [475]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_whole_run (whole.c:74 @ 509b) [2823]
-[494]    0.0    0.00    0.00       2         rs_job_drive (job.c:154 @ 6910) [494]
+                0.00    0.00       2/2           rs_whole_run (whole.c:74 @ 509b) [2824]
+[476]    0.0    0.00    0.00       2         rs_job_drive (job.c:154 @ 6910) [476]
 -----------------------------------------------
-                0.00    0.00       1/2           rs_loadsig_file (whole.c:119 @ 532d) [1795]
-                0.00    0.00       1/2           rs_delta_file (whole.c:136 @ 540c) [1464]
-[495]    0.0    0.00    0.00       2         rs_job_free (job.c:67 @ 6740) [495]
+                0.00    0.00       1/2           rs_loadsig_file (whole.c:119 @ 532d) [1778]
+                0.00    0.00       1/2           rs_delta_file (whole.c:136 @ 540c) [1451]
+[477]    0.0    0.00    0.00       2         rs_job_free (job.c:67 @ 6740) [477]
 -----------------------------------------------
-                0.00    0.00       1/2           rs_delta_begin (delta.c:390 @ 6329) [1451]
-                0.00    0.00       1/2           rs_loadsig_begin (readsums.c:141 @ 7d97) [1780]
-[496]    0.0    0.00    0.00       2         rs_job_new (job.c:49 @ 66e0) [496]
+                0.00    0.00       1/2           rs_delta_begin (delta.c:390 @ 6329) [1438]
+                0.00    0.00       1/2           rs_loadsig_begin (readsums.c:141 @ 7d97) [1763]
+[478]    0.0    0.00    0.00       2         rs_job_new (job.c:49 @ 66e0) [478]
 -----------------------------------------------
-                0.00    0.00       1/2           rs_loadsig_file (whole.c:116 @ 52ac) [1792]
-                0.00    0.00       1/2           rs_delta_file (whole.c:132 @ 5388) [1461]
-[497]    0.0    0.00    0.00       2         rs_whole_run (whole.c:61 @ 5040) [497]
+                0.00    0.00       1/2           rs_loadsig_file (whole.c:116 @ 52ac) [1775]
+                0.00    0.00       1/2           rs_delta_file (whole.c:132 @ 5388) [1448]
+[479]    0.0    0.00    0.00       2         rs_whole_run (whole.c:61 @ 5040) [479]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_delta_file (whole.c:126 @ 5350) [1456]
-[498]    0.0    0.00    0.00       1         rs_delta_begin (delta.c:387 @ 6310) [498]
+                0.00    0.00       1/1           rs_delta_file (whole.c:126 @ 5350) [1443]
+[480]    0.0    0.00    0.00       1         rs_delta_begin (delta.c:387 @ 6310) [480]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [87]
-[499]    0.0    0.00    0.00       1         rs_delta_s_end (delta.c:198 @ 5930) [499]
-                0.00    0.00       1/16387       rs_squirt_byte (netint.c:52 @ 7500) [481]
-                0.00    0.00       1/1           rs_emit_end_cmd (emit.c:124 @ 6540) [503]
+                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [53]
+[481]    0.0    0.00    0.00       1         rs_delta_s_end (delta.c:198 @ 5930) [481]
+                0.00    0.00       1/16387       rs_squirt_byte (netint.c:52 @ 7500) [463]
+                0.00    0.00       1/1           rs_emit_end_cmd (emit.c:124 @ 6540) [484]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [87]
-[500]    0.0    0.00    0.00       1         rs_delta_s_flush (delta.c:161 @ 5950) [500]
-                0.00    0.00       1/1048578     rs_scoop_total_avail (scoop.c:228 @ 8230) [476]
+                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [53]
+[482]    0.0    0.00    0.00       1         rs_delta_s_header (delta.c:375 @ 5880) [482]
+                0.00    0.00       1/1           rs_squirt_n4 (netint.c:80 @ 7570) [493]
+                0.00    0.00       1/1           rs_emit_delta_header (emit.c:41 @ 63a0) [483]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [87]
-[501]    0.0    0.00    0.00       1         rs_delta_s_header (delta.c:375 @ 5880) [501]
-                0.00    0.00       1/1           rs_squirt_n4 (netint.c:80 @ 7570) [512]
-                0.00    0.00       1/1           rs_emit_delta_header (emit.c:41 @ 63a0) [502]
+                0.00    0.00       1/1           rs_delta_s_header (delta.c:375 @ 5880) [482]
+[483]    0.0    0.00    0.00       1         rs_emit_delta_header (emit.c:41 @ 63a0) [483]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_delta_s_header (delta.c:375 @ 5880) [501]
-[502]    0.0    0.00    0.00       1         rs_emit_delta_header (emit.c:41 @ 63a0) [502]
+                0.00    0.00       1/1           rs_delta_s_end (delta.c:198 @ 5930) [481]
+[484]    0.0    0.00    0.00       1         rs_emit_end_cmd (emit.c:124 @ 6540) [484]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_delta_s_end (delta.c:198 @ 5930) [499]
-[503]    0.0    0.00    0.00       1         rs_emit_end_cmd (emit.c:124 @ 6540) [503]
+                0.00    0.00       1/1           rs_loadsig_file (whole.c:112 @ 528c) [1769]
+[485]    0.0    0.00    0.00       1         rs_file_size (fileutil.c:123 @ 3ec0) [485]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_loadsig_file (whole.c:112 @ 528c) [1786]
-[504]    0.0    0.00    0.00       1         rs_file_size (fileutil.c:123 @ 3ec0) [504]
+                0.00    0.00       1/1           rs_loadsig_file (whole.c:112 @ 528c) [1769]
+[486]    0.0    0.00    0.00       1         rs_loadsig_begin (readsums.c:138 @ 7d80) [486]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_loadsig_file (whole.c:112 @ 528c) [1786]
-[505]    0.0    0.00    0.00       1         rs_loadsig_begin (readsums.c:138 @ 7d80) [505]
+                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [53]
+[487]    0.0    0.00    0.00       1         rs_loadsig_s_blocklen (readsums.c:107 @ 7c20) [487]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [87]
-[506]    0.0    0.00    0.00       1         rs_loadsig_s_blocklen (readsums.c:107 @ 7c20) [506]
+                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [53]
+[488]    0.0    0.00    0.00       1         rs_loadsig_s_magic (readsums.c:125 @ 7b80) [488]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [87]
-[507]    0.0    0.00    0.00       1         rs_loadsig_s_magic (readsums.c:125 @ 7b80) [507]
+                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [53]
+[489]    0.0    0.00    0.00       1         rs_loadsig_s_stronglen (readsums.c:85 @ 7c90) [489]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_work (job.c:126 @ 67db) [87]
-[508]    0.0    0.00    0.00       1         rs_loadsig_s_stronglen (readsums.c:85 @ 7c90) [508]
+                0.00    0.00       1/1           rs_signature_init (sumset.c:189 @ 454f) [2654]
+[490]    0.0    0.00    0.00       1         rs_sig_args (sumset.c:119 @ 42f0) [490]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_signature_init (sumset.c:189 @ 454f) [2655]
-[509]    0.0    0.00    0.00       1         rs_sig_args (sumset.c:119 @ 42f0) [509]
------------------------------------------------
-                0.00    0.00       1/1           rs_free_sumset (sumset.c:297 @ 4bc0) [1676]
-[510]    0.0    0.00    0.00       1         rs_signature_done (sumset.c:219 @ 45f0) [510]
+                0.00    0.00       1/1           rs_free_sumset (sumset.c:297 @ 4bc0) [1659]
+[491]    0.0    0.00    0.00       1         rs_signature_done (sumset.c:219 @ 45f0) [491]
                 0.00    0.00       1/1           _hashtable_free (hashtable.c:60 @ 6640) [2866]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_loadsig_s_stronglen (readsums.c:96 @ 7cbf) [1823]
-[511]    0.0    0.00    0.00       1         rs_signature_init (sumset.c:189 @ 4520) [511]
+                0.00    0.00       1/1           rs_loadsig_s_stronglen (readsums.c:96 @ 7cbf) [1809]
+[492]    0.0    0.00    0.00       1         rs_signature_init (sumset.c:189 @ 4520) [492]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_delta_s_header (delta.c:375 @ 5880) [501]
-[512]    0.0    0.00    0.00       1         rs_squirt_n4 (netint.c:80 @ 7570) [512]
+                0.00    0.00       1/1           rs_delta_s_header (delta.c:375 @ 5880) [482]
+[493]    0.0    0.00    0.00       1         rs_squirt_n4 (netint.c:80 @ 7570) [493]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_signature_done (sumset.c:219 @ 45f0) [510]
+                0.00    0.00       1/1           rs_signature_done (sumset.c:219 @ 45f0) [491]
 [2866]   0.0    0.00    0.00       1         _hashtable_free (hashtable.c:60 @ 6640) [2866]
 -----------------------------------------------
-                0.00    0.00       1/1           hashtable_new (hashtable.h:227 @ 495a) [873]
+                0.00    0.00       1/1           hashtable_new (hashtable.h:227 @ 495a) [867]
 [2867]   0.0    0.00    0.00       1         _hashtable_new (hashtable.c:37 @ 6560) [2867]
 -----------------------------------------------
 
@@ -850,168 +830,161 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [32] RollsumInit (rollsum.h:46 @ 6206) [375] blake2b_compress (blake2b-ref.c:211 @ 9a71) [133] rs_block_match_cmp (sumset.c:76 @ 4807)
- [2866] _hashtable_free (hashtable.c:60 @ 6640) [155] blake2b_compress (blake2b-ref.c:211 @ 9a7b) [295] rs_block_match_init (sumset.c:59 @ 4742)
- [2867] _hashtable_new (hashtable.c:37 @ 6560) [239] blake2b_compress (blake2b-ref.c:211 @ 9ad9) [20] rs_block_match_init (sumset.c:60 @ 474b)
-  [54] blake2b_compress (blake2b-ref.c:178 @ 84a0) [376] blake2b_compress (blake2b-ref.c:211 @ 9b1a) [19] rs_block_match_init (sumset.c:61 @ 474f)
-  [63] blake2b_compress (blake2b-ref.c:183 @ 84ba) [377] blake2b_compress (blake2b-ref.c:211 @ 9b2f) [134] rs_block_sig_idx (sumset.c:114 @ 4852)
-  [76] blake2b_compress (blake2b-ref.c:178 @ 84bc) [378] blake2b_compress (blake2b-ref.c:211 @ 9b4d) [296] rs_block_sig_init (sumset.c:36 @ 46aa)
-  [33] blake2b_compress (blake2b-ref.c:184 @ 84d0) [379] blake2b_compress (blake2b-ref.c:211 @ 9b56) [27] rs_block_sig_init (sumset.c:35 @ 4753)
-  [37] blake2b_compress (blake2b-ref.c:183 @ 84d8) [380] blake2b_compress (blake2b-ref.c:211 @ 9b5d) [158] rs_block_sig_ptr (sumset.c:106 @ 46a0)
-  [77] blake2b_compress (blake2b-ref.c:187 @ 84e9) [381] blake2b_compress (blake2b-ref.c:211 @ 9b9e) [297] rs_block_sig_ptr (sumset.c:105 @ 46a4)
-  [40] blake2b_compress (blake2b-ref.c:188 @ 84f8) [240] blake2b_compress (blake2b-ref.c:211 @ 9ba8) [439] rs_block_sig_ptr (sumset.c:106 @ 49a3)
-  [78] blake2b_compress (blake2b-ref.c:187 @ 8500) [241] blake2b_compress (blake2b-ref.c:211 @ 9bc0) [440] rs_block_sig_ptr (sumset.c:105 @ 49a8)
-  [67] blake2b_compress (blake2b-ref.c:200 @ 850a) [382] blake2b_compress (blake2b-ref.c:211 @ 9bdf) [441] rs_block_sig_size (sumset.c:95 @ 469c)
- [174] blake2b_compress (blake2b-ref.c:200 @ 85a4) [242] blake2b_compress (blake2b-ref.c:211 @ 9bff) [298] rs_block_sig_size (sumset.c:95 @ 4990)
- [339] blake2b_compress (blake2b-ref.c:200 @ 85da) [243] blake2b_compress (blake2b-ref.c:211 @ 9c10) [299] rs_build_hash_table (sumset.c:286 @ 4972)
-  [79] blake2b_compress (blake2b-ref.c:200 @ 85e4) [383] blake2b_compress (blake2b-ref.c:211 @ 9c36) [83] rs_build_hash_table (sumset.c:286 @ 4abb)
-  [97] blake2b_compress (blake2b-ref.c:200 @ 8616) [59] blake2b_compress (blake2b-ref.c:211 @ 9c51) [485] rs_bzero (util.c:34 @ 4ea0)
-  [98] blake2b_compress (blake2b-ref.c:200 @ 8636) [244] blake2b_compress (blake2b-ref.c:211 @ 9c6a) [173] rs_calc_strong_sum (checksum.c:59 @ 5800)
- [175] blake2b_compress (blake2b-ref.c:200 @ 866f) [64] blake2b_compress (blake2b-ref.c:213 @ 9c82) [135] rs_calc_strong_sum (checksum.c:64 @ 5840)
- [146] blake2b_compress (blake2b-ref.c:200 @ 8683) [29] blake2b_compress (blake2b-ref.c:214 @ 9c8c) [498] rs_delta_begin (delta.c:387 @ 6310)
- [340] blake2b_compress (blake2b-ref.c:200 @ 8696) [245] blake2b_compress (blake2b-ref.c:213 @ 9ca1) [499] rs_delta_s_end (delta.c:198 @ 5930)
- [176] blake2b_compress (blake2b-ref.c:200 @ 86a0) [50] blake2b_compress (blake2b-ref.c:216 @ 9ca6) [500] rs_delta_s_flush (delta.c:161 @ 5950)
- [177] blake2b_compress (blake2b-ref.c:200 @ 86be) [477] blake2b_final (blake2b-ref.c:249 @ a080) [300] rs_delta_s_flush (delta.c:304 @ 5e5b)
- [341] blake2b_compress (blake2b-ref.c:200 @ 86df) [156] blake2b_final (blake2b-ref.c:262 @ a11b) [501] rs_delta_s_header (delta.c:375 @ 5880)
- [342] blake2b_compress (blake2b-ref.c:200 @ 8713) [246] blake2b_final (blake2b-ref.c:264 @ a12a) [96] rs_delta_s_scan (delta.c:120 @ 5e60)
- [178] blake2b_compress (blake2b-ref.c:200 @ 872a) [81] blake2b_final (blake2b-ref.c:264 @ a139) [72] rs_delta_s_scan (delta.c:121 @ 5e77)
- [179] blake2b_compress (blake2b-ref.c:200 @ 873c) [247] blake2b_final (blake2b-ref.c:269 @ a169) [49] rs_delta_s_scan (delta.c:133 @ 5eb8)
- [343] blake2b_compress (blake2b-ref.c:201 @ 8754) [123] blake2b_final (blake2b-ref.c:270 @ a16b) [46] rs_delta_s_scan (delta.c:135 @ 5f7b)
- [344] blake2b_compress (blake2b-ref.c:200 @ 875b) [60] blake2b_increment_counter (blake2b-ref.c:69 @ 9db0) [18] rs_delta_s_scan (delta.c:142 @ 5f85)
- [180] blake2b_compress (blake2b-ref.c:200 @ 8783) [172] blake2b_init (blake2b-ref.c:99 @ 9ee0) [11] rs_delta_s_scan (delta.c:142 @ 5f96)
- [181] blake2b_compress (blake2b-ref.c:200 @ 878d) [124] blake2b_init (blake2b-ref.c:102 @ 9eee) [41] rs_delta_s_scan (delta.c:141 @ 5f9a)
- [182] blake2b_compress (blake2b-ref.c:201 @ 8796) [385] blake2b_init0 (blake2b-ref.c:77 @ 9e0a) [22] rs_delta_s_scan (delta.c:142 @ 5f9f)
-  [89] blake2b_compress (blake2b-ref.c:201 @ 87bb) [125] blake2b_init0 (blake2b-ref.c:75 @ 9e1f) [301] rs_delta_s_scan (delta.c:132 @ 601f)
-  [99] blake2b_compress (blake2b-ref.c:201 @ 87c4) [126] blake2b_init_key (blake2b-ref.c:124 @ a058) [10] rs_delta_s_scan (delta.c:133 @ 60a4)
- [345] blake2b_compress (blake2b-ref.c:201 @ 87fa) [338] blake2b_init_param (blake2b-ref.c:82 @ 9e00) [31] rs_delta_s_scan (delta.c:133 @ 60b6)
- [183] blake2b_compress (blake2b-ref.c:201 @ 882d) [248] blake2b_init_param (blake2b-ref.c:94 @ 9ed1) [84] rs_delta_s_scan (delta.c:149 @ 60bf)
- [184] blake2b_compress (blake2b-ref.c:201 @ 8837) [249] blake2b_update (blake2b-ref.c:227 @ 9cd7) [39] rs_delta_s_scan (delta.c:158 @ 60d7)
- [100] blake2b_compress (blake2b-ref.c:201 @ 886c) [250] blake2b_update (blake2b-ref.c:243 @ 9d0a) [492] rs_emit_copy_cmd (emit.c:81 @ 6460)
- [185] blake2b_compress (blake2b-ref.c:201 @ 88b1) [251] blake2b_update (blake2b-ref.c:237 @ 9db7) [502] rs_emit_delta_header (emit.c:41 @ 63a0)
- [186] blake2b_compress (blake2b-ref.c:201 @ 88bc) [145] blake2b_update (blake2b-ref.c:222 @ a060) [503] rs_emit_end_cmd (emit.c:124 @ 6540)
- [187] blake2b_compress (blake2b-ref.c:201 @ 88f5) [252] blake2b_update (blake2b-ref.c:224 @ a06a) [482] rs_emit_literal_cmd (emit.c:48 @ 63c0)
- [147] blake2b_compress (blake2b-ref.c:201 @ 8942) [253] blake2b_update.part.0 (blake2b-ref.c:234 @ 9df2) [504] rs_file_size (fileutil.c:123 @ 3ec0)
- [188] blake2b_compress (blake2b-ref.c:201 @ 8956) [254] hashtable_add (hashtable.h:270 @ 4b12) [487] rs_filebuf_free (buf.c:68 @ 5560)
- [101] blake2b_compress (blake2b-ref.c:202 @ 8968) [127] hashtable_add (hashtable.h:273 @ 4b57) [442] rs_filebuf_free (buf.c:71 @ 5593)
- [189] blake2b_compress (blake2b-ref.c:202 @ 8998) [51] hashtable_add (hashtable.h:272 @ 4b62) [488] rs_filebuf_new (buf.c:57 @ 5500)
- [190] blake2b_compress (blake2b-ref.c:202 @ 89ac) [128] hashtable_add (hashtable.h:273 @ 4b67) [42] rs_findmatch (delta.c:228 @ 5edd)
- [102] blake2b_compress (blake2b-ref.c:202 @ 89c0) [9] hashtable_find (hashtable.h:292 @ 473b) [24] rs_findmatch (delta.c:225 @ 5ee1)
- [103] blake2b_compress (blake2b-ref.c:202 @ 89d9) [30] hashtable_find (hashtable.h:291 @ 4756) [25] rs_findmatch (delta.c:228 @ 5ee5)
-  [68] blake2b_compress (blake2b-ref.c:202 @ 89ff) [1] hashtable_find (hashtable.h:292 @ 475c) [2] rs_findmatch (delta.c:244 @ 5f70)
- [191] blake2b_compress (blake2b-ref.c:202 @ 8a46) [13] hashtable_find (hashtable.h:293 @ 47b2) [26] rs_findmatch (delta.c:245 @ 605c)
- [192] blake2b_compress (blake2b-ref.c:202 @ 8a73) [14] hashtable_find (hashtable.h:294 @ 47b8) [493] rs_format_stats (stats.c:41 @ 40c0)
- [193] blake2b_compress (blake2b-ref.c:202 @ 8aa2) [43] hashtable_find (hashtable.h:296 @ 47cb) [302] rs_getinput (delta.c:209 @ 62d0)
- [104] blake2b_compress (blake2b-ref.c:202 @ 8ab7) [255] hashtable_find (hashtable.h:296 @ 481b) [335] rs_infilebuf_fill (buf.c:78 @ 55a0)
- [346] blake2b_compress (blake2b-ref.c:202 @ 8af6) [38] hashtable_find (hashtable.h:292 @ 49e5) [303] rs_infilebuf_fill (buf.c:93 @ 55b7)
- [347] blake2b_compress (blake2b-ref.c:203 @ 8b14) [387] hashtable_find (hashtable.h:293 @ 4a33) [85] rs_infilebuf_fill (buf.c:126 @ 55d1)
- [348] blake2b_compress (blake2b-ref.c:202 @ 8b1b) [388] hashtable_find (hashtable.h:294 @ 4a38) [86] rs_infilebuf_fill (buf.c:81 @ 55e8)
- [194] blake2b_compress (blake2b-ref.c:202 @ 8b43) [16] rabinkarp_rotate (rabinkarp.h:93 @ 60e8) [443] rs_infilebuf_fill (buf.c:99 @ 55fd)
- [161] blake2b_compress (blake2b-ref.c:203 @ 8b56) [8] rabinkarp_rotate (rabinkarp.h:93 @ 60fc) [95] rs_infilebuf_fill (buf.c:103 @ 5604)
- [195] blake2b_compress (blake2b-ref.c:203 @ 8b71) [36] rabinkarp_update (rabinkarp.h:82 @ 5f07) [136] rs_infilebuf_fill (buf.c:104 @ 5619)
- [105] blake2b_compress (blake2b-ref.c:203 @ 8b7b) [6] rabinkarp_update (rabinkarp.h:83 @ 5f20) [304] rs_infilebuf_fill (buf.c:123 @ 5629)
- [349] blake2b_compress (blake2b-ref.c:203 @ 8bba) [28] rabinkarp_update (rabinkarp.h:86 @ 5f6c) [305] rs_infilebuf_fill (buf.c:125 @ 5631)
- [196] blake2b_compress (blake2b-ref.c:203 @ 8bc1) [389] rotr64 (blake2-impl.h:155 @ 85d6) [444] rs_infilebuf_fill (buf.c:117 @ 5688)
- [197] blake2b_compress (blake2b-ref.c:203 @ 8be3) [390] rotr64 (blake2-impl.h:155 @ 867b) [479] rs_int_len (netint.c:120 @ 76a0)
-  [90] blake2b_compress (blake2b-ref.c:203 @ 8bf7) [391] rotr64 (blake2-impl.h:155 @ 868f) [494] rs_job_drive (job.c:154 @ 6910)
- [198] blake2b_compress (blake2b-ref.c:203 @ 8c17) [256] rotr64 (blake2-impl.h:155 @ 86a6) [445] rs_job_drive (job.c:157 @ 6946)
- [350] blake2b_compress (blake2b-ref.c:203 @ 8c39) [392] rotr64 (blake2-impl.h:155 @ 86db) [306] rs_job_drive (job.c:170 @ 6958)
- [199] blake2b_compress (blake2b-ref.c:203 @ 8c53) [393] rotr64 (blake2-impl.h:155 @ 870b) [73] rs_job_drive (job.c:171 @ 695d)
- [351] blake2b_compress (blake2b-ref.c:203 @ 8c5a) [257] rotr64 (blake2-impl.h:155 @ 8722) [160] rs_job_drive (job.c:161 @ 6980)
- [200] blake2b_compress (blake2b-ref.c:203 @ 8c64) [258] rotr64 (blake2-impl.h:155 @ 877f) [495] rs_job_free (job.c:67 @ 6740)
- [201] blake2b_compress (blake2b-ref.c:203 @ 8c93) [394] rotr64 (blake2-impl.h:155 @ 87b7) [171] rs_job_iter (job.c:94 @ 67a0)
- [202] blake2b_compress (blake2b-ref.c:203 @ 8c9d) [395] rotr64 (blake2-impl.h:155 @ 87f3) [308] rs_job_iter (job.c:114 @ 686b)
- [203] blake2b_compress (blake2b-ref.c:203 @ 8cb5) [396] rotr64 (blake2-impl.h:155 @ 893a) [496] rs_job_new (job.c:49 @ 66e0)
- [204] blake2b_compress (blake2b-ref.c:204 @ 8d28) [259] rotr64 (blake2-impl.h:155 @ 8990) [87] rs_job_work (job.c:126 @ 67db)
- [205] blake2b_compress (blake2b-ref.c:204 @ 8d8d) [260] rotr64 (blake2-impl.h:155 @ 89cc) [446] rs_job_work (job.c:127 @ 67e8)
- [106] blake2b_compress (blake2b-ref.c:204 @ 8db8) [261] rotr64 (blake2-impl.h:155 @ 8a3e) [448] rs_loadsig_add_sum (readsums.c:52 @ 7d62)
- [352] blake2b_compress (blake2b-ref.c:204 @ 8deb) [262] rotr64 (blake2-impl.h:155 @ 8a9e) [505] rs_loadsig_begin (readsums.c:138 @ 7d80)
- [353] blake2b_compress (blake2b-ref.c:204 @ 8df2) [397] rotr64 (blake2-impl.h:155 @ 8af2) [506] rs_loadsig_s_blocklen (readsums.c:107 @ 7c20)
- [354] blake2b_compress (blake2b-ref.c:204 @ 8e06) [164] rotr64 (blake2-impl.h:155 @ 8b53) [507] rs_loadsig_s_magic (readsums.c:125 @ 7b80)
-  [69] blake2b_compress (blake2b-ref.c:204 @ 8e23) [398] rotr64 (blake2-impl.h:155 @ 8bb3) [309] rs_loadsig_s_magic (readsums.c:135 @ 7bb5)
- [355] blake2b_compress (blake2b-ref.c:204 @ 8e70) [129] rotr64 (blake2-impl.h:155 @ 8bbd) [473] rs_loadsig_s_strong (readsums.c:72 @ 7d20)
-  [57] blake2b_compress (blake2b-ref.c:204 @ 8e77) [399] rotr64 (blake2-impl.h:155 @ 8c0e) [449] rs_loadsig_s_strong (readsums.c:81 @ 7d6a)
- [148] blake2b_compress (blake2b-ref.c:204 @ 8ea2) [263] rotr64 (blake2-impl.h:155 @ 8c28) [508] rs_loadsig_s_stronglen (readsums.c:85 @ 7c90)
- [356] blake2b_compress (blake2b-ref.c:204 @ 8eb6) [400] rotr64 (blake2-impl.h:155 @ 8c46) [310] rs_loadsig_s_stronglen (readsums.c:104 @ 7d11)
- [107] blake2b_compress (blake2b-ref.c:204 @ 8eca) [157] rotr64 (blake2-impl.h:155 @ 8c56) [336] rs_loadsig_s_weak (readsums.c:57 @ 7bc0)
- [357] blake2b_compress (blake2b-ref.c:205 @ 8ee7) [264] rotr64 (blake2-impl.h:155 @ 8d53) [55] rs_loadsig_s_weak (readsums.c:61 @ 7bcf)
- [358] blake2b_compress (blake2b-ref.c:205 @ 8ef2) [130] rotr64 (blake2-impl.h:155 @ 8d71) [311] rs_loadsig_s_weak (readsums.c:61 @ 7bd6)
- [359] blake2b_compress (blake2b-ref.c:204 @ 8ef9) [265] rotr64 (blake2-impl.h:155 @ 8da7) [450] rs_loadsig_s_weak (readsums.c:68 @ 7c0d)
- [206] blake2b_compress (blake2b-ref.c:204 @ 8f0d) [401] rotr64 (blake2-impl.h:155 @ 8de7) [451] rs_loadsig_s_weak (readsums.c:69 @ 7c12)
- [108] blake2b_compress (blake2b-ref.c:205 @ 8f27) [266] rotr64 (blake2-impl.h:155 @ 8dfe) [489] rs_log0 (trace.c:97 @ 4e00)
- [109] blake2b_compress (blake2b-ref.c:205 @ 8f3b) [267] rotr64 (blake2-impl.h:155 @ 8e1f) [490] rs_log_va (trace.c:76 @ 4cb0)
- [207] blake2b_compress (blake2b-ref.c:205 @ 8f44) [268] rotr64 (blake2-impl.h:155 @ 8e6c) [144] rs_outfilebuf_drain (buf.c:131 @ 5690)
- [360] blake2b_compress (blake2b-ref.c:205 @ 8f69) [402] rotr64 (blake2-impl.h:155 @ 8e73) [137] rs_outfilebuf_drain (buf.c:138 @ 56a7)
- [208] blake2b_compress (blake2b-ref.c:205 @ 8f81) [403] rotr64 (blake2-impl.h:155 @ 8e9e) [312] rs_outfilebuf_drain (buf.c:157 @ 56e0)
- [361] blake2b_compress (blake2b-ref.c:205 @ 8f92) [404] rotr64 (blake2-impl.h:155 @ 8eb2) [313] rs_outfilebuf_drain (buf.c:158 @ 56f5)
- [362] blake2b_compress (blake2b-ref.c:205 @ 8fa3) [405] rotr64 (blake2-impl.h:155 @ 8ee4) [474] rs_scoop_input (scoop.c:68 @ 7f80)
-  [91] blake2b_compress (blake2b-ref.c:205 @ 8fb7) [406] rotr64 (blake2-impl.h:155 @ 8eee) [168] rs_scoop_input (scoop.c:69 @ 7f97)
- [110] blake2b_compress (blake2b-ref.c:205 @ 8fd7) [407] rotr64 (blake2-impl.h:155 @ 8eff) [169] rs_scoop_input (scoop.c:68 @ 7f9b)
- [209] blake2b_compress (blake2b-ref.c:205 @ 9011) [269] rotr64 (blake2-impl.h:155 @ 8f09) [452] rs_scoop_input (scoop.c:87 @ 8010)
- [210] blake2b_compress (blake2b-ref.c:205 @ 903c) [270] rotr64 (blake2-impl.h:155 @ 8f2d) [314] rs_scoop_input (scoop.c:97 @ 8017)
- [211] blake2b_compress (blake2b-ref.c:205 @ 9049) [408] rotr64 (blake2-impl.h:155 @ 8f73) [315] rs_scoop_input (scoop.c:98 @ 801a)
-  [70] blake2b_compress (blake2b-ref.c:205 @ 9060) [409] rotr64 (blake2-impl.h:155 @ 8f8e) [453] rs_scoop_input (scoop.c:102 @ 801e)
- [212] blake2b_compress (blake2b-ref.c:205 @ 9075) [410] rotr64 (blake2-impl.h:155 @ 8f9f) [44] rs_scoop_input (scoop.c:104 @ 8032)
- [213] blake2b_compress (blake2b-ref.c:205 @ 9099) [165] rotr64 (blake2-impl.h:155 @ 8fce) [61] rs_scoop_input (scoop.c:107 @ 8040)
- [214] blake2b_compress (blake2b-ref.c:205 @ 90b1) [271] rotr64 (blake2-impl.h:155 @ 8fe8) [62] rs_scoop_read (scoop.c:193 @ 81a0)
- [363] blake2b_compress (blake2b-ref.c:205 @ 90c2) [272] rotr64 (blake2-impl.h:155 @ 9095) [454] rs_scoop_read (scoop.c:196 @ 81b3)
- [111] blake2b_compress (blake2b-ref.c:205 @ 90d6) [411] rotr64 (blake2-impl.h:155 @ 90ba) [316] rs_scoop_read (scoop.c:197 @ 81b8)
-  [92] blake2b_compress (blake2b-ref.c:206 @ 90e8) [273] rotr64 (blake2-impl.h:155 @ 90ce) [472] rs_scoop_readahead (scoop.c:149 @ 8100)
- [112] blake2b_compress (blake2b-ref.c:206 @ 911b) [274] rotr64 (blake2-impl.h:155 @ 90e2) [138] rs_scoop_readahead (scoop.c:153 @ 8111)
- [113] blake2b_compress (blake2b-ref.c:206 @ 9139) [412] rotr64 (blake2-impl.h:155 @ 9113) [317] rs_scoop_readahead (scoop.c:179 @ 818b)
- [114] blake2b_compress (blake2b-ref.c:206 @ 914d) [413] rotr64 (blake2-impl.h:155 @ 91ae) [318] rs_scoop_readahead (scoop.c:179 @ 8197)
- [215] blake2b_compress (blake2b-ref.c:206 @ 9171) [275] rotr64 (blake2-impl.h:155 @ 921e) [476] rs_scoop_total_avail (scoop.c:228 @ 8230)
- [149] blake2b_compress (blake2b-ref.c:206 @ 91b2) [276] rotr64 (blake2-impl.h:155 @ 922c) [319] rs_scoop_total_avail (scoop.c:229 @ 823a)
- [150] blake2b_compress (blake2b-ref.c:206 @ 91f3) [166] rotr64 (blake2-impl.h:155 @ 9287) [455] rs_scoop_total_avail (scoop.c:230 @ 8245)
- [364] blake2b_compress (blake2b-ref.c:206 @ 9222) [277] rotr64 (blake2-impl.h:155 @ 92b2) [320] rs_scoop_total_avail (scoop.c:229 @ 8246)
- [216] blake2b_compress (blake2b-ref.c:206 @ 9237) [414] rotr64 (blake2-impl.h:155 @ 92d3) [65] rs_scoop_total_avail (scoop.c:230 @ 824a)
- [217] blake2b_compress (blake2b-ref.c:206 @ 9255) [415] rotr64 (blake2-impl.h:155 @ 935f) [509] rs_sig_args (sumset.c:119 @ 42f0)
- [218] blake2b_compress (blake2b-ref.c:206 @ 9262) [416] rotr64 (blake2-impl.h:155 @ 938e) [321] rs_sig_begin (mksum.c:127 @ 74f1)
- [162] blake2b_compress (blake2b-ref.c:206 @ 928a) [417] rotr64 (blake2-impl.h:155 @ 9394) [337] rs_signature_add_block (sumset.c:228 @ 4630)
- [219] blake2b_compress (blake2b-ref.c:206 @ 92a8) [278] rotr64 (blake2-impl.h:155 @ 93e0) [322] rs_signature_add_block (sumset.c:231 @ 4651)
- [220] blake2b_compress (blake2b-ref.c:206 @ 92cd) [418] rotr64 (blake2-impl.h:155 @ 940c) [323] rs_signature_add_block (sumset.c:234 @ 467d)
- [365] blake2b_compress (blake2b-ref.c:207 @ 92d6) [419] rotr64 (blake2-impl.h:155 @ 9452) [21] rs_signature_add_block (sumset.c:235 @ 4718)
- [221] blake2b_compress (blake2b-ref.c:207 @ 92e7) [420] rotr64 (blake2-impl.h:155 @ 946e) [324] rs_signature_calc_strong_sum (sumset.h:133 @ 47f6)
-  [58] blake2b_compress (blake2b-ref.c:207 @ 9304) [131] rotr64 (blake2-impl.h:155 @ 9495) [510] rs_signature_done (sumset.c:219 @ 45f0)
- [366] blake2b_compress (blake2b-ref.c:207 @ 9363) [132] rotr64 (blake2-impl.h:155 @ 94f1) [4] rs_signature_find_match (sumset.c:247 @ 4720)
- [151] blake2b_compress (blake2b-ref.c:207 @ 9377) [279] rotr64 (blake2-impl.h:155 @ 9505) [3] rs_signature_find_match (sumset.c:253 @ 4737)
-  [93] blake2b_compress (blake2b-ref.c:207 @ 9397) [280] rotr64 (blake2-impl.h:155 @ 9527) [53] rs_signature_find_match (sumset.c:247 @ 4746)
- [222] blake2b_compress (blake2b-ref.c:207 @ 93ac) [281] rotr64 (blake2-impl.h:155 @ 957e) [139] rs_signature_find_match (sumset.c:254 @ 4855)
- [367] blake2b_compress (blake2b-ref.c:207 @ 9413) [421] rotr64 (blake2-impl.h:155 @ 9592) [7] rs_signature_find_match (sumset.c:257 @ 485b)
- [223] blake2b_compress (blake2b-ref.c:207 @ 941d) [422] rotr64 (blake2-impl.h:155 @ 95af) [12] rs_signature_find_match (sumset.c:256 @ 4874)
- [115] blake2b_compress (blake2b-ref.c:207 @ 9435) [423] rotr64 (blake2-impl.h:155 @ 95de) [5] rs_signature_find_match (sumset.c:257 @ 487b)
- [368] blake2b_compress (blake2b-ref.c:207 @ 9456) [282] rotr64 (blake2-impl.h:155 @ 9628) [511] rs_signature_init (sumset.c:189 @ 4520)
- [369] blake2b_compress (blake2b-ref.c:207 @ 945d) [424] rotr64 (blake2-impl.h:155 @ 9632) [456] rs_signature_weaksum_kind (sumset.h:110 @ 4641)
- [224] blake2b_compress (blake2b-ref.c:208 @ 94a8) [425] rotr64 (blake2-impl.h:155 @ 9647) [481] rs_squirt_byte (netint.c:52 @ 7500)
- [225] blake2b_compress (blake2b-ref.c:208 @ 94db) [167] rotr64 (blake2-impl.h:155 @ 9693) [512] rs_squirt_n4 (netint.c:80 @ 7570)
- [116] blake2b_compress (blake2b-ref.c:208 @ 950d) [426] rotr64 (blake2-impl.h:155 @ 96b7) [480] rs_squirt_netint (netint.c:65 @ 7530)
-  [94] blake2b_compress (blake2b-ref.c:208 @ 9572) [427] rotr64 (blake2-impl.h:155 @ 96f3) [326] rs_suck_byte (netint.c:92 @ 75cd)
- [226] blake2b_compress (blake2b-ref.c:208 @ 9586) [428] rotr64 (blake2-impl.h:155 @ 970e) [56] rs_suck_n4 (netint.c:110 @ 7660)
- [227] blake2b_compress (blake2b-ref.c:208 @ 9599) [283] rotr64 (blake2-impl.h:155 @ 9789) [327] rs_suck_n4 (netint.c:114 @ 7677)
- [117] blake2b_compress (blake2b-ref.c:208 @ 95b3) [284] rotr64 (blake2-impl.h:155 @ 97c5) [475] rs_suck_netint (netint.c:95 @ 75e0)
- [118] blake2b_compress (blake2b-ref.c:208 @ 95f7) [429] rotr64 (blake2-impl.h:155 @ 984e) [74] rs_suck_netint (netint.c:104 @ 761c)
- [152] blake2b_compress (blake2b-ref.c:208 @ 962c) [285] rotr64 (blake2-impl.h:155 @ 98b1) [328] rs_suck_netint (netint.c:107 @ 7649)
- [153] blake2b_compress (blake2b-ref.c:208 @ 964a) [286] rotr64 (blake2-impl.h:155 @ 98c5) [491] rs_trace_stderr (trace.c:106 @ 4da0)
- [228] blake2b_compress (blake2b-ref.c:208 @ 9683) [430] rotr64 (blake2-impl.h:155 @ 993e) [141] rs_tube_catchup (tube.c:137 @ 8250)
- [163] blake2b_compress (blake2b-ref.c:208 @ 968d) [431] rotr64 (blake2-impl.h:155 @ 9a32) [329] rs_tube_catchup (tube.c:138 @ 8267)
- [154] blake2b_compress (blake2b-ref.c:209 @ 96b1) [287] rotr64 (blake2-impl.h:155 @ 9a3f) [330] rs_tube_catchup (tube.c:137 @ 826e)
- [229] blake2b_compress (blake2b-ref.c:209 @ 96e9) [288] rotr64 (blake2-impl.h:155 @ 9a77) [66] rs_tube_catchup (tube.c:144 @ 8276)
- [370] blake2b_compress (blake2b-ref.c:209 @ 96fa) [289] rotr64 (blake2-impl.h:155 @ 9ace) [457] rs_tube_catchup (tube.c:156 @ 8282)
- [371] blake2b_compress (blake2b-ref.c:209 @ 9701) [432] rotr64 (blake2-impl.h:155 @ 9b14) [75] rs_tube_catchup (tube.c:157 @ 8284)
- [230] blake2b_compress (blake2b-ref.c:209 @ 972d) [433] rotr64 (blake2-impl.h:155 @ 9b2b) [331] rs_tube_catchup (tube.c:157 @ 8342)
- [231] blake2b_compress (blake2b-ref.c:209 @ 97a2) [290] rotr64 (blake2-impl.h:155 @ 9b49) [332] rs_tube_catchup_write (tube.c:69 @ 82d4)
- [232] blake2b_compress (blake2b-ref.c:209 @ 97b1) [291] rotr64 (blake2-impl.h:155 @ 9b53) [483] rs_tube_copy (tube.c:179 @ 8440)
- [233] blake2b_compress (blake2b-ref.c:209 @ 97c9) [434] rotr64 (blake2-impl.h:155 @ 9b63) [478] rs_tube_write (tube.c:193 @ 8460)
- [234] blake2b_compress (blake2b-ref.c:209 @ 97f5) [435] rotr64 (blake2-impl.h:155 @ 9b93) [140] rs_tube_write (tube.c:199 @ 848e)
-  [80] blake2b_compress (blake2b-ref.c:209 @ 9819) [436] rotr64 (blake2-impl.h:155 @ 9bdb) [497] rs_whole_run (whole.c:61 @ 5040)
- [235] blake2b_compress (blake2b-ref.c:209 @ 9831) [292] rotr64 (blake2-impl.h:155 @ 9c0c) [333] secure_zero_memory (blake2-impl.h:162 @ a156)
- [372] blake2b_compress (blake2b-ref.c:209 @ 9842) [437] rotr64 (blake2-impl.h:155 @ 9c32) [334] store64 (blake2-impl.h:112 @ a130)
- [236] blake2b_compress (blake2b-ref.c:209 @ 9856) [293] rotr64 (blake2-impl.h:155 @ 9c63) [458] uint32_pow (rabinkarp.h:64 @ 5f54)
- [119] blake2b_compress (blake2b-ref.c:210 @ 9868) [438] rotr64 (blake2-impl.h:155 @ 9c78) [459] uint32_pow (rabinkarp.h:66 @ 5f58)
-  [71] blake2b_compress (blake2b-ref.c:210 @ 989b) [484] rs_alloc (util.c:50 @ 4f10) [88] uint32_pow (rabinkarp.h:62 @ 5f5b)
- [120] blake2b_compress (blake2b-ref.c:210 @ 98f1) [486] rs_alloc_struct0 (util.c:39 @ 4ec0) [45] weaksum_digest (checksum.h:116 @ 6063)
- [373] blake2b_compress (blake2b-ref.c:210 @ 9932) [15] rs_appendmiss (delta.c:287 @ 5fd5) [48] weaksum_digest (checksum.h:118 @ 6096)
- [237] blake2b_compress (blake2b-ref.c:210 @ 99b7) [47] rs_appendmiss (delta.c:291 @ 60a0) [34] weaksum_rotate (checksum.h:92 @ 5f93)
- [374] blake2b_compress (blake2b-ref.c:210 @ 9a28) [52] rs_appendmiss (delta.c:291 @ 60af) [23] weaksum_rotate (checksum.h:92 @ 5fa4)
- [238] blake2b_compress (blake2b-ref.c:210 @ 9a43) [17] rs_appendmiss (delta.c:287 @ 60f5) [35] weaksum_update (checksum.h:84 @ 6040)
- [121] blake2b_compress (blake2b-ref.c:210 @ 9a4d) [82] rs_appendmiss (delta.c:287 @ 6107)
- [122] blake2b_compress (blake2b-ref.c:211 @ 9a67) [294] rs_block_match_cmp (sumset.c:74 @ 47fb)
+  [34] RollsumInit (rollsum.h:46 @ 6206) [150] blake2b_compress (blake2b-ref.c:211 @ 9b9e) [292] rotr64 (blake2-impl.h:155 @ 9c40)
+  [98] RollsumUpdate (rollsum.c:38 @ 7f70) [121] blake2b_compress (blake2b-ref.c:211 @ 9ba8) [158] rotr64 (blake2-impl.h:155 @ 9c78)
+ [2866] _hashtable_free (hashtable.c:60 @ 6640) [368] blake2b_compress (blake2b-ref.c:211 @ 9bdf) [466] rs_alloc (util.c:50 @ 4f10)
+ [2867] _hashtable_new (hashtable.c:37 @ 6560) [229] blake2b_compress (blake2b-ref.c:211 @ 9bed) [468] rs_alloc_struct0 (util.c:39 @ 4ec0)
+  [71] blake2b_compress (blake2b-ref.c:178 @ 84a0) [122] blake2b_compress (blake2b-ref.c:211 @ 9c10) [423] rs_appendmatch (delta.c:258 @ 6278)
+ [167] blake2b_compress (blake2b-ref.c:183 @ 84ba) [230] blake2b_compress (blake2b-ref.c:211 @ 9c44) [15] rs_appendmiss (delta.c:287 @ 5fd5)
+  [44] blake2b_compress (blake2b-ref.c:178 @ 84bc) [231] blake2b_compress (blake2b-ref.c:211 @ 9c51) [50] rs_appendmiss (delta.c:291 @ 60a0)
+  [31] blake2b_compress (blake2b-ref.c:184 @ 84d0) [232] blake2b_compress (blake2b-ref.c:211 @ 9c6a) [64] rs_appendmiss (delta.c:291 @ 60af)
+  [40] blake2b_compress (blake2b-ref.c:183 @ 84d8) [90] blake2b_compress (blake2b-ref.c:213 @ 9c82) [17] rs_appendmiss (delta.c:287 @ 60f5)
+  [60] blake2b_compress (blake2b-ref.c:187 @ 84e9) [32] blake2b_compress (blake2b-ref.c:214 @ 9c8c) [293] rs_appendmiss (delta.c:287 @ 6107)
+  [36] blake2b_compress (blake2b-ref.c:188 @ 84f8) [233] blake2b_compress (blake2b-ref.c:213 @ 9ca1) [294] rs_block_match_cmp (sumset.c:68 @ 47d3)
+  [54] blake2b_compress (blake2b-ref.c:187 @ 8500) [234] blake2b_compress (blake2b-ref.c:216 @ 9ca6) [295] rs_block_match_cmp (sumset.c:76 @ 4807)
+  [68] blake2b_compress (blake2b-ref.c:200 @ 850a) [166] blake2b_final (blake2b-ref.c:249 @ a080) [296] rs_block_match_init (sumset.c:59 @ 4742)
+ [168] blake2b_compress (blake2b-ref.c:200 @ 85da) [235] blake2b_final (blake2b-ref.c:250 @ a095) [21] rs_block_match_init (sumset.c:60 @ 474b)
+  [69] blake2b_compress (blake2b-ref.c:200 @ 8636) [369] blake2b_final (blake2b-ref.c:261 @ a104) [18] rs_block_match_init (sumset.c:61 @ 474f)
+ [169] blake2b_compress (blake2b-ref.c:200 @ 8683) [139] blake2b_final (blake2b-ref.c:262 @ a11b) [65] rs_block_sig_idx (sumset.c:114 @ 4852)
+ [328] blake2b_compress (blake2b-ref.c:200 @ 8696) [236] blake2b_final (blake2b-ref.c:264 @ a12a) [297] rs_block_sig_init (sumset.c:37 @ 46af)
+ [170] blake2b_compress (blake2b-ref.c:200 @ 86a9) [237] blake2b_final (blake2b-ref.c:264 @ a139) [26] rs_block_sig_init (sumset.c:35 @ 4753)
+ [171] blake2b_compress (blake2b-ref.c:200 @ 86be) [238] blake2b_increment_counter (blake2b-ref.c:68 @ a0d9) [424] rs_block_sig_ptr (sumset.c:106 @ 46a0)
+ [172] blake2b_compress (blake2b-ref.c:200 @ 871c) [457] blake2b_init (blake2b-ref.c:99 @ 9ee0) [425] rs_block_sig_ptr (sumset.c:105 @ 46a4)
+  [61] blake2b_compress (blake2b-ref.c:200 @ 873c) [371] blake2b_init0 (blake2b-ref.c:77 @ 9e0a) [51] rs_build_hash_table (sumset.c:286 @ 4abb)
+ [140] blake2b_compress (blake2b-ref.c:200 @ 8783) [124] blake2b_init0 (blake2b-ref.c:75 @ 9e1f) [467] rs_bzero (util.c:34 @ 4ea0)
+ [173] blake2b_compress (blake2b-ref.c:201 @ 8796) [125] blake2b_init0 (blake2b-ref.c:77 @ 9e45) [459] rs_calc_strong_sum (checksum.c:59 @ 5800)
+ [329] blake2b_compress (blake2b-ref.c:201 @ 87b1) [80] blake2b_init_key (blake2b-ref.c:124 @ a058) [130] rs_calc_strong_sum (checksum.c:68 @ 582e)
+ [174] blake2b_compress (blake2b-ref.c:201 @ 87bb) [327] blake2b_init_param (blake2b-ref.c:82 @ 9e00) [480] rs_delta_begin (delta.c:387 @ 6310)
+  [49] blake2b_compress (blake2b-ref.c:201 @ 87c4) [239] blake2b_init_param (blake2b-ref.c:94 @ 9ed1) [481] rs_delta_s_end (delta.c:198 @ 5930)
+ [175] blake2b_compress (blake2b-ref.c:201 @ 87e9) [372] blake2b_update (blake2b-ref.c:221 @ 9cc0) [452] rs_delta_s_flush (delta.c:161 @ 5950)
+ [330] blake2b_compress (blake2b-ref.c:201 @ 8837) [151] blake2b_update (blake2b-ref.c:227 @ 9cd7) [131] rs_delta_s_flush (delta.c:304 @ 5e5b)
+  [99] blake2b_compress (blake2b-ref.c:201 @ 88a2) [373] blake2b_update (blake2b-ref.c:242 @ 9cff) [482] rs_delta_s_header (delta.c:375 @ 5880)
+ [176] blake2b_compress (blake2b-ref.c:201 @ 88b1) [374] blake2b_update (blake2b-ref.c:243 @ 9d0a) [97] rs_delta_s_scan (delta.c:120 @ 5e60)
+ [100] blake2b_compress (blake2b-ref.c:201 @ 88bc) [240] blake2b_update (blake2b-ref.c:246 @ 9d11) [75] rs_delta_s_scan (delta.c:121 @ 5e77)
+ [177] blake2b_compress (blake2b-ref.c:201 @ 88e0) [375] blake2b_update (blake2b-ref.c:230 @ 9d20) [426] rs_delta_s_scan (delta.c:130 @ 5e94)
+ [178] blake2b_compress (blake2b-ref.c:201 @ 8924) [152] blake2b_update (blake2b-ref.c:231 @ 9d2b) [427] rs_delta_s_scan (delta.c:132 @ 5eaa)
+ [179] blake2b_compress (blake2b-ref.c:201 @ 8931) [126] blake2b_update (blake2b-ref.c:235 @ 9dbc) [55] rs_delta_s_scan (delta.c:133 @ 5eb8)
+ [180] blake2b_compress (blake2b-ref.c:201 @ 8956) [458] blake2b_update (blake2b-ref.c:222 @ a060) [48] rs_delta_s_scan (delta.c:135 @ 5f7b)
+  [78] blake2b_compress (blake2b-ref.c:202 @ 8968) [241] hashtable_add (hashtable.h:268 @ 4b07) [23] rs_delta_s_scan (delta.c:142 @ 5f85)
+ [181] blake2b_compress (blake2b-ref.c:202 @ 89ac) [81] hashtable_add (hashtable.h:273 @ 4b57) [11] rs_delta_s_scan (delta.c:142 @ 5f96)
+  [62] blake2b_compress (blake2b-ref.c:202 @ 89d9) [242] hashtable_add (hashtable.h:272 @ 4b62) [45] rs_delta_s_scan (delta.c:141 @ 5f9a)
+  [72] blake2b_compress (blake2b-ref.c:202 @ 89ff) [82] hashtable_add (hashtable.h:273 @ 4b67) [24] rs_delta_s_scan (delta.c:142 @ 5f9f)
+ [331] blake2b_compress (blake2b-ref.c:202 @ 8a32) [9] hashtable_find (hashtable.h:292 @ 473b) [10] rs_delta_s_scan (delta.c:133 @ 60a4)
+ [182] blake2b_compress (blake2b-ref.c:202 @ 8a63) [30] hashtable_find (hashtable.h:291 @ 4756) [37] rs_delta_s_scan (delta.c:133 @ 60b6)
+ [332] blake2b_compress (blake2b-ref.c:202 @ 8a6c) [1] hashtable_find (hashtable.h:292 @ 475c) [299] rs_delta_s_scan (delta.c:149 @ 60bf)
+ [101] blake2b_compress (blake2b-ref.c:202 @ 8a73) [13] hashtable_find (hashtable.h:293 @ 47b2) [39] rs_delta_s_scan (delta.c:158 @ 60d7)
+ [333] blake2b_compress (blake2b-ref.c:202 @ 8ae2) [14] hashtable_find (hashtable.h:294 @ 47b8) [474] rs_emit_copy_cmd (emit.c:81 @ 6460)
+ [334] blake2b_compress (blake2b-ref.c:202 @ 8aec) [42] hashtable_find (hashtable.h:296 @ 47cb) [483] rs_emit_delta_header (emit.c:41 @ 63a0)
+ [183] blake2b_compress (blake2b-ref.c:202 @ 8b1b) [243] hashtable_find (hashtable.h:292 @ 49c3) [484] rs_emit_end_cmd (emit.c:124 @ 6540)
+ [141] blake2b_compress (blake2b-ref.c:202 @ 8b43) [33] hashtable_find (hashtable.h:292 @ 49e5) [464] rs_emit_literal_cmd (emit.c:48 @ 63c0)
+ [102] blake2b_compress (blake2b-ref.c:203 @ 8b67) [376] rabinkarp_init (rabinkarp.h:77 @ 626e) [485] rs_file_size (fileutil.c:123 @ 3ec0)
+ [142] blake2b_compress (blake2b-ref.c:203 @ 8b7b) [16] rabinkarp_rotate (rabinkarp.h:93 @ 60e8) [469] rs_filebuf_free (buf.c:68 @ 5560)
+ [184] blake2b_compress (blake2b-ref.c:203 @ 8b84) [8] rabinkarp_rotate (rabinkarp.h:93 @ 60fc) [300] rs_filebuf_free (buf.c:71 @ 5593)
+ [335] blake2b_compress (blake2b-ref.c:203 @ 8bd2) [35] rabinkarp_update (rabinkarp.h:82 @ 5f07) [470] rs_filebuf_new (buf.c:57 @ 5500)
+ [336] blake2b_compress (blake2b-ref.c:203 @ 8bf7) [6] rabinkarp_update (rabinkarp.h:83 @ 5f20) [47] rs_findmatch (delta.c:228 @ 5edd)
+ [185] blake2b_compress (blake2b-ref.c:203 @ 8c2c) [127] rabinkarp_update (rabinkarp.h:82 @ 5f33) [20] rs_findmatch (delta.c:225 @ 5ee1)
+ [337] blake2b_compress (blake2b-ref.c:203 @ 8c5a) [377] rabinkarp_update (rabinkarp.h:85 @ 5f38) [22] rs_findmatch (delta.c:228 @ 5ee5)
+ [186] blake2b_compress (blake2b-ref.c:203 @ 8c64) [29] rabinkarp_update (rabinkarp.h:86 @ 5f6c) [428] rs_findmatch (delta.c:230 @ 5ef2)
+ [143] blake2b_compress (blake2b-ref.c:203 @ 8cb5) [244] rotr64 (blake2-impl.h:155 @ 85a0) [429] rs_findmatch (delta.c:235 @ 5efc)
+ [187] blake2b_compress (blake2b-ref.c:203 @ 8cdd) [378] rotr64 (blake2-impl.h:155 @ 8632) [3] rs_findmatch (delta.c:244 @ 5f70)
+ [188] blake2b_compress (blake2b-ref.c:203 @ 8cfb) [153] rotr64 (blake2-impl.h:155 @ 868f) [27] rs_findmatch (delta.c:245 @ 605c)
+ [189] blake2b_compress (blake2b-ref.c:203 @ 8d05) [245] rotr64 (blake2-impl.h:155 @ 869c) [475] rs_format_stats (stats.c:41 @ 40c0)
+ [103] blake2b_compress (blake2b-ref.c:204 @ 8d28) [246] rotr64 (blake2-impl.h:155 @ 86ba) [301] rs_getinput (delta.c:207 @ 5e82)
+ [190] blake2b_compress (blake2b-ref.c:204 @ 8d79) [379] rotr64 (blake2-impl.h:155 @ 877f) [430] rs_getinput (delta.c:208 @ 5e87)
+ [191] blake2b_compress (blake2b-ref.c:204 @ 8db8) [380] rotr64 (blake2-impl.h:155 @ 87b7) [96] rs_infilebuf_fill (buf.c:78 @ 55a0)
+ [338] blake2b_compress (blake2b-ref.c:204 @ 8deb) [247] rotr64 (blake2-impl.h:155 @ 8818) [76] rs_infilebuf_fill (buf.c:126 @ 55d1)
+ [192] blake2b_compress (blake2b-ref.c:204 @ 8df2) [381] rotr64 (blake2-impl.h:155 @ 884e) [302] rs_infilebuf_fill (buf.c:81 @ 55e8)
+ [104] blake2b_compress (blake2b-ref.c:204 @ 8e19) [248] rotr64 (blake2-impl.h:155 @ 88b4) [160] rs_infilebuf_fill (buf.c:103 @ 5604)
+ [105] blake2b_compress (blake2b-ref.c:204 @ 8e23) [249] rotr64 (blake2-impl.h:155 @ 88dd) [92] rs_infilebuf_fill (buf.c:104 @ 5619)
+ [106] blake2b_compress (blake2b-ref.c:204 @ 8e33) [250] rotr64 (blake2-impl.h:155 @ 8920) [461] rs_int_len (netint.c:120 @ 76a0)
+ [339] blake2b_compress (blake2b-ref.c:204 @ 8ea2) [251] rotr64 (blake2-impl.h:155 @ 892e) [303] rs_job_complete (job.c:84 @ 6857)
+ [144] blake2b_compress (blake2b-ref.c:204 @ 8eb6) [252] rotr64 (blake2-impl.h:155 @ 8962) [476] rs_job_drive (job.c:154 @ 6910)
+ [193] blake2b_compress (blake2b-ref.c:204 @ 8eca) [253] rotr64 (blake2-impl.h:155 @ 8990) [431] rs_job_drive (job.c:157 @ 6946)
+ [340] blake2b_compress (blake2b-ref.c:205 @ 8ee7) [128] rotr64 (blake2-impl.h:155 @ 89a4) [432] rs_job_drive (job.c:170 @ 6958)
+ [107] blake2b_compress (blake2b-ref.c:205 @ 8ef2) [254] rotr64 (blake2-impl.h:155 @ 89b8) [305] rs_job_drive (job.c:160 @ 6972)
+ [194] blake2b_compress (blake2b-ref.c:205 @ 8f27) [255] rotr64 (blake2-impl.h:155 @ 89cc) [77] rs_job_drive (job.c:161 @ 6980)
+ [195] blake2b_compress (blake2b-ref.c:205 @ 8f3b) [382] rotr64 (blake2-impl.h:155 @ 89fb) [70] rs_job_drive (job.c:166 @ 6997)
+ [341] blake2b_compress (blake2b-ref.c:205 @ 8f92) [91] rotr64 (blake2-impl.h:155 @ 8a2a) [161] rs_job_drive (job.c:167 @ 69a5)
+ [196] blake2b_compress (blake2b-ref.c:205 @ 8fad) [154] rotr64 (blake2-impl.h:155 @ 8a3e) [477] rs_job_free (job.c:67 @ 6740)
+ [108] blake2b_compress (blake2b-ref.c:205 @ 8fd7) [256] rotr64 (blake2-impl.h:155 @ 8a52) [163] rs_job_iter (job.c:94 @ 67a0)
+ [197] blake2b_compress (blake2b-ref.c:205 @ 8fec) [383] rotr64 (blake2-impl.h:155 @ 8a6f) [306] rs_job_iter (job.c:101 @ 67b7)
+ [198] blake2b_compress (blake2b-ref.c:205 @ 9011) [384] rotr64 (blake2-impl.h:155 @ 8ade) [132] rs_job_iter (job.c:105 @ 6865)
+ [199] blake2b_compress (blake2b-ref.c:205 @ 903c) [385] rotr64 (blake2-impl.h:155 @ 8af2) [133] rs_job_iter (job.c:114 @ 686b)
+ [109] blake2b_compress (blake2b-ref.c:205 @ 9075) [386] rotr64 (blake2-impl.h:155 @ 8b3f) [478] rs_job_new (job.c:49 @ 66e0)
+ [200] blake2b_compress (blake2b-ref.c:205 @ 90a4) [257] rotr64 (blake2-impl.h:155 @ 8b49) [58] rs_job_work (job.c:125 @ 67d0)
+ [201] blake2b_compress (blake2b-ref.c:205 @ 90b1) [387] rotr64 (blake2-impl.h:155 @ 8b77) [486] rs_loadsig_begin (readsums.c:138 @ 7d80)
+ [145] blake2b_compress (blake2b-ref.c:205 @ 90c2) [258] rotr64 (blake2-impl.h:155 @ 8b81) [487] rs_loadsig_s_blocklen (readsums.c:107 @ 7c20)
+ [202] blake2b_compress (blake2b-ref.c:206 @ 90e8) [259] rotr64 (blake2-impl.h:155 @ 8bbd) [488] rs_loadsig_s_magic (readsums.c:125 @ 7b80)
+ [110] blake2b_compress (blake2b-ref.c:206 @ 911b) [388] rotr64 (blake2-impl.h:155 @ 8bce) [454] rs_loadsig_s_strong (readsums.c:72 @ 7d20)
+ [203] blake2b_compress (blake2b-ref.c:206 @ 9171) [389] rotr64 (blake2-impl.h:155 @ 8bf3) [308] rs_loadsig_s_strong (readsums.c:77 @ 7d2f)
+ [342] blake2b_compress (blake2b-ref.c:206 @ 91ab) [260] rotr64 (blake2-impl.h:155 @ 8c28) [309] rs_loadsig_s_strong (readsums.c:82 @ 7d6f)
+ [111] blake2b_compress (blake2b-ref.c:206 @ 91b2) [390] rotr64 (blake2-impl.h:155 @ 8c56) [489] rs_loadsig_s_stronglen (readsums.c:85 @ 7c90)
+ [204] blake2b_compress (blake2b-ref.c:206 @ 91e3) [391] rotr64 (blake2-impl.h:155 @ 8cd2) [89] rs_loadsig_s_weak (readsums.c:57 @ 7bc0)
+ [343] blake2b_compress (blake2b-ref.c:206 @ 91f3) [261] rotr64 (blake2-impl.h:155 @ 8d15) [162] rs_loadsig_s_weak (readsums.c:61 @ 7bcf)
+ [205] blake2b_compress (blake2b-ref.c:206 @ 9237) [262] rotr64 (blake2-impl.h:155 @ 8da7) [471] rs_log0 (trace.c:97 @ 4e00)
+ [206] blake2b_compress (blake2b-ref.c:206 @ 925b) [392] rotr64 (blake2-impl.h:155 @ 8de7) [472] rs_log_va (trace.c:76 @ 4cb0)
+ [344] blake2b_compress (blake2b-ref.c:206 @ 9262) [263] rotr64 (blake2-impl.h:155 @ 8e12) [164] rs_outfilebuf_drain (buf.c:131 @ 5690)
+ [207] blake2b_compress (blake2b-ref.c:206 @ 928a) [264] rotr64 (blake2-impl.h:155 @ 8e1f) [134] rs_outfilebuf_drain (buf.c:138 @ 56a7)
+ [345] blake2b_compress (blake2b-ref.c:206 @ 92a8) [265] rotr64 (blake2-impl.h:155 @ 8e2f) [88] rs_scoop_input (scoop.c:68 @ 7f80)
+ [346] blake2b_compress (blake2b-ref.c:206 @ 92cd) [393] rotr64 (blake2-impl.h:155 @ 8e9e) [310] rs_scoop_input (scoop.c:69 @ 7f97)
+ [112] blake2b_compress (blake2b-ref.c:207 @ 9304) [394] rotr64 (blake2-impl.h:155 @ 8ec7) [433] rs_scoop_input (scoop.c:68 @ 7f9b)
+ [347] blake2b_compress (blake2b-ref.c:207 @ 933a) [155] rotr64 (blake2-impl.h:155 @ 8eee) [311] rs_scoop_input (scoop.c:102 @ 801e)
+ [348] blake2b_compress (blake2b-ref.c:207 @ 9377) [395] rotr64 (blake2-impl.h:155 @ 8f8e) [43] rs_scoop_input (scoop.c:104 @ 8032)
+ [113] blake2b_compress (blake2b-ref.c:207 @ 9397) [266] rotr64 (blake2-impl.h:155 @ 8f98) [312] rs_scoop_input (scoop.c:88 @ 8050)
+ [208] blake2b_compress (blake2b-ref.c:207 @ 93d3) [267] rotr64 (blake2-impl.h:155 @ 9045) [59] rs_scoop_read (scoop.c:193 @ 81a0)
+  [73] blake2b_compress (blake2b-ref.c:207 @ 93e4) [268] rotr64 (blake2-impl.h:155 @ 90ae) [313] rs_scoop_read (scoop.c:197 @ 81b8)
+ [349] blake2b_compress (blake2b-ref.c:207 @ 9413) [396] rotr64 (blake2-impl.h:155 @ 90ba) [453] rs_scoop_readahead (scoop.c:149 @ 8100)
+ [114] blake2b_compress (blake2b-ref.c:207 @ 945d) [129] rotr64 (blake2-impl.h:155 @ 90e2) [314] rs_scoop_readahead (scoop.c:153 @ 8111)
+ [350] blake2b_compress (blake2b-ref.c:207 @ 9485) [269] rotr64 (blake2-impl.h:155 @ 9131) [315] rs_scoop_readahead (scoop.c:149 @ 811c)
+ [115] blake2b_compress (blake2b-ref.c:207 @ 948f) [270] rotr64 (blake2-impl.h:155 @ 9160) [316] rs_scoop_readahead (scoop.c:179 @ 817e)
+ [351] blake2b_compress (blake2b-ref.c:207 @ 9499) [397] rotr64 (blake2-impl.h:155 @ 91a7) [317] rs_scoop_readahead (scoop.c:179 @ 8197)
+ [116] blake2b_compress (blake2b-ref.c:208 @ 94a8) [271] rotr64 (blake2-impl.h:155 @ 91be) [326] rs_scoop_total_avail (scoop.c:228 @ 8230)
+  [86] blake2b_compress (blake2b-ref.c:208 @ 94db) [398] rotr64 (blake2-impl.h:155 @ 921e) [159] rs_scoop_total_avail (scoop.c:229 @ 823a)
+ [117] blake2b_compress (blake2b-ref.c:208 @ 950d) [156] rotr64 (blake2-impl.h:155 @ 925e) [135] rs_scoop_total_avail (scoop.c:230 @ 824a)
+ [209] blake2b_compress (blake2b-ref.c:208 @ 9538) [272] rotr64 (blake2-impl.h:155 @ 9268) [490] rs_sig_args (sumset.c:119 @ 42f0)
+ [210] blake2b_compress (blake2b-ref.c:208 @ 9572) [399] rotr64 (blake2-impl.h:155 @ 92b2) [165] rs_signature_add_block (sumset.c:228 @ 4630)
+ [352] blake2b_compress (blake2b-ref.c:208 @ 9586) [400] rotr64 (blake2-impl.h:155 @ 92d3) [19] rs_signature_add_block (sumset.c:235 @ 4718)
+ [211] blake2b_compress (blake2b-ref.c:208 @ 95a3) [401] rotr64 (blake2-impl.h:155 @ 9333) [491] rs_signature_done (sumset.c:219 @ 45f0)
+ [353] blake2b_compress (blake2b-ref.c:208 @ 95ac) [273] rotr64 (blake2-impl.h:155 @ 933d) [434] rs_signature_done (sumset.c:222 @ 4625)
+  [87] blake2b_compress (blake2b-ref.c:208 @ 95b3) [402] rotr64 (blake2-impl.h:155 @ 938e) [4] rs_signature_find_match (sumset.c:247 @ 4720)
+ [354] blake2b_compress (blake2b-ref.c:208 @ 9622) [274] rotr64 (blake2-impl.h:155 @ 93b5) [2] rs_signature_find_match (sumset.c:253 @ 4737)
+ [355] blake2b_compress (blake2b-ref.c:208 @ 9636) [275] rotr64 (blake2-impl.h:155 @ 93d6) [46] rs_signature_find_match (sumset.c:247 @ 4746)
+ [212] blake2b_compress (blake2b-ref.c:209 @ 9672) [403] rotr64 (blake2-impl.h:155 @ 940c) [52] rs_signature_find_match (sumset.c:254 @ 4855)
+ [356] blake2b_compress (blake2b-ref.c:208 @ 9679) [276] rotr64 (blake2-impl.h:155 @ 9431) [7] rs_signature_find_match (sumset.c:257 @ 485b)
+ [213] blake2b_compress (blake2b-ref.c:209 @ 9696) [277] rotr64 (blake2-impl.h:155 @ 946e) [12] rs_signature_find_match (sumset.c:256 @ 4874)
+ [214] blake2b_compress (blake2b-ref.c:209 @ 96b1) [404] rotr64 (blake2-impl.h:155 @ 948b) [5] rs_signature_find_match (sumset.c:257 @ 487b)
+ [215] blake2b_compress (blake2b-ref.c:209 @ 96bb) [405] rotr64 (blake2-impl.h:155 @ 949f) [492] rs_signature_init (sumset.c:189 @ 4520)
+ [216] blake2b_compress (blake2b-ref.c:209 @ 96c4) [406] rotr64 (blake2-impl.h:155 @ 94d3) [435] rs_signature_weaksum_kind (sumset.h:110 @ 4641)
+ [217] blake2b_compress (blake2b-ref.c:209 @ 96fa) [278] rotr64 (blake2-impl.h:155 @ 94f1) [463] rs_squirt_byte (netint.c:52 @ 7500)
+ [146] blake2b_compress (blake2b-ref.c:209 @ 9701) [83] rotr64 (blake2-impl.h:155 @ 9527) [493] rs_squirt_n4 (netint.c:80 @ 7570)
+ [218] blake2b_compress (blake2b-ref.c:209 @ 9712) [407] rotr64 (blake2-impl.h:155 @ 957e) [462] rs_squirt_netint (netint.c:65 @ 7530)
+ [357] blake2b_compress (blake2b-ref.c:209 @ 9723) [279] rotr64 (blake2-impl.h:155 @ 95af) [455] rs_suck_n4 (netint.c:110 @ 7660)
+ [219] blake2b_compress (blake2b-ref.c:209 @ 972d) [408] rotr64 (blake2-impl.h:155 @ 961e) [318] rs_suck_n4 (netint.c:117 @ 768a)
+ [118] blake2b_compress (blake2b-ref.c:209 @ 9757) [409] rotr64 (blake2-impl.h:155 @ 9647) [456] rs_suck_netint (netint.c:95 @ 75e0)
+ [220] blake2b_compress (blake2b-ref.c:209 @ 976c) [410] rotr64 (blake2-impl.h:155 @ 967f) [436] rs_suck_netint (netint.c:102 @ 7607)
+ [221] blake2b_compress (blake2b-ref.c:209 @ 97a2) [280] rotr64 (blake2-impl.h:155 @ 96f3) [437] rs_suck_netint (netint.c:103 @ 760e)
+ [119] blake2b_compress (blake2b-ref.c:209 @ 97b1) [157] rotr64 (blake2-impl.h:155 @ 970e) [66] rs_suck_netint (netint.c:104 @ 761c)
+ [222] blake2b_compress (blake2b-ref.c:209 @ 97e0) [411] rotr64 (blake2-impl.h:155 @ 971f) [473] rs_trace_stderr (trace.c:106 @ 4da0)
+ [223] blake2b_compress (blake2b-ref.c:209 @ 97f5) [281] rotr64 (blake2-impl.h:155 @ 9815) [57] rs_tube_catchup (tube.c:137 @ 8250)
+ [224] blake2b_compress (blake2b-ref.c:209 @ 9831) [412] rotr64 (blake2-impl.h:155 @ 983a) [85] rs_tube_catchup (tube.c:138 @ 8267)
+ [358] blake2b_compress (blake2b-ref.c:209 @ 9842) [413] rotr64 (blake2-impl.h:155 @ 9862) [93] rs_tube_catchup (tube.c:137 @ 826e)
+ [147] blake2b_compress (blake2b-ref.c:209 @ 9856) [84] rotr64 (blake2-impl.h:155 @ 98e0) [56] rs_tube_catchup (tube.c:144 @ 8276)
+ [225] blake2b_compress (blake2b-ref.c:210 @ 9868) [414] rotr64 (blake2-impl.h:155 @ 993e) [438] rs_tube_catchup (tube.c:156 @ 8282)
+ [226] blake2b_compress (blake2b-ref.c:210 @ 989b) [415] rotr64 (blake2-impl.h:155 @ 995f) [136] rs_tube_catchup (tube.c:157 @ 8284)
+  [63] blake2b_compress (blake2b-ref.c:210 @ 98cd) [416] rotr64 (blake2-impl.h:155 @ 996f) [465] rs_tube_copy (tube.c:179 @ 8440)
+ [359] blake2b_compress (blake2b-ref.c:210 @ 9932) [282] rotr64 (blake2-impl.h:155 @ 99f2) [319] rs_tube_copy (tube.c:183 @ 8454)
+ [120] blake2b_compress (blake2b-ref.c:210 @ 9946) [283] rotr64 (blake2-impl.h:155 @ 9a53) [460] rs_tube_write (tube.c:193 @ 8460)
+ [360] blake2b_compress (blake2b-ref.c:210 @ 9963) [417] rotr64 (blake2-impl.h:155 @ 9a92) [320] rs_tube_write (tube.c:199 @ 848e)
+ [148] blake2b_compress (blake2b-ref.c:210 @ 9973) [284] rotr64 (blake2-impl.h:155 @ 9ab9) [479] rs_whole_run (whole.c:61 @ 5040)
+ [227] blake2b_compress (blake2b-ref.c:210 @ 99d5) [418] rotr64 (blake2-impl.h:155 @ 9ac7) [321] secure_zero_memory (blake2-impl.h:162 @ a156)
+ [361] blake2b_compress (blake2b-ref.c:210 @ 99ec) [285] rotr64 (blake2-impl.h:155 @ 9ace) [322] store64 (blake2-impl.h:112 @ a130)
+ [362] blake2b_compress (blake2b-ref.c:210 @ 99f6) [286] rotr64 (blake2-impl.h:155 @ 9ae9) [439] uint32_pow (rabinkarp.h:63 @ 5f50)
+ [363] blake2b_compress (blake2b-ref.c:210 @ 9a4d) [287] rotr64 (blake2-impl.h:155 @ 9b00) [323] uint32_pow (rabinkarp.h:64 @ 5f54)
+ [364] blake2b_compress (blake2b-ref.c:211 @ 9a56) [288] rotr64 (blake2-impl.h:155 @ 9b49) [324] uint32_pow (rabinkarp.h:66 @ 5f58)
+  [79] blake2b_compress (blake2b-ref.c:211 @ 9a67) [419] rotr64 (blake2-impl.h:155 @ 9b53) [137] uint32_pow (rabinkarp.h:62 @ 5f5b)
+ [365] blake2b_compress (blake2b-ref.c:211 @ 9a8b) [289] rotr64 (blake2-impl.h:155 @ 9b59) [38] weaksum_digest (checksum.h:116 @ 6063)
+ [366] blake2b_compress (blake2b-ref.c:211 @ 9acb) [290] rotr64 (blake2-impl.h:155 @ 9b63) [67] weaksum_digest (checksum.h:118 @ 6096)
+ [367] blake2b_compress (blake2b-ref.c:211 @ 9b56) [420] rotr64 (blake2-impl.h:155 @ 9b7f) [41] weaksum_rotate (checksum.h:92 @ 5f93)
+ [149] blake2b_compress (blake2b-ref.c:211 @ 9b5d) [421] rotr64 (blake2-impl.h:155 @ 9b93) [25] weaksum_rotate (checksum.h:92 @ 5fa4)
+  [74] blake2b_compress (blake2b-ref.c:211 @ 9b67) [422] rotr64 (blake2-impl.h:155 @ 9bdb) [28] weaksum_update (checksum.h:84 @ 6040)
+ [228] blake2b_compress (blake2b-ref.c:211 @ 9b82) [291] rotr64 (blake2-impl.h:155 @ 9be6)

@@ -3,42 +3,41 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 20.00      0.01     0.01    90127     0.00     0.00  rs_tube_catchup
- 20.00      0.02     0.01    49162     0.00     0.00  rs_scoop_readahead
- 20.00      0.03     0.01    16384     0.00     0.00  rs_patch_s_literal
- 20.00      0.04     0.01                             rs_scoop_advance
- 20.00      0.05     0.01                             rs_scoop_total_avail
-  0.00      0.05     0.00    32776     0.00     0.00  rs_scoop_read
-  0.00      0.05     0.00    24577     0.00     0.00  rs_buffers_copy
-  0.00      0.05     0.00    16389     0.00     0.00  rs_suck_netint
-  0.00      0.05     0.00    16387     0.00     0.00  rs_patch_s_cmdbyte
-  0.00      0.05     0.00    16387     0.00     0.00  rs_patch_s_run
-  0.00      0.05     0.00    16387     0.00     0.00  rs_suck_byte
-  0.00      0.05     0.00    16386     0.00     0.00  rs_job_iter
-  0.00      0.05     0.00    16386     0.00     0.00  rs_outfilebuf_drain
-  0.00      0.05     0.00    16386     0.00     0.00  rs_patch_s_copying
-  0.00      0.05     0.00    16386     0.00     0.00  rs_patch_s_params
-  0.00      0.05     0.00    16384     0.00     0.00  rs_tube_copy
-  0.00      0.05     0.00    12291     0.00     0.00  rs_infilebuf_fill
-  0.00      0.05     0.00     8194     0.00     0.00  rs_file_copy_cb
-  0.00      0.05     0.00        4     0.00     0.00  rs_bzero
-  0.00      0.05     0.00        3     0.00     0.00  rs_alloc_struct0
-  0.00      0.05     0.00        2     0.00     0.00  rs_alloc
-  0.00      0.05     0.00        2     0.00     0.00  rs_filebuf_free
-  0.00      0.05     0.00        2     0.00     0.00  rs_filebuf_new
-  0.00      0.05     0.00        2     0.00     0.00  rs_patch_s_copy
-  0.00      0.05     0.00        1     0.00     0.00  rs_format_stats
-  0.00      0.05     0.00        1     0.00    30.00  rs_job_drive
-  0.00      0.05     0.00        1     0.00     0.00  rs_job_free
-  0.00      0.05     0.00        1     0.00     0.00  rs_job_new
-  0.00      0.05     0.00        1     0.00     0.00  rs_log0
-  0.00      0.05     0.00        1     0.00     0.00  rs_log_va
-  0.00      0.05     0.00        1     0.00     0.00  rs_mdfour_begin
-  0.00      0.05     0.00        1     0.00     0.00  rs_patch_begin
-  0.00      0.05     0.00        1     0.00     0.00  rs_patch_s_header
-  0.00      0.05     0.00        1     0.00     0.00  rs_suck_n4
-  0.00      0.05     0.00        1     0.00     0.00  rs_trace_stderr
-  0.00      0.05     0.00        1     0.00    30.00  rs_whole_run
+ 25.00      0.01     0.01    24577     0.00     0.00  rs_buffers_copy
+ 25.00      0.02     0.01    16387     0.00     0.00  rs_patch_s_cmdbyte
+ 25.00      0.03     0.01        1    10.00    30.00  rs_job_drive
+ 25.00      0.04     0.01                             rs_squirt_n4
+  0.00      0.04     0.00    90127     0.00     0.00  rs_tube_catchup
+  0.00      0.04     0.00    49162     0.00     0.00  rs_scoop_readahead
+  0.00      0.04     0.00    32776     0.00     0.00  rs_scoop_read
+  0.00      0.04     0.00    16389     0.00     0.00  rs_suck_netint
+  0.00      0.04     0.00    16387     0.00     0.00  rs_patch_s_run
+  0.00      0.04     0.00    16387     0.00     0.00  rs_suck_byte
+  0.00      0.04     0.00    16386     0.00     0.00  rs_job_iter
+  0.00      0.04     0.00    16386     0.00     0.00  rs_outfilebuf_drain
+  0.00      0.04     0.00    16386     0.00     0.00  rs_patch_s_copying
+  0.00      0.04     0.00    16386     0.00     0.00  rs_patch_s_params
+  0.00      0.04     0.00    16384     0.00     0.00  rs_patch_s_literal
+  0.00      0.04     0.00    16384     0.00     0.00  rs_tube_copy
+  0.00      0.04     0.00    12291     0.00     0.00  rs_infilebuf_fill
+  0.00      0.04     0.00     8194     0.00     0.00  rs_file_copy_cb
+  0.00      0.04     0.00        4     0.00     0.00  rs_bzero
+  0.00      0.04     0.00        3     0.00     0.00  rs_alloc_struct0
+  0.00      0.04     0.00        2     0.00     0.00  rs_alloc
+  0.00      0.04     0.00        2     0.00     0.00  rs_filebuf_free
+  0.00      0.04     0.00        2     0.00     0.00  rs_filebuf_new
+  0.00      0.04     0.00        2     0.00     0.00  rs_patch_s_copy
+  0.00      0.04     0.00        1     0.00     0.00  rs_format_stats
+  0.00      0.04     0.00        1     0.00     0.00  rs_job_free
+  0.00      0.04     0.00        1     0.00     0.00  rs_job_new
+  0.00      0.04     0.00        1     0.00     0.00  rs_log0
+  0.00      0.04     0.00        1     0.00     0.00  rs_log_va
+  0.00      0.04     0.00        1     0.00     0.00  rs_mdfour_begin
+  0.00      0.04     0.00        1     0.00     0.00  rs_patch_begin
+  0.00      0.04     0.00        1     0.00     0.00  rs_patch_s_header
+  0.00      0.04     0.00        1     0.00     0.00  rs_suck_n4
+  0.00      0.04     0.00        1     0.00     0.00  rs_trace_stderr
+  0.00      0.04     0.00        1     0.00    30.00  rs_whole_run
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -76,163 +75,160 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 20.00% of 0.05 seconds
+granularity: each sample hit covers 2 byte(s) for 25.00% of 0.04 seconds
 
 index % time    self  children    called     name
-                0.00    0.03   16386/16386       rs_job_drive [2]
-[1]     60.0    0.00    0.03   16386         rs_job_iter [1]
-                0.01    0.00   90127/90127       rs_tube_catchup [5]
-                0.01    0.00   16384/16384       rs_patch_s_literal [7]
-                0.00    0.01   16386/16386       rs_patch_s_params [11]
-                0.00    0.00   16387/16387       rs_patch_s_cmdbyte [13]
-                0.00    0.00       1/1           rs_patch_s_header [15]
-                0.00    0.00   16387/16387       rs_patch_s_run [18]
-                0.00    0.00   16386/16386       rs_patch_s_copying [20]
-                0.00    0.00       2/2           rs_patch_s_copy [29]
+                0.01    0.02       1/1           rs_whole_run [2]
+[1]     75.0    0.01    0.02       1         rs_job_drive [1]
+                0.00    0.02   16386/16386       rs_job_iter [4]
+                0.00    0.00   16386/16386       rs_outfilebuf_drain [14]
+                0.00    0.00   12291/12291       rs_infilebuf_fill [19]
+                0.00    0.00       1/4           rs_bzero [21]
 -----------------------------------------------
-                0.00    0.03       1/1           rs_whole_run [3]
-[2]     60.0    0.00    0.03       1         rs_job_drive [2]
-                0.00    0.03   16386/16386       rs_job_iter [1]
-                0.00    0.00   16386/16386       rs_outfilebuf_drain [19]
-                0.00    0.00   12291/12291       rs_infilebuf_fill [22]
-                0.00    0.00       1/4           rs_bzero [24]
------------------------------------------------
-                0.00    0.03       1/1           rs_patch_file [4]
-[3]     60.0    0.00    0.03       1         rs_whole_run [3]
-                0.00    0.03       1/1           rs_job_drive [2]
-                0.00    0.00       2/2           rs_filebuf_new [28]
-                0.00    0.00       2/2           rs_filebuf_free [27]
+                0.00    0.03       1/1           rs_patch_file [3]
+[2]     75.0    0.00    0.03       1         rs_whole_run [2]
+                0.01    0.02       1/1           rs_job_drive [1]
+                0.00    0.00       2/2           rs_filebuf_new [25]
+                0.00    0.00       2/2           rs_filebuf_free [24]
 -----------------------------------------------
                                                  <spontaneous>
-[4]     60.0    0.00    0.03                 rs_patch_file [4]
-                0.00    0.03       1/1           rs_whole_run [3]
-                0.00    0.00       1/1           rs_patch_begin [36]
-                0.00    0.00       1/1           rs_job_free [31]
+[3]     75.0    0.00    0.03                 rs_patch_file [3]
+                0.00    0.03       1/1           rs_whole_run [2]
+                0.00    0.00       1/1           rs_patch_begin [33]
+                0.00    0.00       1/1           rs_job_free [28]
 -----------------------------------------------
-                0.01    0.00   90127/90127       rs_job_iter [1]
-[5]     20.0    0.01    0.00   90127         rs_tube_catchup [5]
-                0.00    0.00   24577/24577       rs_buffers_copy [17]
+                0.00    0.02   16386/16386       rs_job_drive [1]
+[4]     50.0    0.00    0.02   16386         rs_job_iter [4]
+                0.00    0.01   90127/90127       rs_tube_catchup [5]
+                0.01    0.00   16387/16387       rs_patch_s_cmdbyte [7]
+                0.00    0.00   16387/16387       rs_patch_s_run [12]
+                0.00    0.00   16386/16386       rs_patch_s_copying [15]
+                0.00    0.00   16386/16386       rs_patch_s_params [16]
+                0.00    0.00   16384/16384       rs_patch_s_literal [17]
+                0.00    0.00       2/2           rs_patch_s_copy [26]
+                0.00    0.00       1/1           rs_patch_s_header [34]
 -----------------------------------------------
-                0.00    0.00   16386/49162       rs_patch_s_params [11]
-                0.01    0.00   32776/49162       rs_scoop_read [10]
-[6]     20.0    0.01    0.00   49162         rs_scoop_readahead [6]
+                0.00    0.01   90127/90127       rs_job_iter [4]
+[5]     25.0    0.00    0.01   90127         rs_tube_catchup [5]
+                0.01    0.00   24577/24577       rs_buffers_copy [6]
 -----------------------------------------------
-                0.01    0.00   16384/16384       rs_job_iter [1]
-[7]     20.0    0.01    0.00   16384         rs_patch_s_literal [7]
-                0.00    0.00   16384/16384       rs_tube_copy [21]
+                0.01    0.00   24577/24577       rs_tube_catchup [5]
+[6]     25.0    0.01    0.00   24577         rs_buffers_copy [6]
+-----------------------------------------------
+                0.01    0.00   16387/16387       rs_job_iter [4]
+[7]     25.0    0.01    0.00   16387         rs_patch_s_cmdbyte [7]
+                0.00    0.00   16387/16387       rs_suck_byte [13]
 -----------------------------------------------
                                                  <spontaneous>
-[8]     20.0    0.01    0.00                 rs_scoop_advance [8]
+[8]     25.0    0.01    0.00                 rs_squirt_n4 [8]
 -----------------------------------------------
-                                                 <spontaneous>
-[9]     20.0    0.01    0.00                 rs_scoop_total_avail [9]
+                0.00    0.00   16386/49162       rs_patch_s_params [16]
+                0.00    0.00   32776/49162       rs_scoop_read [10]
+[9]      0.0    0.00    0.00   49162         rs_scoop_readahead [9]
 -----------------------------------------------
-                0.00    0.00   16387/32776       rs_suck_byte [14]
-                0.00    0.00   16389/32776       rs_suck_netint [12]
-[10]    13.3    0.00    0.01   32776         rs_scoop_read [10]
-                0.01    0.00   32776/49162       rs_scoop_readahead [6]
+                0.00    0.00   16387/32776       rs_suck_byte [13]
+                0.00    0.00   16389/32776       rs_suck_netint [11]
+[10]     0.0    0.00    0.00   32776         rs_scoop_read [10]
+                0.00    0.00   32776/49162       rs_scoop_readahead [9]
 -----------------------------------------------
-                0.00    0.01   16386/16386       rs_job_iter [1]
-[11]    13.3    0.00    0.01   16386         rs_patch_s_params [11]
-                0.00    0.00   16388/16389       rs_suck_netint [12]
-                0.00    0.00   16386/49162       rs_scoop_readahead [6]
------------------------------------------------
-                0.00    0.00       1/16389       rs_suck_n4 [16]
-                0.00    0.00   16388/16389       rs_patch_s_params [11]
-[12]     6.7    0.00    0.00   16389         rs_suck_netint [12]
+                0.00    0.00       1/16389       rs_suck_n4 [35]
+                0.00    0.00   16388/16389       rs_patch_s_params [16]
+[11]     0.0    0.00    0.00   16389         rs_suck_netint [11]
                 0.00    0.00   16389/32776       rs_scoop_read [10]
 -----------------------------------------------
-                0.00    0.00   16387/16387       rs_job_iter [1]
-[13]     6.7    0.00    0.00   16387         rs_patch_s_cmdbyte [13]
-                0.00    0.00   16387/16387       rs_suck_byte [14]
+                0.00    0.00   16387/16387       rs_job_iter [4]
+[12]     0.0    0.00    0.00   16387         rs_patch_s_run [12]
 -----------------------------------------------
-                0.00    0.00   16387/16387       rs_patch_s_cmdbyte [13]
-[14]     6.7    0.00    0.00   16387         rs_suck_byte [14]
+                0.00    0.00   16387/16387       rs_patch_s_cmdbyte [7]
+[13]     0.0    0.00    0.00   16387         rs_suck_byte [13]
                 0.00    0.00   16387/32776       rs_scoop_read [10]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_job_iter [1]
-[15]     0.0    0.00    0.00       1         rs_patch_s_header [15]
-                0.00    0.00       1/1           rs_suck_n4 [16]
+                0.00    0.00   16386/16386       rs_job_drive [1]
+[14]     0.0    0.00    0.00   16386         rs_outfilebuf_drain [14]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_patch_s_header [15]
-[16]     0.0    0.00    0.00       1         rs_suck_n4 [16]
-                0.00    0.00       1/16389       rs_suck_netint [12]
+                0.00    0.00   16386/16386       rs_job_iter [4]
+[15]     0.0    0.00    0.00   16386         rs_patch_s_copying [15]
+                0.00    0.00    8194/8194        rs_file_copy_cb [20]
 -----------------------------------------------
-                0.00    0.00   24577/24577       rs_tube_catchup [5]
-[17]     0.0    0.00    0.00   24577         rs_buffers_copy [17]
+                0.00    0.00   16386/16386       rs_job_iter [4]
+[16]     0.0    0.00    0.00   16386         rs_patch_s_params [16]
+                0.00    0.00   16388/16389       rs_suck_netint [11]
+                0.00    0.00   16386/49162       rs_scoop_readahead [9]
 -----------------------------------------------
-                0.00    0.00   16387/16387       rs_job_iter [1]
-[18]     0.0    0.00    0.00   16387         rs_patch_s_run [18]
+                0.00    0.00   16384/16384       rs_job_iter [4]
+[17]     0.0    0.00    0.00   16384         rs_patch_s_literal [17]
+                0.00    0.00   16384/16384       rs_tube_copy [18]
 -----------------------------------------------
-                0.00    0.00   16386/16386       rs_job_drive [2]
-[19]     0.0    0.00    0.00   16386         rs_outfilebuf_drain [19]
+                0.00    0.00   16384/16384       rs_patch_s_literal [17]
+[18]     0.0    0.00    0.00   16384         rs_tube_copy [18]
 -----------------------------------------------
-                0.00    0.00   16386/16386       rs_job_iter [1]
-[20]     0.0    0.00    0.00   16386         rs_patch_s_copying [20]
-                0.00    0.00    8194/8194        rs_file_copy_cb [23]
+                0.00    0.00   12291/12291       rs_job_drive [1]
+[19]     0.0    0.00    0.00   12291         rs_infilebuf_fill [19]
 -----------------------------------------------
-                0.00    0.00   16384/16384       rs_patch_s_literal [7]
-[21]     0.0    0.00    0.00   16384         rs_tube_copy [21]
+                0.00    0.00    8194/8194        rs_patch_s_copying [15]
+[20]     0.0    0.00    0.00    8194         rs_file_copy_cb [20]
 -----------------------------------------------
-                0.00    0.00   12291/12291       rs_job_drive [2]
-[22]     0.0    0.00    0.00   12291         rs_infilebuf_fill [22]
+                0.00    0.00       1/4           rs_job_free [28]
+                0.00    0.00       1/4           rs_job_drive [1]
+                0.00    0.00       2/4           rs_filebuf_free [24]
+[21]     0.0    0.00    0.00       4         rs_bzero [21]
 -----------------------------------------------
-                0.00    0.00    8194/8194        rs_patch_s_copying [20]
-[23]     0.0    0.00    0.00    8194         rs_file_copy_cb [23]
+                0.00    0.00       1/3           rs_job_new [29]
+                0.00    0.00       2/3           rs_filebuf_new [25]
+[22]     0.0    0.00    0.00       3         rs_alloc_struct0 [22]
 -----------------------------------------------
-                0.00    0.00       1/4           rs_job_free [31]
-                0.00    0.00       1/4           rs_job_drive [2]
-                0.00    0.00       2/4           rs_filebuf_free [27]
-[24]     0.0    0.00    0.00       4         rs_bzero [24]
+                0.00    0.00       2/2           rs_filebuf_new [25]
+[23]     0.0    0.00    0.00       2         rs_alloc [23]
 -----------------------------------------------
-                0.00    0.00       1/3           rs_job_new [32]
-                0.00    0.00       2/3           rs_filebuf_new [28]
-[25]     0.0    0.00    0.00       3         rs_alloc_struct0 [25]
+                0.00    0.00       2/2           rs_whole_run [2]
+[24]     0.0    0.00    0.00       2         rs_filebuf_free [24]
+                0.00    0.00       2/4           rs_bzero [21]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_filebuf_new [28]
-[26]     0.0    0.00    0.00       2         rs_alloc [26]
+                0.00    0.00       2/2           rs_whole_run [2]
+[25]     0.0    0.00    0.00       2         rs_filebuf_new [25]
+                0.00    0.00       2/3           rs_alloc_struct0 [22]
+                0.00    0.00       2/2           rs_alloc [23]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_whole_run [3]
-[27]     0.0    0.00    0.00       2         rs_filebuf_free [27]
-                0.00    0.00       2/4           rs_bzero [24]
+                0.00    0.00       2/2           rs_job_iter [4]
+[26]     0.0    0.00    0.00       2         rs_patch_s_copy [26]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_whole_run [3]
-[28]     0.0    0.00    0.00       2         rs_filebuf_new [28]
-                0.00    0.00       2/3           rs_alloc_struct0 [25]
-                0.00    0.00       2/2           rs_alloc [26]
+                0.00    0.00       1/1           rs_log_stats [85]
+[27]     0.0    0.00    0.00       1         rs_format_stats [27]
 -----------------------------------------------
-                0.00    0.00       2/2           rs_job_iter [1]
-[29]     0.0    0.00    0.00       2         rs_patch_s_copy [29]
+                0.00    0.00       1/1           rs_patch_file [3]
+[28]     0.0    0.00    0.00       1         rs_job_free [28]
+                0.00    0.00       1/4           rs_bzero [21]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_log_stats [86]
-[30]     0.0    0.00    0.00       1         rs_format_stats [30]
+                0.00    0.00       1/1           rs_patch_begin [33]
+[29]     0.0    0.00    0.00       1         rs_job_new [29]
+                0.00    0.00       1/3           rs_alloc_struct0 [22]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_patch_file [4]
-[31]     0.0    0.00    0.00       1         rs_job_free [31]
-                0.00    0.00       1/4           rs_bzero [24]
+                0.00    0.00       1/1           rs_log_stats [85]
+[30]     0.0    0.00    0.00       1         rs_log0 [30]
+                0.00    0.00       1/1           rs_log_va [31]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_patch_begin [36]
-[32]     0.0    0.00    0.00       1         rs_job_new [32]
-                0.00    0.00       1/3           rs_alloc_struct0 [25]
+                0.00    0.00       1/1           rs_log0 [30]
+[31]     0.0    0.00    0.00       1         rs_log_va [31]
+                0.00    0.00       1/1           rs_trace_stderr [36]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_log_stats [86]
-[33]     0.0    0.00    0.00       1         rs_log0 [33]
-                0.00    0.00       1/1           rs_log_va [34]
+                0.00    0.00       1/1           rs_patch_begin [33]
+[32]     0.0    0.00    0.00       1         rs_mdfour_begin [32]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_log0 [33]
-[34]     0.0    0.00    0.00       1         rs_log_va [34]
-                0.00    0.00       1/1           rs_trace_stderr [37]
+                0.00    0.00       1/1           rs_patch_file [3]
+[33]     0.0    0.00    0.00       1         rs_patch_begin [33]
+                0.00    0.00       1/1           rs_job_new [29]
+                0.00    0.00       1/1           rs_mdfour_begin [32]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_patch_begin [36]
-[35]     0.0    0.00    0.00       1         rs_mdfour_begin [35]
+                0.00    0.00       1/1           rs_job_iter [4]
+[34]     0.0    0.00    0.00       1         rs_patch_s_header [34]
+                0.00    0.00       1/1           rs_suck_n4 [35]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_patch_file [4]
-[36]     0.0    0.00    0.00       1         rs_patch_begin [36]
-                0.00    0.00       1/1           rs_job_new [32]
-                0.00    0.00       1/1           rs_mdfour_begin [35]
+                0.00    0.00       1/1           rs_patch_s_header [34]
+[35]     0.0    0.00    0.00       1         rs_suck_n4 [35]
+                0.00    0.00       1/16389       rs_suck_netint [11]
 -----------------------------------------------
-                0.00    0.00       1/1           rs_log_va [34]
-[37]     0.0    0.00    0.00       1         rs_trace_stderr [37]
+                0.00    0.00       1/1           rs_log_va [31]
+[36]     0.0    0.00    0.00       1         rs_trace_stderr [36]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -325,15 +321,15 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [26] rs_alloc               [32] rs_job_new             [18] rs_patch_s_run (patch.c)
-  [25] rs_alloc_struct0       [33] rs_log0                 [8] rs_scoop_advance
-  [17] rs_buffers_copy        [34] rs_log_va (trace.c)    [10] rs_scoop_read
-  [24] rs_bzero               [35] rs_mdfour_begin         [6] rs_scoop_readahead
-  [23] rs_file_copy_cb        [19] rs_outfilebuf_drain     [9] rs_scoop_total_avail
-  [27] rs_filebuf_free        [36] rs_patch_begin         [14] rs_suck_byte
-  [28] rs_filebuf_new         [13] rs_patch_s_cmdbyte (patch.c) [16] rs_suck_n4
-  [30] rs_format_stats        [29] rs_patch_s_copy (patch.c) [12] rs_suck_netint
-  [22] rs_infilebuf_fill      [20] rs_patch_s_copying (patch.c) [37] rs_trace_stderr
-   [2] rs_job_drive           [15] rs_patch_s_header (patch.c) [5] rs_tube_catchup
-  [31] rs_job_free             [7] rs_patch_s_literal (patch.c) [21] rs_tube_copy
-   [1] rs_job_iter            [11] rs_patch_s_params (patch.c) [3] rs_whole_run
+  [23] rs_alloc               [29] rs_job_new             [12] rs_patch_s_run (patch.c)
+  [22] rs_alloc_struct0       [30] rs_log0                [10] rs_scoop_read
+   [6] rs_buffers_copy        [31] rs_log_va (trace.c)     [9] rs_scoop_readahead
+  [21] rs_bzero               [32] rs_mdfour_begin         [8] rs_squirt_n4
+  [20] rs_file_copy_cb        [14] rs_outfilebuf_drain    [13] rs_suck_byte
+  [24] rs_filebuf_free        [33] rs_patch_begin         [35] rs_suck_n4
+  [25] rs_filebuf_new          [7] rs_patch_s_cmdbyte (patch.c) [11] rs_suck_netint
+  [27] rs_format_stats        [26] rs_patch_s_copy (patch.c) [36] rs_trace_stderr
+  [19] rs_infilebuf_fill      [15] rs_patch_s_copying (patch.c) [5] rs_tube_catchup
+   [1] rs_job_drive           [34] rs_patch_s_header (patch.c) [18] rs_tube_copy
+  [28] rs_job_free            [17] rs_patch_s_literal (patch.c) [2] rs_whole_run
+   [4] rs_job_iter            [16] rs_patch_s_params (patch.c)
