@@ -320,6 +320,10 @@ was slower. I also experimented with unrolling it as statements that
 accumulate into the hash vs a single long expression and the expression was
 faster.
 
+Given that 2.is basically 4 32bit multiplies in parallel, I thought that
+perhaps using xmm vectors would make this faster. Unfortunalty it took more
+than 2x as long as my unrolled loop.
+
 In the end I managed to shave 1.5 seconds off the 12.5 seconds for the 1G data
 file. `Profiling of opt/rabinkarp1 sig
 <data/prof_sig_b1024S8_opt-rabinkarp1.txt>`_ shows it is nearly 2x as fast as
@@ -358,3 +362,41 @@ Lessons Learned
   hashtable made such a difference (better hash-key locality for lookups), and
   why the v2.3.0 default larger blocksize for large files made a difference
   (it needs a smaller hashtable).
+
+Making Hashtable faster
+-----------------------
+
+The profiling clearly shows that hashtable lookups thrashing the L2 cache are
+the biggest part of delta execution time. On the low-end atom platform I'm
+using we have;
+
+* L1 cache 32K ~1ns    256K entries at 1bit/entry, 8K entries at 32bits/entry.
+* L2 cache 512K 10ns   4M entries at 1bit/entry, 128K entries at 32bits/entry.
+* Memory 2G+ 100ns
+
+It's also important that the cache uses 64 byte cache lines, which can contain
+16 32bit key hash values. The hashtable probing for an entry will probe at
+offsets 0, 1, 3, 6, 10, 15, etc. This means after the first hashtable probe,
+we get the next average 3, upto 5, probes "for free" before we need to hit the
+next cache line. This is why packing the hash keys separately from the entry
+pointers was such a performance win. Note that hashtable load of 80% means
+typically 5 probes per lookup, whereas 70% is 3.33 probes.
+
+My first thought was that the hash key index could be sliced up bitwise for
+better locality. Slicing the keys into bitmaps with 1bit/entry means each bit
+check has a 50% chance of aborting the search early before even touching the
+rest of the key table. To abort misses before having to probe all the bits
+requires adding a bitmap that indicates if entries are empty. The initial
+"emtpy" check would only save lookups at a rate that depends on the hashtable
+load (currently max 80%, so only 20% chance of aborting the lookup).
+Unfortunatly, although this gives better locality across searches, it
+completely destroys the locality within searches, with each bit check being on
+a different cache line. The 512K L2 cache only gives us ~2bits per entry for a
+2M entries hashtable, which means all bit lookups after the first 2 bits will
+be hitting main memory.
+
+After doing some modeling, and thinking about how to make bloom filters with
+k<1 work (see http://minkirri.apana.org.au/wiki/PartialKBloomFilter), I came
+to the conclusiong that a simple K=1 bloom filter the same size as the
+hashtable is best. It should fit within L2 caches for even 4M entry hashtables
+on atom-class CPU's and halve the lookup rate.
