@@ -1,0 +1,300 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+ 16.67      0.01     0.01    16386   610.37   610.37  rs_job_iter (job.c:94 @ 6750)
+ 16.67      0.02     0.01    12291   813.72   813.72  rs_infilebuf_fill (buf.c:78 @ 5630)
+ 16.67      0.03     0.01                             blake2 (blake2b-ref.c:303 @ a3bb)
+ 16.67      0.04     0.01                             rs_patch_s_copying (patch.c:228 @ 7878)
+  8.33      0.05     0.01     8194   610.29   610.29  rs_file_copy_cb (fileutil.c:131 @ 3f20)
+  8.33      0.05     0.01                             rs_file_size (fileutil.c:128 @ 3f18)
+  8.33      0.06     0.01                             rs_scoop_readahead (scoop.c:157 @ 82d5)
+  8.33      0.06     0.01                             rs_scoop_readahead (scoop.c:179 @ 82d7)
+  0.00      0.06     0.00    90127     0.00     0.00  rs_tube_catchup (tube.c:137 @ 8390)
+  0.00      0.06     0.00    49162     0.00     0.00  rs_scoop_readahead (scoop.c:149 @ 8240)
+  0.00      0.06     0.00    32776     0.00     0.00  rs_scoop_read (scoop.c:193 @ 82e0)
+  0.00      0.06     0.00    24577     0.00     0.00  rs_buffers_copy (stream.c:97 @ a3c0)
+  0.00      0.06     0.00    16389     0.00     0.00  rs_suck_netint (netint.c:95 @ 7590)
+  0.00      0.06     0.00    16387     0.00     0.00  rs_patch_s_cmdbyte (patch.c:48 @ 79c0)
+  0.00      0.06     0.00    16387     0.00     0.00  rs_patch_s_run (patch.c:100 @ 7930)
+  0.00      0.06     0.00    16387     0.00     0.00  rs_suck_byte (netint.c:85 @ 7550)
+  0.00      0.06     0.00    16386     0.00     0.00  rs_outfilebuf_drain (buf.c:131 @ 5720)
+  0.00      0.06     0.00    16386     0.00     0.00  rs_patch_s_copying (patch.c:180 @ 77c0)
+  0.00      0.06     0.00    16386     0.00     0.00  rs_patch_s_params (patch.c:72 @ 7a40)
+  0.00      0.06     0.00    16384     0.00     0.00  rs_patch_s_literal (patch.c:124 @ 7890)
+  0.00      0.06     0.00    16384     0.00     0.00  rs_tube_copy (tube.c:179 @ 8580)
+  0.00      0.06     0.00        4     0.00     0.00  rs_bzero (util.c:34 @ 4f30)
+  0.00      0.06     0.00        3     0.00     0.00  rs_alloc_struct0 (util.c:39 @ 4f50)
+  0.00      0.06     0.00        2     0.00     0.00  rs_alloc (util.c:50 @ 4fa0)
+  0.00      0.06     0.00        2     0.00     0.00  rs_filebuf_free (buf.c:68 @ 55f0)
+  0.00      0.06     0.00        2     0.00     0.00  rs_filebuf_new (buf.c:57 @ 5590)
+  0.00      0.06     0.00        2     0.00     0.00  rs_patch_s_copy (patch.c:145 @ 7720)
+  0.00      0.06     0.00        1     0.00     0.00  rs_format_stats (stats.c:41 @ 40c0)
+  0.00      0.06     0.00        1     0.00     0.00  rs_job_drive (job.c:154 @ 68c0)
+  0.00      0.06     0.00        1     0.00     0.00  rs_job_free (job.c:67 @ 66f0)
+  0.00      0.06     0.00        1     0.00     0.00  rs_job_new (job.c:49 @ 6690)
+  0.00      0.06     0.00        1     0.00     0.00  rs_log0 (trace.c:97 @ 4e90)
+  0.00      0.06     0.00        1     0.00     0.00  rs_log_va (trace.c:76 @ 4d40)
+  0.00      0.06     0.00        1     0.00     0.00  rs_mdfour_begin (mdfour.c:242 @ 6f40)
+  0.00      0.06     0.00        1     0.00     0.00  rs_patch_begin (patch.c:252 @ 7ad0)
+  0.00      0.06     0.00        1     0.00     0.00  rs_patch_s_header (patch.c:232 @ 76a0)
+  0.00      0.06     0.00        1     0.00     0.00  rs_suck_n4 (netint.c:110 @ 7610)
+  0.00      0.06     0.00        1     0.00     0.00  rs_trace_stderr (trace.c:106 @ 4e30)
+  0.00      0.06     0.00        1     0.00     0.00  rs_whole_run (whole.c:61 @ 50d0)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 16.66% of 0.06 seconds
+
+index % time    self  children    called     name
+                0.01    0.00   16386/16386       rs_job_drive (job.c:166 @ 6947) [5]
+[1]     16.7    0.01    0.00   16386         rs_job_iter (job.c:94 @ 6750) [1]
+-----------------------------------------------
+                0.01    0.00   12291/12291       rs_job_drive (job.c:161 @ 6930) [4]
+[2]     16.7    0.01    0.00   12291         rs_infilebuf_fill (buf.c:78 @ 5630) [2]
+-----------------------------------------------
+                0.01    0.00    8194/8194        rs_patch_s_copying (patch.c:199 @ 77ff) [9]
+[7]      8.3    0.01    0.00    8194         rs_file_copy_cb (fileutil.c:131 @ 3f20) [7]
+-----------------------------------------------
+                0.00    0.00   90127/90127       rs_job_work (job.c:125 @ 6780) [1721]
+[12]     0.0    0.00    0.00   90127         rs_tube_catchup (tube.c:137 @ 8390) [12]
+-----------------------------------------------
+                0.00    0.00   16386/49162       rs_patch_s_params (patch.c:79 @ 7a5d) [2321]
+                0.00    0.00   32776/49162       rs_scoop_read (scoop.c:193 @ 82e0) [14]
+[13]     0.0    0.00    0.00   49162         rs_scoop_readahead (scoop.c:149 @ 8240) [13]
+-----------------------------------------------
+                0.00    0.00   16387/32776       rs_suck_byte (netint.c:89 @ 7562) [2738]
+                0.00    0.00   16389/32776       rs_suck_netint (netint.c:101 @ 75ae) [2748]
+[14]     0.0    0.00    0.00   32776         rs_scoop_read (scoop.c:193 @ 82e0) [14]
+                0.00    0.00   32776/49162       rs_scoop_readahead (scoop.c:149 @ 8240) [13]
+-----------------------------------------------
+                0.00    0.00   24577/24577       rs_tube_catchup_copy (tube.c:125 @ 83ec) [2795]
+[15]     0.0    0.00    0.00   24577         rs_buffers_copy (stream.c:97 @ a3c0) [15]
+-----------------------------------------------
+                0.00    0.00       1/16389       rs_suck_n4 (netint.c:114 @ 7627) [2743]
+                0.00    0.00       2/16389       rs_patch_s_params (patch.c:89 @ 7ac0) [2332]
+                0.00    0.00   16386/16389       rs_patch_s_params (patch.c:84 @ 7a80) [2326]
+[16]     0.0    0.00    0.00   16389         rs_suck_netint (netint.c:95 @ 7590) [16]
+-----------------------------------------------
+                0.00    0.00   16387/16387       rs_job_work (job.c:126 @ 678b) [1722]
+[17]     0.0    0.00    0.00   16387         rs_patch_s_cmdbyte (patch.c:48 @ 79c0) [17]
+-----------------------------------------------
+                0.00    0.00   16387/16387       rs_job_work (job.c:126 @ 678b) [1722]
+[18]     0.0    0.00    0.00   16387         rs_patch_s_run (patch.c:100 @ 7930) [18]
+-----------------------------------------------
+                0.00    0.00   16387/16387       rs_patch_s_cmdbyte (patch.c:51 @ 79cf) [2237]
+[19]     0.0    0.00    0.00   16387         rs_suck_byte (netint.c:85 @ 7550) [19]
+-----------------------------------------------
+                0.00    0.00   16386/16386       rs_job_drive (job.c:171 @ 690d) [1676]
+[20]     0.0    0.00    0.00   16386         rs_outfilebuf_drain (buf.c:131 @ 5720) [20]
+-----------------------------------------------
+                0.00    0.00   16386/16386       rs_job_work (job.c:126 @ 678b) [1722]
+[21]     0.0    0.00    0.00   16386         rs_patch_s_copying (patch.c:180 @ 77c0) [21]
+-----------------------------------------------
+                0.00    0.00   16386/16386       rs_job_work (job.c:126 @ 678b) [1722]
+[22]     0.0    0.00    0.00   16386         rs_patch_s_params (patch.c:72 @ 7a40) [22]
+-----------------------------------------------
+                0.00    0.00   16384/16384       rs_job_work (job.c:126 @ 678b) [1722]
+[23]     0.0    0.00    0.00   16384         rs_patch_s_literal (patch.c:124 @ 7890) [23]
+-----------------------------------------------
+                0.00    0.00   16384/16384       rs_patch_s_literal (patch.c:136 @ 78cb) [2310]
+[24]     0.0    0.00    0.00   16384         rs_tube_copy (tube.c:179 @ 8580) [24]
+-----------------------------------------------
+                0.00    0.00       1/4           rs_job_free (job.c:71 @ 6718) [1686]
+                0.00    0.00       1/4           rs_job_drive (job.c:154 @ 68e8) [1673]
+                0.00    0.00       2/4           rs_filebuf_free (buf.c:70 @ 560c) [1542]
+[25]     0.0    0.00    0.00       4         rs_bzero (util.c:34 @ 4f30) [25]
+-----------------------------------------------
+                0.00    0.00       1/3           rs_job_new (job.c:52 @ 66a9) [1707]
+                0.00    0.00       2/3           rs_filebuf_new (buf.c:58 @ 55a9) [1547]
+[26]     0.0    0.00    0.00       3         rs_alloc_struct0 (util.c:39 @ 4f50) [26]
+-----------------------------------------------
+                0.00    0.00       2/2           rs_filebuf_new (buf.c:60 @ 55ba) [1548]
+[27]     0.0    0.00    0.00       2         rs_alloc (util.c:50 @ 4fa0) [27]
+-----------------------------------------------
+                0.00    0.00       1/2           rs_whole_run (whole.c:77 @ 515f) [2848]
+                0.00    0.00       1/2           rs_whole_run (whole.c:79 @ 5169) [2850]
+[28]     0.0    0.00    0.00       2         rs_filebuf_free (buf.c:68 @ 55f0) [28]
+-----------------------------------------------
+                0.00    0.00       1/2           rs_whole_run (whole.c:70 @ 510a) [2840]
+                0.00    0.00       1/2           rs_whole_run (whole.c:72 @ 511d) [2844]
+[29]     0.0    0.00    0.00       2         rs_filebuf_new (buf.c:57 @ 5590) [29]
+-----------------------------------------------
+                0.00    0.00       2/2           rs_job_work (job.c:126 @ 678b) [1722]
+[30]     0.0    0.00    0.00       2         rs_patch_s_copy (patch.c:145 @ 7720) [30]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_log_stats (stats.c:35 @ 42a3) [1815]
+[31]     0.0    0.00    0.00       1         rs_format_stats (stats.c:41 @ 40c0) [31]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_whole_run (whole.c:74 @ 512b) [2845]
+[32]     0.0    0.00    0.00       1         rs_job_drive (job.c:154 @ 68c0) [32]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_patch_file (whole.c:151 @ 557c) [2235]
+[33]     0.0    0.00    0.00       1         rs_job_free (job.c:67 @ 66f0) [33]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_patch_begin (patch.c:253 @ 7ae9) [2219]
+[34]     0.0    0.00    0.00       1         rs_job_new (job.c:49 @ 6690) [34]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_log_stats (stats.c:36 @ 42b7) [1816]
+[35]     0.0    0.00    0.00       1         rs_log0 (trace.c:97 @ 4e90) [35]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_log0 (trace.c:101 @ 4f0e) [1812]
+[36]     0.0    0.00    0.00       1         rs_log_va (trace.c:76 @ 4d40) [36]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_patch_begin (patch.c:256 @ 7b0d) [2223]
+[37]     0.0    0.00    0.00       1         rs_mdfour_begin (mdfour.c:242 @ 6f40) [37]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_patch_file (whole.c:142 @ 54de) [2228]
+[38]     0.0    0.00    0.00       1         rs_patch_begin (patch.c:252 @ 7ad0) [38]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_job_work (job.c:126 @ 678b) [1722]
+[39]     0.0    0.00    0.00       1         rs_patch_s_header (patch.c:232 @ 76a0) [39]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_patch_s_header (patch.c:236 @ 76af) [2292]
+[40]     0.0    0.00    0.00       1         rs_suck_n4 (netint.c:110 @ 7610) [40]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_log_va (trace.c:91 @ 4ddc) [1829]
+[41]     0.0    0.00    0.00       1         rs_trace_stderr (trace.c:106 @ 4e30) [41]
+-----------------------------------------------
+                0.00    0.00       1/1           rs_patch_file (whole.c:148 @ 5500) [2232]
+[42]     0.0    0.00    0.00       1         rs_whole_run (whole.c:61 @ 50d0) [42]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [3] blake2 (blake2b-ref.c:303 @ a3bb) [1] rs_job_iter (job.c:94 @ 6750) [22] rs_patch_s_params (patch.c:72 @ 7a40)
+  [27] rs_alloc (util.c:50 @ 4fa0) [34] rs_job_new (job.c:49 @ 6690) [18] rs_patch_s_run (patch.c:100 @ 7930)
+  [26] rs_alloc_struct0 (util.c:39 @ 4f50) [35] rs_log0 (trace.c:97 @ 4e90) [14] rs_scoop_read (scoop.c:193 @ 82e0)
+  [15] rs_buffers_copy (stream.c:97 @ a3c0) [36] rs_log_va (trace.c:76 @ 4d40) [13] rs_scoop_readahead (scoop.c:149 @ 8240)
+  [25] rs_bzero (util.c:34 @ 4f30) [37] rs_mdfour_begin (mdfour.c:242 @ 6f40) [10] rs_scoop_readahead (scoop.c:157 @ 82d5)
+   [7] rs_file_copy_cb (fileutil.c:131 @ 3f20) [20] rs_outfilebuf_drain (buf.c:131 @ 5720) [11] rs_scoop_readahead (scoop.c:179 @ 82d7)
+   [8] rs_file_size (fileutil.c:128 @ 3f18) [38] rs_patch_begin (patch.c:252 @ 7ad0) [19] rs_suck_byte (netint.c:85 @ 7550)
+  [28] rs_filebuf_free (buf.c:68 @ 55f0) [17] rs_patch_s_cmdbyte (patch.c:48 @ 79c0) [40] rs_suck_n4 (netint.c:110 @ 7610)
+  [29] rs_filebuf_new (buf.c:57 @ 5590) [30] rs_patch_s_copy (patch.c:145 @ 7720) [16] rs_suck_netint (netint.c:95 @ 7590)
+  [31] rs_format_stats (stats.c:41 @ 40c0) [21] rs_patch_s_copying (patch.c:180 @ 77c0) [41] rs_trace_stderr (trace.c:106 @ 4e30)
+   [2] rs_infilebuf_fill (buf.c:78 @ 5630) [6] rs_patch_s_copying (patch.c:228 @ 7878) [12] rs_tube_catchup (tube.c:137 @ 8390)
+  [32] rs_job_drive (job.c:154 @ 68c0) [39] rs_patch_s_header (patch.c:232 @ 76a0) [24] rs_tube_copy (tube.c:179 @ 8580)
+  [33] rs_job_free (job.c:67 @ 66f0) [23] rs_patch_s_literal (patch.c:124 @ 7890) [42] rs_whole_run (whole.c:61 @ 50d0)
