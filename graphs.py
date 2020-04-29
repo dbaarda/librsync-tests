@@ -34,7 +34,7 @@ def saveplt(filename, title, xlabel, ylabel, xticks, xlabels=None, yticks=None):
 
 
 def GetFiles(sigargs='*'):
-  return glob.glob('data/perf_%s_*.txt' % sigargs)
+  return glob.glob('data/perf_%s_v*.txt' % sigargs)
 
 
 def GetFileArgsVer(fname):
@@ -98,8 +98,8 @@ def GraphTimeVsVers(data, args, cmd):
   """Plot how execution times vary with version."""
   p = data[args][cmd]
   vers = sorted(p)
-  sizes = sorted(p[vers[0]])
-  for size in sizes:
+  #sizes = sorted(p[vers[0]])
+  for size in sizeticks:
     times = [p[ver][size][0] for ver in vers]
     plt.plot(vers, times, label="%sM" % size)
   if cmd == 'delta':
@@ -132,8 +132,8 @@ def GraphMemVsVers(data, args, cmd):
   """Plot how memory usage varys with version."""
   p = data[args][cmd]
   vers = sorted(p)
-  sizes = sorted(p[vers[0]])
-  for size in sizes:
+  #sizes = sorted(p[vers[0]])
+  for size in sizeticks:
     mems = [p[ver][size][1] for ver in vers]
     plt.plot(vers, mems, label="%sM" % size)
   if cmd == 'delta':
@@ -164,8 +164,8 @@ def GraphSigVsVers(data, args):
   """Plot how signature size vary with version."""
   p = data[args]['sigsize']
   vers = sorted(p)
-  sizes = sorted(p[vers[0]])
-  for size in sizes:
+  #sizes = sorted(p[vers[0]])
+  for size in sizeticks:
     sigs = [p[ver][size]/size for ver in vers]
     plt.plot(vers, sigs, label="%sM" % size)
   #plt.xscale('log')
@@ -192,8 +192,8 @@ def GraphDeltaVsVers(data, args):
   """Plot how delta size vary with version."""
   p = data[args]['deltasize']
   vers = sorted(p)
-  sizes = sorted(p[vers[0]])
-  for size in sizes:
+  #sizes = sorted(p[vers[0]])
+  for size in sizeticks:
     deltas = [p[ver][size]/size for ver in vers]
     plt.plot(vers, deltas, label="%sM" % size)
   #plt.xscale('log')
