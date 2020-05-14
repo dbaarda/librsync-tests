@@ -411,5 +411,5 @@ memory, but it also would cost a little performance and doesn't seem worth it.
 After adding a simple k=1 bloomfilter and changing the loadfactor limit to 70%
 the profiling `with bloom filter
 <data/prof_delta_b1024S8_opt-hashtable2.txt>`_ compared to `without bloom
-filter <data/prof_delta_b1024S8_opt-rabin1.txt>`_ shows we've
+filter <data/prof_delta_b1024S8_opt-rabinkarp1.txt>`_ shows we've
 significantly improved the lookup time, dropping it from 93secs to 75secs.
