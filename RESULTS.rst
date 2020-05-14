@@ -1,5 +1,5 @@
 =============================
-DLFUCache Performance Results
+Librsync Performance Results
 =============================
 
 After working on librsync for some time I realized that although I'd been
@@ -366,9 +366,9 @@ Lessons Learned
 Making Hashtable faster
 -----------------------
 
-The profiling clearly shows that hashtable lookups thrashing the L2 cache are
-the biggest part of delta execution time. On the low-end atom platform I'm
-using we have;
+The `profiling <data/prof_delta_b1024S8_v2.3.0.txt>`_ clearly shows
+that hashtable lookups thrashing the L2 cache are the biggest part of delta
+execution time. On the low-end atom platform I'm using we have;
 
 * L1 cache 32K ~1ns    256K entries at 1bit/entry, 8K entries at 32bits/entry.
 * L2 cache 512K 10ns   4M entries at 1bit/entry, 128K entries at 32bits/entry.
@@ -400,3 +400,16 @@ k<1 work (see http://minkirri.apana.org.au/wiki/PartialKBloomFilter), I came
 to the conclusiong that a simple K=1 bloom filter the same size as the
 hashtable is best. It should fit within L2 caches for even 4M entry hashtables
 on atom-class CPU's and halve the lookup rate.
+
+Bloomfilters with k=1 have an optimal loadfactor of ln(2)~=0.7 which is the
+upper end for the hashtable. At the lower 0.35 end for the hashtable k=2 would
+be better, but modeling suggests the cost of an extra bloom-filter lookup is
+more than it saves in hashtable lookups. We could perhaps size the bloom
+filter independently of the hashtable to better fit k=1 and save a little
+memory, but it also would cost a little performance and doesn't seem worth it.
+
+After adding a simple k=1 bloomfilter and changing the loadfactor limit to 70%
+the profiling `with bloom filter
+<data/prof_delta_b1024S8_opt-hashtable2.txt>`_ compared to `without bloom
+filter <data/prof_delta_b1024S8_opt-rabin1.txt>`_ shows we've
+significantly improved the lookup time, dropping it from 93secs to 75secs.
