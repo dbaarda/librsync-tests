@@ -57,5 +57,5 @@ runfull () {
   shift 1
   sigargs="$@"
   out=$(outputfile perf $version $sigargs)
-  ./testfull.sh $sigargs >$out
+  [ -f ${out} ] || ./testfull.sh $sigargs >$out
 }
