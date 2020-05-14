@@ -44,7 +44,7 @@ runprofile () {
   rm -f $sig $delta $out gmon.out
 }
 
-#buildversion $version Debug -DCMAKE_C_FLAGS="-pg -g -O1 -fno-inline -DNDEBUG" -DBUILD_SHARED_LIBS=OFF
+#buildversion $version Debug -DCMAKE_C_FLAGS="-pg -g -O1 -fno-inline -static -DNDEBUG" -DBUILD_SHARED_LIBS=OFF
 buildversion $version RelWithDebInfo -DCMAKE_C_FLAGS="-pg -g" -DBUILD_SHARED_LIBS=OFF
 
 runprofile $version
