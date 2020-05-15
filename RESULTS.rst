@@ -409,7 +409,20 @@ filter independently of the hashtable to better fit k=1 and save a little
 memory, but it also would cost a little performance and doesn't seem worth it.
 
 After adding a simple k=1 bloomfilter and changing the loadfactor limit to 70%
-the profiling `with bloom filter
+the profiling `hashtable2 with bloom filter
 <data/prof_delta_b1024S8_opt-hashtable2.txt>`_ compared to `without bloom
 filter <data/prof_delta_b1024S8_opt-rabinkarp1.txt>`_ shows we've
 significantly improved the lookup time, dropping it from 93secs to 75secs.
+
+I then further optimized the bloom filter to use a different index (the
+shifted upper bits of the hash instead of the masked lower bits) to the
+hashtable so we would not start probing the hashtable at known-occupied
+entries, giving a chance to hit empty entries on the first probe. This
+significantly reduced the number of hash compares. Initially this was not
+visible in the `hashtable3 profiling
+<data/prof_delta_b1024S8_opt-hashtable3.txt>`_ due to a minor regression
+introduced in the `_for_probe()` probing code that didn't slow things when
+compiled with `-O3`, but did slow things when compiling with lower
+optimizations used for profiling. However, after this regression was fixed the
+`hashtable4 profiling <data/prof_delta_b1024S8_opt-hashtable4.txt>`_ shows the
+lookup time has now dropped below 66 seconds.
