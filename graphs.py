@@ -75,6 +75,10 @@ def GetAllData():
       data['b1024S1'][cmd].setdefault(ver, data['b1024S8'][cmd][ver])
       data['Rrollsum'][cmd].setdefault(ver, data['defaults'][cmd][ver])
       data['b1024S8Rrollsum'][cmd].setdefault(ver, data['b1024S8'][cmd][ver])
+      # Treat `S1` runs for versions that support it as another version.
+      if ver >= 'v2.3.0':
+        data['defaults'][cmd][ver + '-S1'] = data['S1'][cmd][ver]
+        data['b1024S8'][cmd][ver + '-S1'] = data['b1024S1'][cmd][ver]
   return data
 
 
@@ -100,7 +104,7 @@ def GraphTimeVsSize(data, args, cmd):
 def GraphTimeVsVers(data, args, cmd):
   """Plot how execution times vary with version."""
   p = data[args][cmd]
-  vers = sorted(p)
+  vers = sorted(v for v in p if 'S1' not in v)
   #sizes = sorted(p[vers[0]])
   for size in sizeticks:
     times = [p[ver][size][0] for ver in vers]
@@ -138,7 +142,7 @@ def GraphMemVsSize(data, args, cmd):
 def GraphMemVsVers(data, args, cmd):
   """Plot how memory usage varys with version."""
   p = data[args][cmd]
-  vers = sorted(p)
+  vers = sorted(v for v in p if 'S1' not in v)
   #sizes = sorted(p[vers[0]])
   for size in sizeticks:
     mems = [p[ver][size][1] for ver in vers]
@@ -172,7 +176,7 @@ def GraphSigVsSize(data, args):
 def GraphSigVsVers(data, args):
   """Plot how signature size vary with version."""
   p = data[args]['sigsize']
-  vers = sorted(p)
+  vers = sorted(v for v in p if 'S1' not in v)
   #sizes = sorted(p[vers[0]])
   for size in sizeticks:
     sigs = [p[ver][size]/size for ver in vers]
@@ -202,7 +206,7 @@ def GraphDeltaVsSize(data, args):
 def GraphDeltaVsVers(data, args):
   """Plot how delta size vary with version."""
   p = data[args]['deltasize']
-  vers = sorted(p)
+  vers = sorted(v for v in p if 'S1' not in v)
   #sizes = sorted(p[vers[0]])
   for size in sizeticks:
     deltas = [p[ver][size]/size for ver in vers]
@@ -228,6 +232,3 @@ if __name__ == '__main__':
   for cmd in ('sig', 'delta'):
     GraphTimeVsVers(data, 'b1024S8Rrollsum', cmd)
     GraphTimeVsVers(data, 'Rrollsum', cmd)
-  # Regenerated file-size-defaults-sig.svg treating -S1 as another version.
-  data['defaults']['sigsize']['v2.3.0-S1'] = data['S1']['sigsize']['v2.3.0']
-  GraphSigVsSize(data, 'defaults')
