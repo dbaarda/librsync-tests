@@ -86,8 +86,11 @@ def GraphTimeVsSize(data, args, cmd):
   for ver in vers:
     times = [p[ver][size][0] for size in sizes]
     plt.plot(sizes, times, label=ver)
+  ax = plt.gca()
   if cmd == 'delta':
-    plt.gca().yaxis.set_major_locator(MultipleLocator(60))
+    ax.yaxis.set_major_locator(MultipleLocator(60))
+  ax.set_ylim(bottom=0)
+  ax.set_xlim(left=0, right=1024)
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/time-size-%s-%s.svg' % (args,cmd), '%s times vs filesize for %s' % (cmd, args),
@@ -102,8 +105,10 @@ def GraphTimeVsVers(data, args, cmd):
   for size in sizeticks:
     times = [p[ver][size][0] for ver in vers]
     plt.plot(vers, times, label="%sM" % size)
+  ax = plt.gca()
   if cmd == 'delta':
-    plt.gca().yaxis.set_major_locator(MultipleLocator(60))
+    ax.yaxis.set_major_locator(MultipleLocator(60))
+  ax.set_ylim(bottom=0)
   #plt.xscale('log')
   saveplt('data/time-vers-%s-%s.svg' % (args,cmd), '%s times vs version for %s' % (cmd, args),
             'version', 'time', vers)
@@ -121,7 +126,9 @@ def GraphMemVsSize(data, args, cmd):
     mult=10240
   else:
     mult=32
-  plt.gca().yaxis.set_major_locator(MultipleLocator(mult))
+  ax = plt.gca()
+  ax.yaxis.set_major_locator(MultipleLocator(mult))
+  ax.set_xlim(left=0, right=1024)
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/mem-size-%s-%s.svg' % (args,cmd), '%s memory vs filesize for %s' % (cmd, args),
@@ -154,6 +161,8 @@ def GraphSigVsSize(data, args):
   for ver in vers:
     sigs = [p[ver][size]/size for size in sizes]
     plt.plot(sizes, sigs, label=ver)
+  ax = plt.gca()
+  ax.set_xlim(left=0, right=1024)
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/file-size-%s-%s.svg' % (args,'sig'), 'sigsize vs filesize for %s' % args,
@@ -182,6 +191,8 @@ def GraphDeltaVsSize(data, args):
   for ver in vers:
     deltas = [p[ver][size]/size for size in sizes]
     plt.plot(sizes, deltas, label=ver)
+  ax = plt.gca()
+  ax.set_xlim(left=0, right=1024)
   #plt.xscale('log')
   #plt.yscale('log')
   saveplt('data/file-size-%s-%s.svg' % (args,'delta'), 'deltasize vs filesize for %s' % args,
