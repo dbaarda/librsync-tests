@@ -20,7 +20,11 @@ Platform
 
 I'm using a pretty crappy old `atom cpu with 4GB ram and an SSD drive
 <data/platforminfo.txt>`_. This helps highlight the performance costs,
-particularly the cost of cpu memory cache misses.
+particularly the cost of cpu memory cache misses. Unfortunately it's not
+always very repeatable, and I've noticed second runs are often a little
+slower than first runs. I suspect that this is because it is fanless, and
+starts thermal throttling on the second run. However, the difference is
+minimal so it's mostly OK.
 
 Data Files
 ----------
@@ -50,10 +54,12 @@ I'm testing using the following variants of signature arguments:
   unrelated to the new RabinKarp rollsum algorithm.
 
 * S1 - Args `-S -1`. Like defaults except enabling the new `-1` minimum safe-ish
-  strongsum option.
+  strongsum option. These are shown on some graphs as if they were a different
+  version with default args, so you can see what effect it has.
 
 * b1024S1 - Args `-b 1024 -S -1`. Like b1024S8 except enabling the new `-1`
-  minimum safe-ish strongsum option.
+  minimum safe-ish strongsum option. These are also shown on some graphs like
+  a different version.
 
 Versions
 --------
@@ -88,8 +94,13 @@ calculate, but you still need to calculate for every byte, so only a little
 saving due to less finalization costs (which for RabinKarp include an integer
 power operation using several multiplies).
 
+After optimizing rabinkarp_update() in v2.3.1 it got faster again, and is now
+nearly as fast as older versions using rollsum. However, some of this speedup
+is the larger default blocksize, so rabinkarp is still a little slower than
+rollsum.
+
 But signatures are fast and cheap compared to deltas, the better RabinKarp
-rollsum should give faster deltas, so the extra ~2.5secs on a 1G signature is
+rollsum should give faster deltas, so the extra ~0.5secs on a 1G signature is
 worth it if it can shave enough time off the delta.
 
 .. image:: data/time-vers-defaults-delta.svg
@@ -106,7 +117,14 @@ me suspect the RabinKarp implementation had some strange inefficiencies.
 Delta got 2x faster again with v2.3.0, which is entirely due to the default
 blocksizes being larger for larger files.
 
-So good news; deltas have gotten 7x faster since v1.0.1, and even v1.0.1 was
+With optimizations in v2.3.1 it got a tiny bit faster but it's hard to see.
+The hashtable speedups are mostly visible when the hashtable is large, and
+larger blocks make the hashtable smaller. For some filesizes the hashtable
+speedups are slightly offset by slightly smaller blocks (due to rounding down
+to a multiple of the blake2b blocksize), but that should also translate into
+slightly smaller deltas.
+
+So good news; deltas have gotten 8x faster since v1.0.1, and even v1.0.1 was
 intended to be faster than the versions before that.
 
 .. image:: data/time-vers-defaults-patch.svg
@@ -120,26 +138,33 @@ anyway.
 .. image:: data/time-vers-b1024S8-sig.svg
 
 This shows pretty much the same thing as for defaults, except v2.3.0 doesn't
-get faster if you force the blocksize. Interestingly there's nearly no
-difference from the defaults, which uses a 2K blocksize, which shows the
-strongsum and rollsum costs are pretty much per-byte and not per-block.
+get faster if you force the blocksize. The rabinkarp optimizations in v2.3.1
+show that it's about 1.5secs slower than rollsum. There is a visible diffence
+now from the defaults which uses a 2K blocksize for rabinkarp, but not
+rollsum. This shows the rollsum costs are per-byte, not per-block, but
+rabinkarp does have a noticable per-block finalization cost, which is
+calculating the mult^blocksize needed for doing the rolling. It may be
+possible to cache this.
 
 .. image:: data/time-vers-b1024S8-delta.svg
 
 Using fixed 1K blocksize highlights the performance improvement by the new
-hashtable in v2.0.1 even more; it got 5x faster. The improvement by RabinKarp
-in v2.2.0 is still there but harder to see at this scale, but the match stats
-show it reduced the strongsum calcs by much more than half.  Interestingly
-since the new hashtable going from 2K to 1K blocks has no visible impact on
-the speed, but v2.3.0's default 32K block for a 1G file does make 2x speedup.
-So smaller blocks do make a difference at some point, and it turns out that
-point is when the hashtable gets small enough the keys fit into the cpu's
-memory cache.
+hashtable in v2.0.1 even more; it got nearly 5x faster. The improvement by
+RabinKarp in v2.2.0 is still there but harder to see at this scale, but the
+match stats show it reduced the strongsum calcs by much more than half.
+Interestingly since the new hashtable going from 2K to 1K blocks has no
+visible impact on the speed, but v2.3.0's default 32K block for a 1G file does
+make 2x speedup. So smaller blocks do make a difference at some point, and it
+turns out that point is when the hashtable gets small enough the keys fit into
+the cpu's memory cache.
 
 The lack of significant improvements from RabinKarp still bothered me. Adding
 the new rollsum meant the delta calculator needs to select the rollsum
 implementation at runtime using an if-statment dispatcher. Perhaps this
 dispatching added too much overheads?
+
+After optimizing the hashtable and rabinkarp_update() in v2.3.1 it got a bit
+faster again, and is now nearly 6x faster than v1.0.1.
 
 .. image:: data/time-vers-b1024S8-patch.svg
 
@@ -149,8 +174,9 @@ Patch patch is identical to defaults, since the delta cacluated is identical.
 
 This confirms that none of the other changes necessary to add RabinKarp
 support caused a regression for signatures; v2.2.0+ using rollsum is exactly
-the same as v2.1.0. This means the extra 2.5secs for a 1G file is entirely in
-the RabinKarp rollsum.
+the same as v2.1.0. This means the extra 2.5secs in v2.3.0 for a 1G file is
+entirely in the RabinKarp rollsum. Optimizing rabinkarp in v2.3.1 means its
+now only 1.5secs slower.
 
 .. image:: data/time-vers-b1024S8Rrollsum-delta.svg
 
@@ -159,7 +185,8 @@ significant overheads, then we should see those overheads when explicitly
 using the old rollsum implementation, but we don't. Using the old rollsum
 v2.2.0+ are exactly the same as v2.1.0. This means the dynamic
 dispatching overheads are completely negiligable. The minimal gains with
-RabinKarp are not because of other introduced overheads.
+RabinKarp are not because of other introduced overheads. With v2.3.1 the
+hashtable optimizations show a tiny improvement.
 
 .. image:: data/time-size-defaults-delta.svg
 
@@ -167,14 +194,21 @@ Plotting the delta execution time against filesize clearly shows the
 performance saw-tooths at the point where the hashtable doubles in size. It
 also shows the 2.3.0 larger default blocksize for larger files benefits
 clearly, but can't show the sawtooth because the blocksizes nolonger line up
-with the filesizes chosen. Interestingly the sawtooth step is small,
-showing the hashtable's high 80% loadfactor is an OK compromize against
-hashtable size.
+with the filesizes chosen. Interestingly the sawtooth step is fairly large,
+showing the hashtable's high 80% loadfactor is maybe too high. With v2.3.1 its
+a barely visible bit faster, and wobbles a little differently to v2.3.1
+because of the slightly smaller block sizes from rounding them down to the
+blake2b blocksize. Using `-S-1` makes no difference as it only affects the
+signature size.
 
 .. image:: data/time-size-b1024S8-delta.svg
 
-For the fixe blocksize v2.3.0 doesn't get an advantage any more, but the
-benefits of the new hashtable are even more visible.
+For the fixe bdlocksize v2.3.0 doesn't get an advantage any more, but the
+benefits of the new hashtable are even more visible. The hashtable
+optimizations in v2.3.1 are more visible against v2.3.1 than for defaults
+because the hashtable is bigger when the blocksize is smaller. You can also
+see the max 70% loadfactor change moves the sawtooths back and makes them much
+smaller. Again using `-S-1` makes no difference.
 
 How memory vary with version
 -------------------------------
@@ -190,7 +224,9 @@ because of the larger default blocksizes for larger files.
 The memory required for deltas is large because it needs the full signature
 and hashtable in memory. It jumped a bit with v2.0.1 with the new hashtable,
 and dropped significantly with v2.3.0 with the larger default blocksizes for
-large files.
+large files. It got a tiny bit larger with v2.3.1 for some file sizes, not so
+much because of the additional bloom filter (which is tiny), but because of
+the slightly smaller block sizes giving more blocks.
 
 .. image:: data/mem-vers-defaults-patch.svg
 
@@ -221,13 +257,20 @@ command sizes got longer, resulting in larger inserts being written.
 This clearly shows the saw-tooth growth vs filesize when the hashtable size
 doubles for v2.0.1 -> v2.2.1. For v2.3.0 the blocksize varies with filesize so
 the saw-tooth points don't align with the filesizes used and are not
-visible. The memory savings of larger blocks in v2.3.0 are very clear.
+visible. The memory savings of larger blocks in v2.3.0 are very clear. The
+extra bloom filter in v2.3.1 is so small it's invisible. Using `-S-1` saves a
+little memory because of the smaller strongsum sizes.
 
 .. image:: data/mem-size-b1024S8-delta.svg
 
 The fixed blocksize removes v2.3.0's memory advantage, but the strongsum
 packing means all versions since v2.0.1 use less memory despite the larger
-hashtable, even at the saw-tooth peaks.
+hashtable, even at the saw-tooth peaks. With v2.3.1 the max 70% hashtable
+loadfactor means the sawtooth peaks are a tiny bit earlier, and the extra
+bloom filter is only just visible. Using `-S-1` causes a jump at 1024M
+filesize because the recommended minimum strongsum size goes to 9bytes. There
+is also an invisible tiny drop at the very small filesizes where it drops to
+7bytes.
 
 How filesizes vary with version
 -------------------------------
@@ -242,7 +285,8 @@ because of the larger default blocksize for larger files.
 The delta dropped a little at v2.0.1 because of longer insert commands. It
 jumps at v2.3.0 because the blocksizes are nolonger a nice multiple of the
 deltas in our test data, meaning we have small extra insert commands at the
-delta boundaries.
+delta boundaries. It changes again at v2.3.1 for some filesizes because the
+blocksizes are rounded down to multiples of the blake2b blocksize.
 
 .. image:: data/file-vers-b1024S8-sig.svg
 
@@ -262,9 +306,9 @@ particularly for small files.
 
 .. image:: data/file-size-b1024S8-sig.svg
 
-With a fixed blocksize all versions are the same. Note the vertical scale; the
-variation is actually tiny, and shows amortizing the header cost over the
-signature data.
+With a fixed blocksize all versions are the same. Using `-S-1` you can see
+when the strongsum size drops to 7bytes for small files, and jumps to 8bytes
+for large files.
 
 
 Summary
