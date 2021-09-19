@@ -1,4 +1,4 @@
-#!/usr/bin/python -O
+#!/usr/bin/python3 -O
 """Generate graphs comparing librsync versions.
 
 This reads the run output text files in data/perf_*.txt to extract the data.
@@ -51,7 +51,7 @@ def GetFileData(data, fname):
     tmatch = re.match(r'([0-9.]+)user ([0-9.]+)system .* ([0-9]+)maxresident.*', l)
     if tmatch:
       u,s,m = tmatch.groups()
-      cmd = cyclecmds.next()
+      cmd = next(cyclecmds)
       stats = (float(u) + float(s), int(m))
       data.setdefault(args, {}).setdefault(cmd, {}).setdefault(ver, {})[size] = stats
     deltamatch = re.match(r'.* (\d+) ... .. ..:.. /tmp/delta.*', l)
