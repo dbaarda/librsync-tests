@@ -1,0 +1,46 @@
+name: Generate Data
+
+on: workflow_dispatch
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout librsync-tests
+      uses: actions/checkout@v2
+      with:
+        path: librsync-tests
+    
+    -name: Checkout librsync
+      uses: actions/checkout@v2
+      with:
+        repository: librsync/librsync
+        path: librsync
+        fetch-depth: 0
+    
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y libpopt-dev libb2-dev python3-matplotlib
+
+    - name: List files
+      run: ls -lR
+      
+    - name: Clean data
+      run: rm -f data/*
+      working-directory: librsync-tests
+      
+    - name: Generate data
+      run: ./testall.sh
+      working-directory: librsync-tests
+      
+    - name: Generate graphs
+      run: ./graphs.py
+      working-directory: librsync-tests
+      
+    - name: Upload data
+      uses: actions/upload-artifact@v2
+      with:
+        name: data
+        path: ${{github.workspace}}/librsync-tests/data
+        if-no-files-found: error
