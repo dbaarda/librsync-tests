@@ -11,7 +11,7 @@ jobs:
       with:
         path: librsync-tests
     
-    -name: Checkout librsync
+    - name: Checkout librsync
       uses: actions/checkout@v2
       with:
         repository: librsync/librsync
