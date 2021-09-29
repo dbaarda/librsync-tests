@@ -1,6 +1,12 @@
 name: Generate Data
 
 on: workflow_dispatch
+  inputs:
+    versions:
+      description: 'librsync versions to test'
+      default: 'all'
+      required: true
+
 
 jobs:
   generate:
@@ -27,8 +33,14 @@ jobs:
       run: rm -f data/*
       working-directory: librsync-tests
 
-    - name: Generate data
+    - name: Generate all data
+      if: ${{ github.event.inputs.versions == 'all' }}
       run: ./testall.sh
+      working-directory: librsync-tests
+
+    - name: Generate version data
+      if: ${{ github.event.inputs.versions != 'all' }}
+      run: ./testvers.sh ${{github.event.inputs.versions}}
       working-directory: librsync-tests
 
     - name: Generate graphs
