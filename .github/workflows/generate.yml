@@ -1,12 +1,12 @@
 name: Generate Data
 
-on: workflow_dispatch
-  inputs:
-    versions:
-      description: 'librsync versions to test'
-      default: 'all'
-      required: true
-
+on:
+  workflow_dispatch:
+    inputs:
+      versions:
+        description: 'librsync versions'
+        default: 'all'
+        required: true
 
 jobs:
   generate:
